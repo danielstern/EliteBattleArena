@@ -2,6 +2,7 @@
   "name": "elite-battle-arena",
   "private": true,
   "dependencies": {
-    "jquery": "~1.11.1"
+    "jquery": "~1.11.1",
+    "ui-router": "~0.2.11"
   }
 }
