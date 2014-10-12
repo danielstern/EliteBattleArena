@@ -9,6 +9,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -22,19 +23,34 @@
 
 
     <div class="hero-unit">
-      <h1>Battle Arena</h1>
+      <h1>AI Battle Arena</h1>
       <p>Latest Battle</p>
-      <ul>
-      <li>... nothing yet...</li>
-
-
-      </ul>
     </div>
 
-    <div>
-      <p>
-        Conditoins: get evil team to 0 life. if ur life is 0 u lose
-      </p>
+    <div class=container ng-init=simulation={currentTurn:info.length}>
+      <!-- <p> -->
+        <!-- Conditoins: get evil team to 0 life. if ur life is 0 u lose -->
+      <!-- </p> -->
+      <!-- {{info}} -->
+      <!-- {{info[info.length-1]}} -->
+      <input min=1 max={{info.length}} ng-model=simulation.currentTurn type=range step=1>
+      <div ng-repeat='turn in info | slice:simulation.currentTurn-1:simulation.currentTurn'>
+        Turn {{turn.turn}}
+        <p ng-repeat='action in turn.narrative track by $index' >
+            {{action}}
+        </p>
+        <table class='table table-bordered'>
+          <tr ng-class="{'danger':actor.side === 'evil','success':actor.side==='good'}"ng-repeat="actor in turn.game.actors">
+            <td>
+              {{actor.name}}
+            </td>
+            <td>
+              {{actor.health}}
+            </td>
+          </tr>
+
+        </table>
+      </div>
     </div>
 
 
@@ -43,6 +59,7 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -58,6 +75,8 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/EliteBattleArena.js"></script>
+        <script src="scripts/conditions.js"></script>
         <!-- endbuild -->
 </body>
 </html>
