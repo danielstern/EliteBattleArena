@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body>
+  <body ng-controller=EBADemoController>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -27,13 +27,14 @@
       <p>Latest Battle</p>
     </div>
 
-    <div class=container ng-init=simulation={currentTurn:info.length}>
+    <div class=container>
       <!-- <p> -->
         <!-- Conditoins: get evil team to 0 life. if ur life is 0 u lose -->
       <!-- </p> -->
       <!-- {{info}} -->
       <!-- {{info[info.length-1]}} -->
-      <input min=1 max={{info.length}} ng-model=simulation.currentTurn type=range step=1>
+      {{simulation}}
+      <input min=1  ng-range ng-model=simulation.currentTurn max={{info.length}} type=range step=1>
       <div ng-repeat='turn in info | slice:simulation.currentTurn-1:simulation.currentTurn'>
         Turn {{turn.turn}}
         <p ng-repeat='action in turn.narrative track by $index' >
