@@ -33,6 +33,10 @@ angular.module("EliteBattleArena", [])
 
             this.start = function() {
                 var battleLog = [];
+                game.currentTurn = 0;
+                game.actors.forEach(function(actor){
+                    actor.health = 100;
+                })
                 while (game.currentTurn < game.maxTurns) {
 
                     // START OF TURN PHASE
@@ -43,6 +47,7 @@ angular.module("EliteBattleArena", [])
                         actions:[],
                         narrative:[]
                     }
+
                     // console.log("a turn passes");
 
                     // AI PHASE

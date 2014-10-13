@@ -4,7 +4,7 @@ angular.module("EBADemo", ['EliteBattleArena'])
     var game = new Game();
 
     game.addActor(new Actor({
-        name:"Friendus Lovemire",
+        name:"Friendus Fortunato",
         side:"good"
     }));
     game.addActor(new Actor({
@@ -16,4 +16,9 @@ angular.module("EBADemo", ['EliteBattleArena'])
     $scope.simulation={
         currentTurn:1
     };
+
+    $scope.go = function() {
+        $scope.info = game.start();
+        $scope.simulation.currentTurn = 1;
+    }
 })
