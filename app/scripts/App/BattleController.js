@@ -12,19 +12,19 @@ angular.module("EliteBattleArena.App")
             speed: 3
         });
 
-        var badGuy2 = new Actor({
-            name: "Dangerous Troll",
-            side: "evil",
-            body: "villain",
-            health: 35,
-            speed: 3
-        });
+        // var badGuy2 = new Actor({
+        //     name: "Dangerous Troll",
+        //     side: "evil",
+        //     body: "villain",
+        //     health: 35,
+        //     speed: 3
+        // });
 
         $scope.game.party.forEach(function(hero) {
             battle.actors.push(hero);
         })
         
-        battle.target = badGuy;
+        // battle.target = badGuy;
 
         $scope.startBattle = function() {
             $scope.isFighting = true;
@@ -55,5 +55,5 @@ angular.module("EliteBattleArena.App")
         })
 
         battle.actors.push(badGuy);
-        battle.actors.push(badGuy2);
+        // battle.actors.push(badGuy2);
     })

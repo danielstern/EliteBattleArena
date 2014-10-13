@@ -48,6 +48,7 @@ angular.module("Game.EliteBattleArena")
                 templateUrl:"partial/status.html",
                 controller: function($scope){
                     $scope.actor = $scope.game.party[0];
+                    // $scope.
                 }
             }
         }

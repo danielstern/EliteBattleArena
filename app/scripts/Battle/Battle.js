@@ -12,6 +12,21 @@ angular.module("EliteBattleArena.Battle")
         this.winConditions = [conditions.allVillainsDead];
         this.loseConditions = [conditions.allHeroesDead];
 
+        battle.targetNextValidUnit = function() {
+
+            var enemies = characterFilters.isEvil(battle.actors);
+            enemies = characterFilters.isAlive(enemies);
+
+            var targetIndex = enemies.indexOf(battle.target);
+            console.log("target index?", targetIndex, targetIndex.length);
+            if (targetIndex === enemies.length - 1) {
+                battle.target = enemies[0];
+            } else {
+                battle.target = enemies[targetIndex + 1];
+            }
+
+        }
+
         battle.stop = function() {
             $interval.cancel(gameClock);
         }
@@ -23,12 +38,13 @@ angular.module("EliteBattleArena.Battle")
             gameClock = $interval(function() {
 
                 enemies = characterFilters.isAlive(enemies);
-
+                if (!battle.target || battle.target.dead) battle.targetNextValidUnit();
                 battle.currentTurn++;
                 var narrative = battle.narrative;
                 battle.actors.forEach(function(actor) {
                     if (actor.health <= 0) {
                         actor.animation = "dead";
+                        actor.dead = true;
                         return;
                     }
                     actor.sp += actor.speed;
@@ -39,6 +55,8 @@ angular.module("EliteBattleArena.Battle")
                         actor.canAct = false;
                     }
 
+
+
                     if (actor.canAct) {
                         var action;
 
@@ -47,6 +65,9 @@ angular.module("EliteBattleArena.Battle")
                             action = actor.act(battle, actor);
 
                         } else {
+
+
+
                             if (actor.selectedAction) {
                                 var selection = actor.selectedAction;
                                 if (selection == 'heal' || selection === "defend") {
@@ -55,20 +76,14 @@ angular.module("EliteBattleArena.Battle")
                                         target: actor,
                                         actor: actor
                                     }
-                                } else  if (selection == 'attack') {
+                                } else if (selection == 'attack') {
                                     action = {
                                         action: selection,
                                         target: battle.target,
                                         actor: actor
                                     }
-                                } else if (selection =='target') {
-                                    var targetIndex = enemies.indexOf(battle.target);
-                                    console.log("target index?",targetIndex, targetIndex.length);
-                                    if (targetIndex === enemies.length -1){
-                                        battle.target = enemies[0];
-                                    } else {
-                                        battle.target = enemies[targetIndex+1];
-                                    }
+                                } else if (selection == 'target') {
+                                    battle.targetNextValidUnit();
                                 }
                             }
 
