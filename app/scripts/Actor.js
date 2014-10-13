@@ -1,4 +1,4 @@
-angular.module("EliteBattleArena.Actor",[])
+angular.module("EliteBattleArena.Actor",['EliteBattleArena.AI'])
 .factory("Actor", function(getRandomMove) {
 
     return function(options) {

@@ -1,4 +1,9 @@
-angular.module("EliteBattleArena", ['EliteBattleArena.AI', 'EliteBattleArena.Actor'])
+angular.module("EliteBattleArena", [
+    'EliteBattleArena.AI',
+    'EliteBattleArena.Actor',
+    'EliteBattleArena.App',
+    'EliteBattleArena.Battle',
+    'EliteBattleArena.Helpers'])
 
 .factory("Game", function(Actor) {
     return function() {
