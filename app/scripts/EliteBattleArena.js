@@ -52,6 +52,7 @@ angular.module("EliteBattleArena", ['EliteBattleArena.AI', 'EliteBattleArena.Act
                 })
                 while (game.currentTurn < game.maxTurns) {
 
+                    
                     // START OF TURN PHASE
                     game.currentTurn++;
 
