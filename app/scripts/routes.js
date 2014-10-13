@@ -91,6 +91,7 @@ angular.module("Game.EliteBattleArena")
                 templateUrl:"partial/inventory.html",
                 controller:function($scope){
                     $scope.equip = function(item) {
+                        console.log("Equip!",item,$scope.game.party);
                         $scope.game.party[0].equip[item.location] = item;
                     }
                     

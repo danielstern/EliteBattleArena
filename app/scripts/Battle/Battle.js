@@ -86,7 +86,6 @@ angular.module("EliteBattleArena.Battle")
                                     battle.targetNextValidUnit();
                                 }
                                 else if (selection == 'retreat') {
-                                    // battle.targetNextValidUnit();
                                     battle.stop();
                                     $state.go("main.status");
                                 }
@@ -100,7 +99,15 @@ angular.module("EliteBattleArena.Battle")
 
                     if (action.action === 'attack') {
                         action.actor.defending = false;
-                        action.target.health -= action.target.defending ? Math.floor(action.actor.attack / 2) : action.actor.attack;
+                        var damage = action.actor.getAttack();
+                        if (action.target.defending) {
+                            damage/=2;
+                        }
+                        damage -= action.target.getDefense();
+                        if (damage < 0) {
+                            damage = 0;
+                        }
+                        action.target.health -= damage;
                         narrative.push(action.actor.name + " attacked " + action.target.name + " for " + action.actor.attack + " damage.");
                         action.actor.animation = "attacking";
                         actor.sp = 0;

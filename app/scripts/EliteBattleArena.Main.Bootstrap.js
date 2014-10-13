@@ -1,5 +1,5 @@
-angular.module("Game.EliteBattleArena", ['EliteBattleArena', 'ui.router'])
-    .run(function($rootScope, Game,Actor) {
+angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Scenario', 'ui.router'])
+    .run(function($rootScope, Game, Actor, armor, weapons) {
         var game = new Game();
         $rootScope.game = game;
 
@@ -9,33 +9,19 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena', 'ui.router'])
             body: "hero",
         });
 
-        game.storeItems = [{
-            name:"Helmet of Strenth",
-            description:"A stout helmet. Increases health by 20",
-            cost: 200,
-            location: "head",
-            appearance:"helm-fancy"
-        }]
+        game.storeItems = [
+            armor.helmetOfStrength
+        ]
 
-        game.inventory = [{
-            name:"Common Skullcap",
-            description:"It's quite common.",
-            location: 'head',
-            appearance:"helm-basic"
-        }]
+        game.inventory = [armor.commonSkullCap];
 
         game.party.push(hero);
 
-        hero.equip.body = {
-        	name: "Shoddy Armor",
-        	defense: 3
-        };
-
-        hero.equip.weapon = {
-        	weapon: "Puny Spear",
-        	attack: 4
-        }
+        hero.equip.body = armor.shoddyArmor;
+        hero.equip.weapon = weapons.punySpear;
 
         game.gold = 420;
 
-    });
+    })
+
+

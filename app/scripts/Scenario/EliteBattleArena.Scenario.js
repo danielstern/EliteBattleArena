@@ -1,0 +1,1 @@
+angular.module("EliteBattleArena.Scenario", []);
