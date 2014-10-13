@@ -68,7 +68,7 @@ module.exports = function (grunt) {
         options: {
           ignorePath:"app",
           sort: function(a,b) {
-            return (b.match(/./g).length - a.match(/./g).length);
+            return (b.match(/\./g).length - a.match(/\./g).length);
           }
         },
         local_dependencies: {
