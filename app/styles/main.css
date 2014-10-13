@@ -57,6 +57,16 @@
   background-position: -6400px 0px;
 }
 
+.equip-helmet {
+  background-position: -4352px 0px;
+}
+
+.equip-helmet.helm-fancy {
+  background-position: -4864px 0px;
+}
+
+
+
 .equip.attacking {
   transform: rotate(30deg);
 }

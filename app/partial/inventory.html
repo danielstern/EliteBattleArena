@@ -1,0 +1,11 @@
+<div avatar-display actor=actor>
+
+</div>
+<div ng-repeat='item in game.inventory'>
+<p>
+	{{item.name}}
+</p>
+<p>
+	{{item.description}}
+</p>
+<button class='btn btn-default' ng-click=equip(item)>Equip!</button>

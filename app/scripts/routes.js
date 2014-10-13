@@ -71,6 +71,29 @@ angular.module("Game.EliteBattleArena")
         views: {
             main: {
                 templateUrl:"partial/store.html",
+                controller:function($scope){
+                    $scope.buy = function(item) {
+                        $scope.game.gold-=item.cost;
+                        $scope.game.inventory.push(item);
+                        item.bought = true;
+                    }
+                }
+            }
+        }
+    })
+
+    .state({
+        name:"main.status.inventory",
+        url:"^/inventory",
+        views: {
+            main: {
+                templateUrl:"partial/inventory.html",
+                controller:function($scope){
+                    $scope.equip = function(item) {
+                        $scope.game.party[0].equip[item.location] = item;
+                    }
+                    
+                }
             }
         }
     })
