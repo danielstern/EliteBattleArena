@@ -25,6 +25,10 @@
   margin: 10px auto;
 }
 
+.char.dead {
+  transform: rotate(90deg);
+}
+
 .char-villain {
   background-position: 64px 0px;
 }

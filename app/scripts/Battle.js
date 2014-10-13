@@ -1,5 +1,5 @@
 angular.module("EliteBattleArena")
-    .factory("Battle", function($interval, conditions) {
+    .factory("Battle", function($interval, conditions,characterFilters) {
         return function() {
 
             this.actors = [];
@@ -12,11 +12,16 @@ angular.module("EliteBattleArena")
 
             var gameClock;
             this.start = function() {
+                characterFilters.isGood(battle.actors)[0].controlled = true;
                 gameClock = $interval(function() {
                     console.log("Game clock ticking...");
                     battle.currentTurn++;
                     var narrative = [];
                     battle.actors.forEach(function(actor) {
+                        if (actor.health <= 0) {
+                            actor.animation = "dead";
+                            return;
+                        }
                         actor.sp += actor.speed;
                         if (actor.sp > 99) {
                             actor.sp = 100;
@@ -26,14 +31,31 @@ angular.module("EliteBattleArena")
                         }
 
                         if (actor.canAct) {
-                            action = actor.act(battle, actor);
-                            actor.sp = 0;
+                            var action;
+
+                            if (!actor.controlled) {
+
+                                action = actor.act(battle, actor);
+
+                            } else {
+                                if (actor.selectedAction) {
+                                    action = actor.selectedAction;
+                                    actor.selectedAction = undefined;
+                                } else {
+                                    action = {
+                                    action:"nothing",
+                                    actor:"actor"
+                                };
+                                }
+                                
+                            }
 
                             if (action.action === 'attack') {
                                 action.actor.defending = false;
                                 action.target.health -= action.target.defending ? Math.floor(action.actor.attack / 2) : action.actor.attack;
                                 narrative.push(action.actor.name + " attacked " + action.target.name + " for " + action.actor.attack + " damage.");
                                 action.actor.animation = "attacking";
+                                actor.sp = 0;
                             }
 
                             if (action.action === 'nothing' || undefined) {
@@ -48,11 +70,14 @@ angular.module("EliteBattleArena")
                                     action.target.health = action.target.maxHealth;
                                 }
                                 narrative.push(action.actor.name + " healed " + action.target.name + " for " + action.actor.attack + " damage.");
+                                actor.sp -= 75;
                             }
 
                             if (action.action === 'defend') {
                                 action.target.defending = true;
+                                action.actor.animation = "nothing";
                                 narrative.push(action.actor.name + " is defending " + action.target.name + ".");
+                                actor.sp -= 50;
                             }
                         }
                     });
@@ -66,16 +91,11 @@ angular.module("EliteBattleArena")
                     });
 
                     if (losing) {
-                        // narrative.push("The forces of evil have overwhelmed us!");
-                        gameClock();
-                        // handle loss
+                        $interval.cancel(gameClock);
                     }
 
                     if (winning) {
-                        // narrative.push("The forces of good have prevailed!",gameClock);
-                        console.log("YOU WIN!",gameClock);
                         $interval.cancel(gameClock);
-                        // handleWin
                     }
                 }, 25)
             };
@@ -89,8 +109,17 @@ angular.module("EliteBattleArena")
 
         $scope.battle = battle;
 
+        var badGuy = new Actor({
+            name: "Common Troll",
+            side: "evil",
+            body: "villain",
+            health: 25,
+            speed: 3
+        });
+
         $scope.game.party.forEach(function(hero) {
             battle.actors.push(hero);
+            hero.target = badGuy;
         })
 
         $scope.startBattle = function() {
@@ -98,11 +127,5 @@ angular.module("EliteBattleArena")
             $scope.battle.start();
         }
 
-        battle.actors.push(new Actor({
-            name: "Common Troll",
-            side: "evil",
-            body: "villain",
-            health: 25,
-            speed: 3
-        }));
+        battle.actors.push(badGuy);
     })

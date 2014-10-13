@@ -80,6 +80,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','ui.router'])
     return {
         scope: {
             actor:"=",
+            target:"=",
         },
         templateUrl: "partial/single-hero-status.html",
         restrict:"AE",

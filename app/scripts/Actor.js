@@ -15,7 +15,7 @@ angular.module("EliteBattleArena.Actor",[])
         this.defending = false;
         this.exp = 0;
         this.body = options.body || "hero";
-        this.speed = options.speed || 4;
+        this.speed = options.speed || 2.5;
         this.sp = 0;
 
     }

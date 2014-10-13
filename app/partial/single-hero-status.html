@@ -1,5 +1,5 @@
 <div>
-    <div class='char char-{{actor.body}}'>
+    <div class='char char-{{actor.body}} {{actor.animation}}'>
         <div class='equip equip-dagger {{actor.animation}}'>
         </div>
         <div class='equip equip-armor'>
@@ -23,6 +23,12 @@
     <div class="progress">
         <div class="progress-bar" style="width: {{actor.sp}}%;transition: all 0s;">
         </div>
+    </div>
+
+    <div ng-if=actor.controlled>
+        <button ng-disabled=!actor.canAct ng-click="actor.selectedAction={action:'attack',actor:actor,target:actor.target}" class='btn btn-primary btn-block'>Attack</button>
+        <button ng-disabled=!actor.canAct ng-click="actor.selectedAction={action:'heal',actor:actor,target:actor}" class='btn btn-block btn-success'>Heal</button>
+        <button ng-disabled=!actor.canAct ng-click="actor.selectedAction={action:'defend',actor:actor,target:actor}" class='btn btn-block btn-warning'>Defend</button>
     </div>
 </div>
 </div>

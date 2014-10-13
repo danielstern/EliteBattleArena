@@ -6,7 +6,7 @@ angular.module("EliteBattleArena", ['EliteBattleArena.AI', 'EliteBattleArena.Act
             new Actor({
                 name: "Friendus Fortunato",
                 side: "good",
-                body: "hero"
+                body: "hero",
             })
         ];
 
