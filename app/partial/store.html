@@ -1,12 +1,15 @@
 <div avatar-display actor=actor>
 
 </div>
-<div ng-repeat='item in game.storeItems' ng-if=!item.bought>
-<p>
-	{{item.name}} - {{item.cost}}
-</p>
-<p>
-	{{item.description}}
-</p>
-<button class='btn btn-default' ng-click=buy(item)>Buy!</button>
+<div class=col-xs-4>
+    <div ng-repeat='item in game.storeItems' ng-if=!item.bought>
+        <div item-view item=item></div>
+        <p>
+            {{item.name}} - {{item.cost}}
+        </p>
+        <p>
+            {{item.description}}
+        </p>
+        <button class='btn btn-default' ng-click=buy(item)>Buy!</button>
+    </div>
 </div>

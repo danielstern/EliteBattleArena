@@ -1,11 +1,14 @@
 <div avatar-display actor=actor>
 
 </div>
-<div ng-repeat='item in game.inventory'>
-<p>
-	{{item.name}}
-</p>
-<p>
-	{{item.description}}
-</p>
-<button class='btn btn-default' ng-click=equip(item)>Equip!</button>
+<div class=col-xs-4>
+    <div ng-repeat='item in game.inventory'>
+        <div item-view item=item></div>
+        <p>
+            {{item.name}}
+        </p>
+        <p>
+            {{item.description}}
+        </p>
+        <button class='btn btn-default' ng-click=equip(item)>Equip!</button>
+    </div>

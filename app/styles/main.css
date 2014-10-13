@@ -49,7 +49,7 @@
 
 }
 
-.equip-weapon.dagger-basic {
+.dagger-basic {
   background-position: -128px 0px;
 }
 
@@ -57,11 +57,11 @@
   background-position: -6400px 0px;
 }
 
-.equip-helmet {
+.helm-basic {
   background-position: -4352px 0px;
 }
 
-.equip-helmet.helm-fancy {
+.helm-fancy {
   background-position: -4864px 0px;
 }
 
@@ -69,4 +69,8 @@
 
 .equip.attacking {
   transform: rotate(30deg);
+}
+
+.item-view {
+  border: 1px solid black;
 }
