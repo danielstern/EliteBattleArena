@@ -25,6 +25,10 @@
   margin: 10px auto;
 }
 
+.targeted {
+  border: 1px solid red;
+}
+
 .char.dead {
   transform: rotate(90deg);
 }

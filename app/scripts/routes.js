@@ -2,6 +2,7 @@ angular.module("Game.EliteBattleArena")
 .config(function($stateProvider, $urlRouterProvider){
     $stateProvider.state({
         name:"main",
+        abstract:true,
         url:"/main",
         templateUrl:'partial/main.html',
     })

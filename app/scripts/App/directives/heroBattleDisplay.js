@@ -4,6 +4,7 @@ angular.module("EliteBattleArena.App")
         scope: {
             alignment:"=",
             actors:"=",
+            battle:'='
         },
         templateUrl: "partial/hero-battle.html",
         restrict:"AE",

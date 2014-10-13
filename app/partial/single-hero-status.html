@@ -1,4 +1,8 @@
-<div>
+<div ng-class='{"targeted":battle.target.id == actor.id}'>
+    {{battle.target.id == actor.id}}
+    <!-- {{actor.id}} -->
+    <!-- {{battle.target.id}} -->
+    <!-- {{battle}} -->
     <div class='char char-{{actor.body}} {{actor.animation}}'>
         <div class='equip equip-dagger {{actor.animation}}'>
         </div>
@@ -16,19 +20,22 @@
             </td>
         </tr>
     </table>
+
     <div class="progress">
         <div class="progress-bar progress-bar-danger" style="width: {{(actor.health / actor.maxHealth) * 100}}%; ">
         </div>
     </div>
+
     <div class="progress"  ng-if=actor.controlled>
         <div class="progress-bar" style="width: {{actor.sp}}%;transition: all 0s;">
         </div>
     </div>
 
     <div ng-if=actor.controlled>
-        <button ng-disabled=!actor.canAct ng-click="actor.selectedAction={action:'attack',actor:actor,target:actor.target}" class='btn btn-primary btn-block'>Attack</button>
-        <button ng-disabled=!actor.canAct ng-click="actor.selectedAction={action:'heal',actor:actor,target:actor}" class='btn btn-block btn-success'>Heal</button>
-        <button ng-disabled=!actor.canAct ng-click="actor.selectedAction={action:'defend',actor:actor,target:actor}" class='btn btn-block btn-warning'>Defend</button>
+        <button ng-disabled=!actor.canAct ng-click="actor.selectedAction='attack'" class='btn btn-primary btn-block'>Attack</button>
+        <button ng-disabled=!actor.canAct ng-click="actor.selectedAction='heal'" class='btn btn-block btn-success'>Heal</button>
+        <button ng-disabled=!actor.canAct ng-click="actor.selectedAction='defend'" class='btn btn-block btn-warning'>Defend</button>
+        <button ng-click="actor.selectedAction='target'" class='btn btn-block btn-warning'>Change Target</button>
     </div>
 </div>
 </div>

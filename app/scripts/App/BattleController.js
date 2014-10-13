@@ -12,10 +12,19 @@ angular.module("EliteBattleArena.App")
             speed: 3
         });
 
+        var badGuy2 = new Actor({
+            name: "Dangerous Troll",
+            side: "evil",
+            body: "villain",
+            health: 35,
+            speed: 3
+        });
+
         $scope.game.party.forEach(function(hero) {
             battle.actors.push(hero);
-            hero.target = badGuy;
         })
+        
+        battle.target = badGuy;
 
         $scope.startBattle = function() {
             $scope.isFighting = true;
@@ -34,6 +43,8 @@ angular.module("EliteBattleArena.App")
                     $scope.inventory.push(treasure);
                 });
                 $scope.isFighting = false;
+                $scope.game.currentDungeonLevel++
+                $scope.game.maxDungeonLevel = $scope.game.currentDungeonLevel;
                 $scope.isVictory = true;
             } else if (val === false) {
                 battle.stop();
@@ -44,4 +55,5 @@ angular.module("EliteBattleArena.App")
         })
 
         battle.actors.push(badGuy);
+        battle.actors.push(badGuy2);
     })

@@ -18,8 +18,12 @@ angular.module("EliteBattleArena.Battle")
         var gameClock;
         this.start = function() {
             characterFilters.isGood(battle.actors)[0].controlled = true;
+
+            var enemies = characterFilters.isEvil(battle.actors);
             gameClock = $interval(function() {
-                console.log("Game clock ticking...");
+
+                enemies = characterFilters.isAlive(enemies);
+
                 battle.currentTurn++;
                 var narrative = battle.narrative;
                 battle.actors.forEach(function(actor) {
@@ -44,43 +48,67 @@ angular.module("EliteBattleArena.Battle")
 
                         } else {
                             if (actor.selectedAction) {
-                                action = actor.selectedAction;
-                                actor.selectedAction = undefined;
+                                var selection = actor.selectedAction;
+                                if (selection == 'heal' || selection === "defend") {
+                                    action = {
+                                        action: selection,
+                                        target: actor,
+                                        actor: actor
+                                    }
+                                } else  if (selection == 'attack') {
+                                    action = {
+                                        action: selection,
+                                        target: battle.target,
+                                        actor: actor
+                                    }
+                                } else if (selection =='target') {
+                                    var targetIndex = enemies.indexOf(battle.target);
+                                    console.log("target index?",targetIndex, targetIndex.length);
+                                    if (targetIndex === enemies.length -1){
+                                        battle.target = enemies[0];
+                                    } else {
+                                        battle.target = enemies[targetIndex+1];
+                                    }
+                                }
                             }
-                        }
 
-                        if (!action) return;
-
-                        if (action.action === 'attack') {
-                            action.actor.defending = false;
-                            action.target.health -= action.target.defending ? Math.floor(action.actor.attack / 2) : action.actor.attack;
-                            narrative.push(action.actor.name + " attacked " + action.target.name + " for " + action.actor.attack + " damage.");
-                            action.actor.animation = "attacking";
-                            actor.sp = 0;
-                        }
-
-                        if (action.action === 'nothing' || undefined) {
-                            narrative.push(action.actor.name + " did nothing.");
-                            action.actor.animation = "nothing";
-                        }
-
-                        if (action.action === 'heal' || undefined) {
-                            action.actor.defending = false;
-                            action.target.health += 5;
-                            if (action.target.health > action.target.maxHealth) {
-                                action.target.health = action.target.maxHealth;
-                            }
-                            narrative.push(action.actor.name + " healed " + action.target.name + " for " + action.actor.attack + " damage.");
-                            actor.sp -= 75;
-                        }
-
-                        if (action.action === 'defend') {
-                            action.target.defending = true;
-                            action.actor.animation = "nothing";
-                            narrative.push(action.actor.name + " is defending " + action.target.name + ".");
-                            actor.sp -= 50;
+                            actor.selectedAction = undefined;
                         }
                     }
+
+                    if (!action) return;
+
+                    if (action.action === 'attack') {
+                        action.actor.defending = false;
+                        action.target.health -= action.target.defending ? Math.floor(action.actor.attack / 2) : action.actor.attack;
+                        narrative.push(action.actor.name + " attacked " + action.target.name + " for " + action.actor.attack + " damage.");
+                        action.actor.animation = "attacking";
+                        actor.sp = 0;
+                    }
+
+                    if (action.action === 'nothing' || undefined) {
+                        narrative.push(action.actor.name + " did nothing.");
+                        action.actor.animation = "nothing";
+                    }
+
+                    if (action.action === 'heal' || undefined) {
+                        action.actor.defending = false;
+                        action.target.health += 5;
+                        if (action.target.health > action.target.maxHealth) {
+                            action.target.health = action.target.maxHealth;
+                        }
+                        narrative.push(action.actor.name + " healed " + action.target.name + " for " + action.actor.attack + " damage.");
+                        actor.sp -= 75;
+                    }
+
+                    if (action.action === 'defend') {
+                        action.target.defending = true;
+                        action.actor.animation = "nothing";
+                        narrative.push(action.actor.name + " is defending " + action.target.name + ".");
+                        actor.sp -= 50;
+                    }
+
+
                 });
 
                 var losing = battle.loseConditions.some(function(condition) {
