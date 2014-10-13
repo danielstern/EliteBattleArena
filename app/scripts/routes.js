@@ -6,15 +6,13 @@ angular.module("Game.EliteBattleArena")
         templateUrl:'partial/main.html',
     })
     .state({
-        name:"main.instructions",
-        url:"^/instructions",
+        name:"splash.instructions",
+        url:"instructions",
         views: {
-            game: {
+            detail: {
                 templateUrl:"partial/instructions.html"
-                
             }
         }
-
     })
     
     .state({
@@ -23,6 +21,9 @@ angular.module("Game.EliteBattleArena")
         views: {
             game: {
                 templateUrl:"partial/dungeon.html",
+                controller:function($state,$scope){
+                    $state.go('main.dungeon.floor',{floor:$scope.game.currentDungeonLevel});
+                }
             }
         }
     })
@@ -54,8 +55,10 @@ angular.module("Game.EliteBattleArena")
     
     $stateProvider.state({
         name:"splash",
-        url:"/splash",
-        templateUrl:'partial/splash.html'
+        url:"/",
+        templateUrl:"partial/splash.html",
+        
     });
-     $urlRouterProvider.when('', '/instructions');
+     $urlRouterProvider.when('', '/');
+     $urlRouterProvider.otherwise('/');
 })
