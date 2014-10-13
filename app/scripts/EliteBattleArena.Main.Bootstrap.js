@@ -10,7 +10,8 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         });
 
         game.storeItems = [
-            armor.helmetOfStrength
+            armor.helmetOfStrength,
+            weapons.ironDagger
         ]
 
         game.inventory = [armor.commonSkullCap];
