@@ -19,32 +19,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','ui.router'])
         }
 
     })
-    .state({
-        name:"main.simulator",
-        url:"^/simulator",
-        views: {
-            game: {
-                templateUrl:"partial/simulator.html",
-                controller:function($scope,Simulation,Actor){
-                    var game = new Simulation();
-
-                    game.addActor(new Actor({
-                        name:"Malphant Drowmuir",
-                        side:"evil",
-                        body:"villain"
-                    }));
-
-                    $scope.info = game.start();
-                    
-                    $scope.go = function() {
-                        $scope.info = game.start();
-                    }
-                }
-            }
-        }
-
-    })
-
+    
     .state({
         name:"main.dungeon",
         url:"^/dungeon",
@@ -61,26 +36,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','ui.router'])
         views: {
             floor: {
                 templateUrl:"partial/floor.html",
-                controller:function($scope,Simulation,Actor) {
-                    var battle = new Simulation();
-
-                    $scope.game.party.forEach(function(hero){
-                        battle.addActor(hero);
-                    })
-
-                    battle.addActor(new Actor({
-                        name:"Common Troll",
-                        side:"evil",
-                        body:"villain",
-                        health: 25
-                    }));
-
-                    $scope.info = battle.start();
-                    
-                    $scope.go = function() {
-                        $scope.info = battle.start();
-                    }
-                }
+                controller:"BattleController"
             }
         }
     })
@@ -141,4 +97,18 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','ui.router'])
         }
     }
 })
+.directive("battleDisplay",function(){
+    return {
+        scope: {
+            battle:"=",
+        },
+        templateUrl: "partial/battle-display.html",
+        restrict:"AE",
+        controller: function($scope) {
+
+        }
+    }
+})
+
+
 

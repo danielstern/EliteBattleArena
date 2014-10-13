@@ -1,10 +1,10 @@
 angular.module("EliteBattleArena.AI",[])
-.service("getRandomMove", function(conditions) {
+.service("getRandomMove", function(characterFilters) {
     return function(game, self) {
 
         var targets = game.actors;
-        targets = self.side === 'good' ? conditions.isEvil(targets) : conditions.isGood(targets);
-        targets = conditions.isAlive(targets);
+        targets = self.side === 'good' ? characterFilters.isEvil(targets) : characterFilters.isGood(targets);
+        targets = characterFilters.isAlive(targets);
         var target = targets[0];
 
         if (!target) {
@@ -44,7 +44,7 @@ angular.module("EliteBattleArena.AI",[])
     }
 })
 
-.value("conditions", {
+.value("characterFilters", {
     isWeak: function(actors) {
         var targets = actors.filter(function(enemy) {
             if (enemy.health < enemy.maxHealth / 10) {
