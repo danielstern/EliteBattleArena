@@ -1,8 +1,20 @@
-angular.module("EliteBattleArena", [])
-
-    .factory("Game", function() {
+angular.module("EliteBattleArena", ['EliteBattleArena.AI', 'EliteBattleArena.Actor'])
+    .factory("Game", function(Actor) {
         return function() {
-            // console.log("Creating game");
+            this.party = [
+                new Actor({
+                    name: "Friendus Fortunato",
+                    side: "good",
+                    body: "hero"
+                })
+            ];
+
+            this.inventory = [];
+            this.gold = 420;
+        }
+    })
+    .factory("Simulation", function() {
+        return function() {
 
             var game = {
                 actors: [],
@@ -30,11 +42,10 @@ angular.module("EliteBattleArena", [])
                 });
             }];
 
-
             this.start = function() {
                 var battleLog = [];
                 game.currentTurn = 0;
-                game.actors.forEach(function(actor){
+                game.actors.forEach(function(actor) {
                     actor.health = 100;
                 })
                 while (game.currentTurn < game.maxTurns) {
@@ -43,15 +54,12 @@ angular.module("EliteBattleArena", [])
                     game.currentTurn++;
 
                     var log = {
-                        turn:game.currentTurn,
-                        actions:[],
-                        narrative:[]
+                        turn: game.currentTurn,
+                        actions: [],
+                        narrative: []
                     }
 
-                    // console.log("a turn passes");
-
                     // AI PHASE
-                    // action "attack, defend, heal, do nothing"
                     var actions = game.actors.map(function(actor) {
                         if (actor.health <= 0) return;
                         return actor.act(game, actor);
@@ -60,15 +68,17 @@ angular.module("EliteBattleArena", [])
                     log.actions = actions;
 
                     // ACTION PHASE
-                    actions.forEach(function(action){
+                    actions.forEach(function(action) {
                         if (action.action === 'attack') {
                             action.actor.defending = false;
                             action.target.health -= action.target.defending ? Math.floor(action.actor.attack / 2) : action.actor.attack;
                             log.narrative.push(action.actor.name + " attacked " + action.target.name + " for " + action.actor.attack + " damage.");
+                            action.actor.animation = "attacking";
                         }
 
                         if (action.action === 'nothing' || undefined) {
                             log.narrative.push(action.actor.name + " did nothing.");
+                            action.actor.animation = "nothing";
                         }
 
                         if (action.action === 'heal' || undefined) {
@@ -82,7 +92,6 @@ angular.module("EliteBattleArena", [])
                             log.narrative.push(action.actor.name + " is defending " + action.target.name + ".");
                         }
 
-                        // if (acti)
                     })
 
                     // END OF TURN PHASE
@@ -100,7 +109,7 @@ angular.module("EliteBattleArena", [])
 
                     if (losing) {
                         log.narrative.push("The forces of evil have overwhelmed us!");
-                        console.warn("You lost!",game);
+                        console.warn("You lost!", game);
                         break;
                     }
 

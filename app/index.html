@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" ng-app=EBADemo>
+<html class="no-js" ng-app=Game.EliteBattleArena>
   <head>
     <meta charset="utf-8">
     <title>elite battle arena</title>
@@ -17,91 +17,13 @@
     <!-- endbuild -->
   </head>
   <style>
-  .char {
-    width: 64px;
-    height: 64px;
-    background: url(images/characters-32x32.png);
-    background-size: cover;
-    position: relative;
-    margin: 10px auto;
-  }
-
-  .char-villain {
-    background-position: 64px 0px;
-  }
-
-  .equip {
-    width: 64px;
-    height: 64px;
-    background: url(images/equipment-32x32.png);
-    background-size: cover;
-    position: absolute;
-  }
-
-  .equip-sword {
-
-  }
-
-
+  
   </style>
   <body ng-controller=EBADemoController>
 
-    <div class="hero-unit">
-      <h1>Battle Arena</h1>
-      <p>Can you build the strongest AI team?</p>
-    </div>
+    
 
-    <div class=container>
-      <!-- <p> -->
-        <!-- Conditoins: get evil team to 0 life. if ur life is 0 u lose -->
-      <!-- </p> -->
-      <!-- {{info}} -->
-      <!-- {{info[info.length-1]}} -->
-      <!-- {{simulation}} -->
-      <button ng-click=go() class='btn btn-primary'>
-         Start!
-      </button>
-      <input min=1  ng-range ng-model=simulation.currentTurn max={{info.length}} type=range step=1>
-      <div ng-repeat='turn in info | slice:simulation.currentTurn-1:simulation.currentTurn'>
-        Turn {{turn.turn}}
-        <p ng-repeat='action in turn.narrative track by $index' >
-            {{action}}
-        </p>
-        <div class=col-xs-3>
-          <div class='char char-hero'>
-          </div>
-          <table class='table table-bordered'>
-            <tr ng-class="{'danger':actor.side === 'evil','success':actor.side==='good'}"ng-repeat="actor in turn.game.actors | alignment:'good'">
-              <td>
-                {{actor.name}}
-              </td>
-              <td>
-                {{actor.health}}
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class=col-xs-6>
-        </div>
-       
-        <div class=col-xs-3>
-          <div class='char char-villain'>
-            <div class='equip equip-sword'>
-            </div>
-          </div>
-          <table class='table table-bordered'>
-            <tr ng-class="{'danger':actor.side === 'evil','success':actor.side==='good'}"ng-repeat="actor in turn.game.actors | alignment:'evil'">
-              <td>
-                {{actor.name}}
-              </td>
-              <td>
-                {{actor.health}}
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      </div>
+    <div ui-view></div>
 
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -126,7 +48,9 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <script src="scripts/EliteBattleArena.js"></script>
-        <script src="scripts/conditions.js"></script>
+        <script src="scripts/helpers.js"></script>
+        <script src="scripts/AI.js"></script>
+        <script src="scripts/Actor.js"></script>
         <!-- endbuild -->
 </body>
 </html>
