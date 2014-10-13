@@ -11,6 +11,8 @@ angular.module("EliteBattleArena", ['EliteBattleArena.AI', 'EliteBattleArena.Act
 
             this.inventory = [];
             this.gold = 420;
+            this.currentDungeonLevel = 1;
+            this.maxDungeonLevel = 1;
         }
     })
     .factory("Simulation", function() {
@@ -46,7 +48,7 @@ angular.module("EliteBattleArena", ['EliteBattleArena.AI', 'EliteBattleArena.Act
                 var battleLog = [];
                 game.currentTurn = 0;
                 game.actors.forEach(function(actor) {
-                    actor.health = 100;
+                    actor.health = actor.maxHealth;
                 })
                 while (game.currentTurn < game.maxTurns) {
 

@@ -5,6 +5,8 @@ angular.module("EliteBattleArena.Actor",[])
 
         options = options || {};
 
+        console.log("creating character...",options);
+
         this.id = Math.ceil(Math.random() * 100000),
         this.name = options.name || this.id;
         this.act = getRandomMove;

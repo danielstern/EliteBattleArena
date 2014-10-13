@@ -29,11 +29,6 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','ui.router'])
                     var game = new Simulation();
 
                     game.addActor(new Actor({
-                        name:"Friendus Fortunato",
-                        side:"good",
-                        body:"hero"
-                    }));
-                    game.addActor(new Actor({
                         name:"Malphant Drowmuir",
                         side:"evil",
                         body:"villain"
@@ -48,6 +43,46 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','ui.router'])
             }
         }
 
+    })
+
+    .state({
+        name:"main.dungeon",
+        url:"^/dungeon",
+        views: {
+            game: {
+                templateUrl:"partial/dungeon.html",
+            }
+        }
+    })
+
+    .state({
+        name:"main.dungeon.floor",
+        url:"^/dungeon/:floor",
+        views: {
+            floor: {
+                templateUrl:"partial/floor.html",
+                controller:function($scope,Simulation,Actor) {
+                    var battle = new Simulation();
+
+                    $scope.game.party.forEach(function(hero){
+                        battle.addActor(hero);
+                    })
+
+                    battle.addActor(new Actor({
+                        name:"Common Troll",
+                        side:"evil",
+                        body:"villain",
+                        health: 25
+                    }));
+
+                    $scope.info = battle.start();
+                    
+                    $scope.go = function() {
+                        $scope.info = battle.start();
+                    }
+                }
+            }
+        }
     })
 
     .state({
