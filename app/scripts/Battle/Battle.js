@@ -1,4 +1,4 @@
-angular.module("EliteBattleArena.Battle", [])
+angular.module("EliteBattleArena.Battle")
 
 .factory("Battle", function($interval, conditions, characterFilters) {
     return function() {

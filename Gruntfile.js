@@ -64,6 +64,20 @@ module.exports = function (grunt) {
       }
     },
 
+    injector: {
+        options: {
+          ignorePath:"app",
+          sort: function(a,b) {
+            return (b.match(/./g).length - a.match(/./g).length);
+          }
+        },
+        local_dependencies: {
+          files: {
+            'app/index.html': ['app/**/*.js', 'app/**/*.css'],
+          }
+        }
+      },
+
     // The actual grunt server settings
     connect: {
       options: {
