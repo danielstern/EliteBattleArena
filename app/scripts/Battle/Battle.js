@@ -1,6 +1,6 @@
 angular.module("EliteBattleArena.Battle")
 
-.factory("Battle", function($interval, conditions, characterFilters) {
+.factory("Battle", function($interval, conditions, characterFilters,$state) {
     return function() {
 
         this.actors = [];
@@ -84,6 +84,11 @@ angular.module("EliteBattleArena.Battle")
                                     }
                                 } else if (selection == 'target') {
                                     battle.targetNextValidUnit();
+                                }
+                                else if (selection == 'retreat') {
+                                    // battle.targetNextValidUnit();
+                                    battle.stop();
+                                    $state.go("main.status");
                                 }
                             }
 

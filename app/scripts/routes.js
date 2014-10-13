@@ -46,13 +46,33 @@ angular.module("Game.EliteBattleArena")
         views: {
             game: {
                 templateUrl:"partial/status.html",
-                controller: function($scope){
+                controller:function($state,$scope){
                     $scope.actor = $scope.game.party[0];
-                    // $scope.
+                    $state.go('main.status.character');
                 }
             }
         }
+    })
 
+    .state({
+        name:"main.status.character",
+        url:"/character",
+        views: {
+            main: {
+                templateUrl:"partial/hero-stat-view.html",
+                
+            }
+        }
+    })
+
+    .state({
+        name:"main.status.store",
+        url:"^/store",
+        views: {
+            main: {
+                templateUrl:"partial/store.html",
+            }
+        }
     })
     
     $stateProvider.state({

@@ -17,6 +17,13 @@ angular.module("EliteBattleArena.Actor")
         this.body = options.body || "hero";
         this.speed = options.speed || 2.5;
         this.sp = 0;
+        this.equip = {
+            body: undefined,
+            legs: undefined,
+            weapon: undefined,
+            helmet: undefined,
+            shield: undefined
+        }
 
     }
 })

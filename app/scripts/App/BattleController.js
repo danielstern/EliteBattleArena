@@ -4,27 +4,38 @@ angular.module("EliteBattleArena.App")
 
         $scope.battle = battle;
 
-        var badGuy = new Actor({
+        var commonTroll = {
             name: "Common Troll",
             side: "evil",
             body: "villain",
             health: 25,
             speed: 3
-        });
+        };
 
-        // var badGuy2 = new Actor({
-        //     name: "Dangerous Troll",
-        //     side: "evil",
-        //     body: "villain",
-        //     health: 35,
-        //     speed: 3
-        // });
+        var deadlyTroll = {
+            name: "Deadly Troll",
+            side: "evil",
+            body: "villain",
+            health: 35,
+            attack: 12,
+            speed: 3
+        };
+
+        var enemiesMap = {
+            1: [new Actor(commonTroll)],
+            2: [new Actor(commonTroll),new Actor(commonTroll)],
+            3: [new Actor(commonTroll),new Actor(deadlyTroll)],
+        }
+
+        var enemies = enemiesMap[$scope.game.currentDungeonLevel];
+
+        enemies.forEach(function(enemy) {
+            battle.actors.push(enemy);
+        })
 
         $scope.game.party.forEach(function(hero) {
             battle.actors.push(hero);
         })
-        
-        // battle.target = badGuy;
 
         $scope.startBattle = function() {
             $scope.isFighting = true;
@@ -44,7 +55,7 @@ angular.module("EliteBattleArena.App")
                 });
                 $scope.isFighting = false;
                 $scope.game.currentDungeonLevel++
-                $scope.game.maxDungeonLevel = $scope.game.currentDungeonLevel;
+                    $scope.game.maxDungeonLevel = $scope.game.currentDungeonLevel;
                 $scope.isVictory = true;
             } else if (val === false) {
                 battle.stop();
@@ -54,6 +65,5 @@ angular.module("EliteBattleArena.App")
             }
         })
 
-        battle.actors.push(badGuy);
         // battle.actors.push(badGuy2);
     })

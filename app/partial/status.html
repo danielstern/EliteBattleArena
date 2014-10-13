@@ -1,5 +1,6 @@
-<div class=container>
+<div>
     <div>
+        <h2>You</h2>
         <table class='table table-bordered table-large'>
             <tr>
                 <td>Gold</td>
@@ -11,39 +12,10 @@
             </tr>
         </table>
     </div>
+    <button class='btn btn-default' ui-sref='main.status.character'>Status</button>
+    <button class='btn btn-default' ui-sref='main.status.store'>Store</button>
 
-    <div class='char char-{{actor.body}}'>
-        <div class='equip equip-dagger {{actor.animation}}'>
-        </div>
-        <div class='equip equip-armor'>
-        </div>
-    </div>
 
-    <table class='table table-bordered'>
-        <tr>
-            <td>
-                Name
-            </td>
-            <td>
-                {{actor.name}}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Health
-            </td>
-            <td>
-                {{actor.health}} / {{actor.maxHealth}}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Attack
-            </td>
-            <td>
-                {{actor.attack}}
-            </td>
-        </tr>
-    </table>
+    <div ui-view=main></div>
     <button class='btn btn-danger' ui-sref='main.dungeon'>Next level!</button>
 </div>

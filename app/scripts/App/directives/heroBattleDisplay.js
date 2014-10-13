@@ -9,4 +9,13 @@ angular.module("EliteBattleArena.App")
         templateUrl: "partial/hero-battle.html",
         restrict:"AE",
     }
-});
+})
+.directive("avatarDisplay",function(){
+    return {
+        scope: {
+            actor:"=",
+        },
+        templateUrl: "partial/avatar-display.html",
+        restrict:"AE",
+    }
+})
