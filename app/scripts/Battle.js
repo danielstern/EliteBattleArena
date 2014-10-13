@@ -4,19 +4,23 @@ angular.module("EliteBattleArena")
 
             this.actors = [];
             this.currentTurn = 0;
+            this.narrative = [];
 
             var battle = this;
 
             this.winConditions = [conditions.allVillainsDead];
             this.loseConditions = [conditions.allHeroesDead];
 
+            battle.stop = function(){
+                $interval.cancel(gameClock);
+            }
             var gameClock;
             this.start = function() {
                 characterFilters.isGood(battle.actors)[0].controlled = true;
                 gameClock = $interval(function() {
                     console.log("Game clock ticking...");
                     battle.currentTurn++;
-                    var narrative = [];
+                    var narrative = battle.narrative;
                     battle.actors.forEach(function(actor) {
                         if (actor.health <= 0) {
                             actor.animation = "dead";
@@ -41,14 +45,10 @@ angular.module("EliteBattleArena")
                                 if (actor.selectedAction) {
                                     action = actor.selectedAction;
                                     actor.selectedAction = undefined;
-                                } else {
-                                    action = {
-                                    action:"nothing",
-                                    actor:"actor"
-                                };
-                                }
-                                
+                                } 
                             }
+
+                            if (!action) return;
 
                             if (action.action === 'attack') {
                                 action.actor.defending = false;
@@ -91,11 +91,13 @@ angular.module("EliteBattleArena")
                     });
 
                     if (losing) {
-                        $interval.cancel(gameClock);
+                        battle.victory = false;
+                        // $interval.cancel(gameClock);
                     }
 
                     if (winning) {
-                        $interval.cancel(gameClock);
+                        battle.victory = true;
+                        // $interval.cancel(gameClock);
                     }
                 }, 25)
             };
@@ -104,8 +106,6 @@ angular.module("EliteBattleArena")
     })
     .controller("BattleController", function($scope, Actor, Battle) {
         var battle = new Battle();
-
-        console.log("Created battle..", battle);
 
         $scope.battle = battle;
 
@@ -124,8 +124,29 @@ angular.module("EliteBattleArena")
 
         $scope.startBattle = function() {
             $scope.isFighting = true;
+            $scope.fightStarted = true;
             $scope.battle.start();
         }
+
+        $scope.$watch(function(){
+            return $scope.battle.victory;
+        },function(val){
+            if (val === true) {
+                battle.stop();
+                var treasures = [/*soon*/];
+                $scope.treasures = treasures;
+                treasures.forEach(function(treasure){
+                    $scope.inventory.push(treasure);
+                });
+                $scope.isFighting = false;
+                $scope.isVictory = true;
+            } else if (val === false) {
+                battle.stop();
+                $scope.game.gold/=2;
+                $scope.isDefeat = true;
+                $scope.isFighting = false;
+            }
+        })
 
         battle.actors.push(badGuy);
     })

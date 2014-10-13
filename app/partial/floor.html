@@ -1,8 +1,8 @@
-<div ng-if=!isFighting>
 	
 <h2>
   Level {{game.currentDungeonLevel}}
 </h2>
+<div ng-if=!fightStarted>
 <div>
 	<p>
 		You see a common troll.
@@ -17,4 +17,19 @@
 </div>
 
 </div>
-<div battle-display battle=battle>
+<div battle-display battle=battle></div>
+<div ng-if=isVictory>
+	<p>
+		"Hahaha."
+	</p>
+	<p>
+		"What a puny troll." You say. "Haha...";
+	</p>
+	<button class='btn btn-danger' ui-sref='main.dungeon.floor({floor:game.currentFloor + 1})'>Go to Next Floor</button>
+</div>
+<div ng-if=isDefeat>
+	<p>
+		Ghast!
+	</p>
+	<button class='btn btn-danger' ui-sref='main'>Back to town!</button>
+</div>

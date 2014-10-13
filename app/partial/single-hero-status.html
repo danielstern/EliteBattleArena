@@ -20,7 +20,7 @@
         <div class="progress-bar progress-bar-danger" style="width: {{(actor.health / actor.maxHealth) * 100}}%; ">
         </div>
     </div>
-    <div class="progress">
+    <div class="progress"  ng-if=actor.controlled>
         <div class="progress-bar" style="width: {{actor.sp}}%;transition: all 0s;">
         </div>
     </div>
