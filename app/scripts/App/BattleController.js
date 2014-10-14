@@ -1,10 +1,11 @@
 angular.module("EliteBattleArena.App")
-    .controller("BattleController", function($scope, Actor, Battle,enemiesMap,foes) {
+    .controller("BattleController", function($scope, $http, Actor, levelsMap, Battle,enemiesMap,foes) {
         var battle = new Battle();
 
         $scope.battle = battle;
 
         var enemies = enemiesMap[$scope.game.currentDungeonLevel];
+        var level = levelsMap[$scope.game.currentDungeonLevel];
 
         enemies.forEach(function(enemy) {
             battle.actors.push(enemy);

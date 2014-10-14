@@ -1,0 +1,38 @@
+<div ng-if=!fightStarted>
+    <h2>
+        Level {{game.currentDungeonLevel}}
+    </h2>
+    <div>
+        <p>
+            You see a common troll.
+        </p>
+        <p>
+            "Hahaha," you laugh merrily. "What a puny troll. Let us slay it in sport."
+        </p>
+        <p>
+            Do you fight the troll?
+        </p>
+        <button class='btn-danger btn' ng-click='startBattle()'>Fight the troll</button>
+        <button class='btn-warning btn' ui-sref=main.status>Retreat</button>
+    </div>
+
+</div>
+<div ng-if=fightStarted battle-display battle=battle></div>
+<div ng-if=isVictory>
+    <p>
+        "Hahaha."
+    </p>
+    <p>
+        "What a puny troll." You say. "Haha...";
+    </p>
+    <p>Your treasure:
+    
+    </p>
+    <button class='btn btn-success' ui-sref='main.status'>Victory!</button>
+</div>
+<div ng-if=isDefeat>
+    <p>
+        "Ghast! I was beaten by that deadly troll!" you say, realizing it was a very strong troll.
+    </p>
+    <button class='btn btn-danger' ui-sref='main.status'>Retreat</button>
+</div>

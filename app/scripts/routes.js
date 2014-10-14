@@ -44,7 +44,11 @@ angular.module("Game.EliteBattleArena")
             url: "^/dungeon/:floor",
             views: {
                 floor: {
-                    templateUrl: "partial/floor.html",
+                    templateUrl: function($stateParams){
+                        var url = "partial/floors/floor-" + $stateParams.floor + ".html";
+                        console.log("Rn template url",$stateParams,url);
+                      return url;
+                    },
                     controller: "BattleController"
                 }
             }
