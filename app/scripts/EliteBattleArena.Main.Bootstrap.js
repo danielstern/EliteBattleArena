@@ -1,5 +1,5 @@
 angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Scenario', 'ui.router'])
-    .run(function($rootScope, Game, Actor, armor, weapons) {
+    .run(function($rootScope, Game, Actor, armor, weapons,enemiesMap) {
         var game = new Game();
         $rootScope.game = game;
 
@@ -9,7 +9,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             body: "hero",
         });
         game.party.push(hero);
-        game.totalDungeonLevels = 20;
+        game.totalDungeonLevels = Object.keys(enemiesMap).length;
 
         game.store = {};
 
