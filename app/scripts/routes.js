@@ -22,7 +22,7 @@ angular.module("Game.EliteBattleArena")
             views: {
                 game: {
                     templateUrl: "partial/dungeon.html",
-                    controller: "FloorController"
+                    controller: "DungeonController"
                 }
             }
         })

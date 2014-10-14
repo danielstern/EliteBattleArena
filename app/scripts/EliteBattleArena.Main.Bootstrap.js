@@ -9,6 +9,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             body: "hero",
         });
         game.party.push(hero);
+        game.totalDungeonLevels = 20;
 
         game.store = {};
 
