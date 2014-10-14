@@ -1,0 +1,14 @@
+<div title="{{item.description}}" item-view item=item></div>
+<p>
+    {{item.name}}
+</p>
+<p>
+   
+</p>
+<p ng-if=item.attack>
+    Attack - {{item.attack}}
+</p>
+<p ng-if=item.defense>
+    Defense - {{item.defense}}
+</p>
+<button class='btn btn-default btn-block' ng-disabled="item.cost>game.gold" ng-click=buy(item)>Buy - {{item.cost}}c</button>

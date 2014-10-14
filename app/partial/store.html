@@ -2,14 +2,12 @@
 
 </div>
 <div class=col-xs-4>
-    <div ng-repeat='item in game.storeItems' ng-if=!item.bought>
-        <div item-view item=item></div>
-        <p>
-            {{item.name}} - {{item.cost}}
-        </p>
-        <p>
-            {{item.description}}
-        </p>
-        <button class='btn btn-default' ng-click=buy(item)>Buy!</button>
+    <div ng-repeat='item in game.store.armor track by $index' ng-if=!item.bought>
+        <div ng-include="'partial/store-item-display.html'"></div>
+    </div>
+</div>
+<div class=col-xs-4>
+    <div ng-repeat='item in game.store.weapons track by $index' ng-if=!item.bought>
+        <div ng-include="'partial/store-item-display.html'"></div>
     </div>
 </div>

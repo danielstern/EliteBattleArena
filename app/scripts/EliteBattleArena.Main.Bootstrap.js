@@ -8,18 +8,13 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             side: "good",
             body: "hero",
         });
-
-        game.storeItems = [
-            armor.helmetOfStrength,
-            weapons.ironDagger
-        ]
-
-        game.inventory = [armor.commonSkullCap];
-
         game.party.push(hero);
 
-        hero.equip.body = armor.shoddyArmor;
-        hero.equip.weapon = weapons.punySpear;
+        game.store = {};
+
+        game.store.weapons = weapons;
+        game.store.armor = armor;
+
 
         game.gold = 420;
 

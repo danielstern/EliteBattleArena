@@ -19,6 +19,18 @@ angular.module("EliteBattleArena.Scenario")
     },
     "shoddyArmor": {
         name: "Shoddy Armor",
+        cost:50,
+        location:"body",
+        appearance:'armor-basic',
+        description:"Shoddy armor indeed",
         defense: 3
+    },
+    "roughShield": {
+        name: "Rough Shield",
+        defense: 5,
+        cost: 300,
+        location: "shield",
+        description: "Not so rough on the inside.",
+        appearance:"shield-basic"
     }
 })

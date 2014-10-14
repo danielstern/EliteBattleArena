@@ -2,7 +2,7 @@
 
 </div>
 <div class=col-xs-4>
-    <div ng-repeat='item in game.inventory'>
+    <div ng-repeat='item in game.inventory track by $index' ng-if=!item.equipped>
         <div item-view item=item></div>
         <p>
             {{item.name}}

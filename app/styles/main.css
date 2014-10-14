@@ -45,16 +45,36 @@
   position: absolute;
 }
 
-.equip-spear {
+.spear-basic {
 
+}
+
+.hammer-basic {
+  background-position: -1280px 0px;
 }
 
 .dagger-basic {
+  background-position: -1024px 0px;
+}
+
+.dagger-fancy {
   background-position: -128px 0px;
 }
 
-.equip-armor {
+.bow-basic {
+  background-position: -258px 0px;
+}
+.bow-large {
+  background-position: -385px 0px;
+}
+
+
+.equip-armor, .armor-basic {
   background-position: -6400px 0px;
+}
+
+.armor-fancy {
+  background-position: -5633px 0px;
 }
 
 .helm-basic {
@@ -64,6 +84,24 @@
 .helm-fancy {
   background-position: -4864px 0px;
 }
+
+.shield-basic {
+  background-position: -3715px 0px;
+
+}
+
+.sword-mighty {
+  background-position: -638px 0px;
+}
+
+.crowbar-basic {
+  background-position: -768px 0px;
+}
+
+.whip-basic {
+  background-position: -898px 0px;
+}
+
 
 
 
