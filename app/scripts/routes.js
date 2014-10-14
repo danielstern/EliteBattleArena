@@ -22,10 +22,22 @@ angular.module("Game.EliteBattleArena")
             views: {
                 game: {
                     templateUrl: "partial/dungeon.html",
+                    // controller: "DungeonController"
+                }
+            }
+        })
+
+        .state({
+            name: "main.dungeon.select",
+            url: "/select",
+            views: {
+                floor: {
+                    templateUrl: "partial/dungeon-select.html",
                     controller: "DungeonController"
                 }
             }
         })
+
 
         .state({
             name: "main.dungeon.floor",

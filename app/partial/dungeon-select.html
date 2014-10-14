@@ -1,0 +1,8 @@
+<h3>Go to Floor</h3>
+<!-- <div ng-repeat="floor in availableFloors"> -->
+<span ng-repeat="floor in allFloors track by $index">
+    <button ng-disabled='$index>game.maxDungeonLevel-1' ui-sref=main.dungeon.floor({floor:$index+1}) class='btn btn-default'>
+        {{$index + 1}}
+    </button>
+</span>
+<button class='btn btn-default' ui-sref='main.status'>Back to Town</button>
