@@ -20,6 +20,22 @@ angular.module("EliteBattleArena.Scenario")
             health: 35,
             attack: 5,
             speed: 3
+        },
+        skeleton: {
+            name: "Rag n' Bones",
+            side: "evil",
+            health: 15,
+            attack: 6,
+            speed: 4,
+            body: 'skeleton'
+        },
+        bear: {
+            name: "Grizzly Bear",
+            side: "evil",
+            health: 45,
+            attack: 7,
+            speed: 1,
+            body: 'bear'
         }
     }
 })

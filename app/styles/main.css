@@ -36,6 +36,12 @@
 .char-villain {
   background-position: 64px 0px;
 }
+.char-skeleton {
+  background-position: -446px 0px;
+}
+.char-bear {
+  background-position: 446px 0px;
+}
 
 .equip {
   width: 64px;
