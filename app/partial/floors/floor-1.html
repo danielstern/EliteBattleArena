@@ -17,7 +17,7 @@
     </div>
 
 </div>
-<div ng-if=fightStarted battle-display battle=battle></div>
+<div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
 <div ng-if=isVictory>
     <p>
         "Hahaha."
@@ -25,9 +25,8 @@
     <p>
         "What a puny troll." You say. "Haha...";
     </p>
-    <p>Your treasure:
-    
-    </p>
+    <div ng-include="'partial/treasure-display.html'"></div>
+
     <button class='btn btn-success' ui-sref='main.status'>Victory!</button>
 </div>
 <div ng-if=isDefeat>

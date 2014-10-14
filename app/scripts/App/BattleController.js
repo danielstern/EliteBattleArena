@@ -1,14 +1,16 @@
 angular.module("EliteBattleArena.App")
-    .controller("BattleController", function($scope, $http, Actor, levelsMap, Battle,enemiesMap,foes) {
+    .controller("BattleController", function($scope, $stateParams, treasureService, Actor, levelsMap, Battle,enemiesMap,foes) {
         var battle = new Battle();
 
         $scope.battle = battle;
 
-        var enemies = enemiesMap[$scope.game.currentDungeonLevel];
-        var level = levelsMap[$scope.game.currentDungeonLevel];
+        var level = $stateParams.floor;
+
+        var enemies = enemiesMap[level];
+        var levelMap = levelsMap[level];
 
         enemies.forEach(function(enemy) {
-            battle.actors.push(enemy);
+            battle.actors.push(new Actor(enemy));
         })
 
         $scope.game.party.forEach(function(hero) {
@@ -26,14 +28,22 @@ angular.module("EliteBattleArena.App")
         }, function(val) {
             if (val === true) {
                 battle.stop();
-                var treasures = [ /*soon*/ ];
+                var treasures = treasureService.getTreasures(level);
                 $scope.treasures = treasures;
                 treasures.forEach(function(treasure) {
-                    $scope.inventory.push(treasure);
+                    if (treasure.gold) {
+                        $scope.game.gold += treasure.value;
+                    } else {
+                        console.log("Pushing to inventory...",treasure);
+                        $scope.game.inventory.push(treasure);
+                    }
                 });
                 $scope.isFighting = false;
-                $scope.game.currentDungeonLevel++
-                    $scope.game.maxDungeonLevel = $scope.game.currentDungeonLevel;
+
+                console.log("Setting max dungeon level...",level,$scope.game.maxDungeonLevel);
+                if (level+1 > $scope.game.maxDungeonLevel) {
+                    $scope.game.maxDungeonLevel = +level + 1;
+                }
                 $scope.isVictory = true;
             } else if (val === false) {
                 battle.stop();
@@ -42,6 +52,4 @@ angular.module("EliteBattleArena.App")
                 $scope.isFighting = false;
             }
         })
-
-        // battle.actors.push(badGuy2);
     })

@@ -3,6 +3,7 @@ angular.module("EliteBattleArena.App")
     return {
         scope: {
             battle:"=",
+            treasures:"=",
         },
         templateUrl: "partial/battle-display.html",
         restrict:"AE",

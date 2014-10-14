@@ -6,7 +6,7 @@ angular.module("EliteBattleArena.Scenario")
             name: "Common Troll",
             side: "evil",
             body: "villain",
-            health: 25,
+            health: 10,
             speed: 3,
             attack: 4,
             equip: {
