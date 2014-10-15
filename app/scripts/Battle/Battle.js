@@ -1,6 +1,6 @@
 angular.module("EliteBattleArena.Battle")
 
-.factory("Battle", function($interval, conditions, characterFilters,$state) {
+.factory("Battle", function($interval, battleSounds,conditions, characterFilters,$state) {
     return function() {
 
         this.actors = [];
@@ -99,6 +99,7 @@ angular.module("EliteBattleArena.Battle")
 
                     if (action.action === 'attack') {
                         action.actor.defending = false;
+                        battleSounds.punch.play();
                         var damage = action.actor.getAttack();
                         if (action.target.defending) {
                             damage/=2;
