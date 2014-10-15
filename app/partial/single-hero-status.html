@@ -27,7 +27,7 @@
 
     <div ng-if=actor.controlled>
         <button ng-disabled=!actor.canAct ng-click="actor.selectedAction='attack'" class='btn btn-primary btn-block'>Attack</button>
-        <button ng-disabled=!actor.canAct ng-click="actor.selectedAction='heal'" class='btn btn-block btn-success'>Heal</button>
+        <button ng-disabled=!actor.canAct||!actor.heals ng-click="actor.selectedAction='heal'" class='btn btn-block btn-success'>Heal</button>
         <button ng-disabled=!actor.canAct ng-click="actor.selectedAction='defend'" class='btn btn-block btn-warning'>Defend</button>
         <button ng-click="actor.selectedAction='target'" class='btn btn-block btn-warning'>Change Target</button>
         <button ng-click="actor.selectedAction='retreat'" class='btn btn-block btn-danger'>Retreat</button>

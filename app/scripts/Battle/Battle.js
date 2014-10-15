@@ -119,13 +119,15 @@ angular.module("EliteBattleArena.Battle")
                     }
 
                     if (action.action === 'heal' || undefined) {
+                        if (!actor.heals) return;
                         action.actor.defending = false;
-                        action.target.health += 5;
+                        action.target.health += 75;
                         if (action.target.health > action.target.maxHealth) {
                             action.target.health = action.target.maxHealth;
                         }
                         narrative.push(action.actor.name + " healed " + action.target.name + " for " + action.actor.attack + " damage.");
                         actor.sp -= 75;
+                        actor.heals--;
                     }
 
                     if (action.action === 'defend') {

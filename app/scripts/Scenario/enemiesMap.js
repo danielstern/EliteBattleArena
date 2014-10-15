@@ -6,5 +6,8 @@ angular.module("EliteBattleArena.Scenario")
         1: [foes.commonTroll],
         2: [foes.skeleton,foes.skeleton],
         3: [foes.bear,foes.commonTroll],
+        4: [foes.swampman,foes.swampman],
+        5: [foes.ghoul,foes.swampman],
+        6: [foes.ghoul,foes.ghoul,foes.ghoul]
     }
 })

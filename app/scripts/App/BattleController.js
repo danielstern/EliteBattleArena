@@ -15,6 +15,7 @@ angular.module("EliteBattleArena.App")
 
         $scope.game.party.forEach(function(hero) {
             battle.actors.push(hero);
+            hero.heals = 1;
         })
 
         $scope.startBattle = function() {

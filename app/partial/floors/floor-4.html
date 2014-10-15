@@ -1,0 +1,30 @@
+<div ng-if=!fightStarted>
+    <h2>
+        Level {{game.currentDungeonLevel}}
+    </h2>
+    <div>
+        <p>
+            Crumbling stairs take you into a deep and dark catacombs.
+        </p> 
+        <p>
+            "I guess I'll have a look behind this door what with all the skulls on it."
+        </p>
+        <button class='btn-danger btn' ng-click='startBattle()'>What have we here?</button>
+        <button class='btn-warning btn' ui-sref=main.status>I'd rather not...</button>
+    </div>
+
+</div>
+<div ng-if=fightStarted battle-display battle=battle></div>
+<div ng-if=isVictory>
+    <p>
+        "I cleaned their clock."
+    </p>
+    <div ng-include="'partial/treasure-display.html'"></div>
+    <button class='btn btn-success' ui-sref='main.status'>Victory!</button>
+</div>
+<div ng-if=isDefeat>
+    <p>
+        "Trouble is a knocking..."
+    </p>
+    <button class='btn btn-danger' ui-sref='main.status'>Retreat</button>
+</div>

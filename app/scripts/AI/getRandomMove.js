@@ -22,7 +22,8 @@ angular.module("EliteBattleArena.AI")
 
             case 1:
                 return {
-                    action: "heal",
+                    // action: "heal",
+                    action: "nothing",
                     target: this,
                     actor: this,
                 }

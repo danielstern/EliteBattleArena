@@ -1,6 +1,6 @@
 angular.module("EliteBattleArena.Scenario")
 
-.service("foes", function(weapons) {
+.service("foes", function(weapons,armor) {
     return {
         commonTroll: {
             name: "Common Troll",
@@ -32,13 +32,39 @@ angular.module("EliteBattleArena.Scenario")
             speed: 1,
             body: 'bear'
         },
-        deadlyTroll: {
-            name: "Deadly Troll",
+        swampMan: {
+            name:"Swamp Man",
             side: "evil",
-            body: "villain",
+            health: 60,
+            attack: 12,
+            speed: 4,
+            body: 'swampman',
+            equip: {
+                weapon:weapons.ironDagger,
+                shield:armor.roughShield
+            }
+        },
+        ghoul: {
+            name:"Laughing Ghoul",
+            side: "evil",
             health: 35,
-            attack: 5,
-            speed: 4
+            attack: 17,
+            speed: 5,
+            body: 'ghoul',
+            equip: {
+                weapon:weapons.cheapDagger
+            }
+        },
+        evilThing: {
+            name:"Thing that Should not Be",
+            side: "evil",
+            health: 250,
+            attack: 20,
+            speed: 6,
+            body: 'evilThing',
+            equip: {
+                weapon:weapons.punySpear
+            }
         },
     }
 })
