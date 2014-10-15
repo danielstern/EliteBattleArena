@@ -35,12 +35,12 @@ angular.module("EliteBattleArena.Scenario")
         swampman: {
             name:"Swamp Man",
             side: "evil",
-            health: 60,
-            attack: 12,
-            speed: 4,
+            health: 50,
+            attack: 9,
+            speed: 3,
             body: 'swampman',
             equip: {
-                weapon:weapons.ironDagger,
+                weapon:weapons.cheapDagger,
                 shield:armor.roughShield
             }
         },
@@ -48,7 +48,7 @@ angular.module("EliteBattleArena.Scenario")
             name:"Laughing Ghoul",
             side: "evil",
             health: 35,
-            attack: 17,
+            attack: 12,
             speed: 5,
             body: 'ghoul',
             equip: {
@@ -58,9 +58,9 @@ angular.module("EliteBattleArena.Scenario")
         skeletalWarrior: {
             name: "Skeletal Warrior",
             side: "evil",
-            health: 75,
-            attack: 6,
-            speed: 4,
+            health: 55,
+            attack: 9,
+            speed: 5,
             body: 'skeleton',
             equip: {
                 weapon:weapons.trustyCrowbar,
