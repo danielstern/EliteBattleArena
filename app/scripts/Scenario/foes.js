@@ -32,7 +32,7 @@ angular.module("EliteBattleArena.Scenario")
             speed: 1,
             body: 'bear'
         },
-        swampMan: {
+        swampman: {
             name:"Swamp Man",
             side: "evil",
             health: 60,
@@ -55,11 +55,23 @@ angular.module("EliteBattleArena.Scenario")
                 weapon:weapons.cheapDagger
             }
         },
+        skeletalWarrior: {
+            name: "Skeletal Warrior",
+            side: "evil",
+            health: 75,
+            attack: 6,
+            speed: 4,
+            body: 'skeleton',
+            equip: {
+                weapon:weapons.trustyCrowbar,
+                shield:armor.roughShield
+            }
+        },
         evilThing: {
             name:"Thing that Should not Be",
             side: "evil",
-            health: 250,
-            attack: 20,
+            health: 200,
+            attack: 15,
             speed: 6,
             body: 'evilThing',
             equip: {

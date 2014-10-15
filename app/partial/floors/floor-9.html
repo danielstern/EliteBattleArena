@@ -1,0 +1,41 @@
+<div ng-if=!fightStarted>
+    <h2>
+        Level {{game.currentDungeonLevel}}
+    </h2>
+    <div>
+        <p>
+            A dark and foreboding creature welcomes you.
+        </p> 
+        <p>
+            "Greetings, adventurer. You have come far. Join me now for an eternity of evil and good times."
+        </p>
+        <p>
+            "Never! I will slay you, demon king."
+        </p>
+        <p>
+            "Then good luck," laughs the powerful being.
+        </p>
+        <button class='btn-danger btn' ng-click='startBattle()'>Charge!</button>
+        <button class='btn-warning btn' ui-sref=main.status>Run away!</button>
+    </div>
+
+</div>
+<div ng-if=fightStarted battle-display battle=battle></div>
+<div ng-if=isVictory>
+    <p>
+        "Jolly good!" you exclaim as you hack the demon king the bits.
+    </p>
+    <p>
+        <strong>
+            You have beaten the ultimate challenge of the game!
+        </strong>
+    </p>
+    <div ng-include="'partial/treasure-display.html'"></div>
+    <button class='btn btn-success' ui-sref='main.status'>Victory!</button>
+</div>
+<div ng-if=isDefeat>
+    <p>
+        "Eek! I need stronger equipment!"
+    </p>
+    <button class='btn btn-danger' ui-sref='main.status'>Retreat</button>
+</div>

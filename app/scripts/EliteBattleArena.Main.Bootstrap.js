@@ -34,7 +34,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         // game.store.armor = armor;
 
 
-        game.gold = 100;
+        game.gold = 10000;
 
     })
 

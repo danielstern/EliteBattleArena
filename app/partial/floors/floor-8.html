@@ -1,0 +1,30 @@
+<div ng-if=!fightStarted>
+    <h2>
+        Level {{game.currentDungeonLevel}}
+    </h2>
+    <div>
+        <p>
+            You sense you are getting near the end.
+        </p> 
+        <p>
+            "But... treasure... more... treasure..."
+        </p>
+        <button class='btn-danger btn' ng-click='startBattle()'>I guess I'll slay one more enemy....</button>
+        <button class='btn-warning btn' ui-sref=main.status>Actually, I'm pretty tired.</button>
+    </div>
+
+</div>
+<div ng-if=fightStarted battle-display battle=battle></div>
+<div ng-if=isVictory>
+    <p>
+        "There you go," you say. "That's some exercise for today."
+    </p>
+    <div ng-include="'partial/treasure-display.html'"></div>
+    <button class='btn btn-success' ui-sref='main.status'>Victory!</button>
+</div>
+<div ng-if=isDefeat>
+    <p>
+        "Eek! I need stronger equipment!"
+    </p>
+    <button class='btn btn-danger' ui-sref='main.status'>Retreat</button>
+</div>
