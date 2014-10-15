@@ -73,7 +73,7 @@ angular.module("EliteBattleArena.Scenario")
             health: 200,
             attack: 15,
             speed: 6,
-            body: 'evilThing',
+            body: 'evilthing',
             equip: {
                 weapon:weapons.punySpear
             }

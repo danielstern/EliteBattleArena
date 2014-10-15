@@ -67,6 +67,7 @@ module.exports = function (grunt) {
     injector: {
         options: {
           ignorePath:"app",
+          addRootSlash:false,
           sort: function(a,b) {
             return (b.match(/\./g).length - a.match(/\./g).length);
           }
