@@ -11,10 +11,27 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         game.party.push(hero);
         game.totalDungeonLevels = Object.keys(enemiesMap).length;
 
-        game.store = {};
+        game.store = {
+            weapons:{
 
-        game.store.weapons = weapons;
-        game.store.armor = armor;
+            },
+            armor:{
+                
+            }
+        };
+
+        for (var key in weapons) {
+            if (weapons[key].canBuy) {
+                game.store.weapons[key] = weapons[key];
+            }
+        }
+
+        for (var key in armor) {
+            if (armor[key].canBuy) {
+                game.store.armor[key] = armor[key];
+            }
+        }
+        // game.store.armor = armor;
 
 
         game.gold = 420;

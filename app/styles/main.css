@@ -82,6 +82,9 @@
 .armor-fancy {
   background-position: -5633px 0px;
 }
+.armor-elite {
+  background-position: -5761px 0px;
+}
 
 .helm-basic {
   background-position: -4352px 0px;
@@ -94,6 +97,13 @@
 .shield-basic {
   background-position: -3715px 0px;
 
+}
+
+.shield-fancy {
+  background-position: -3591px 0px;
+}
+.shield-elite {
+  background-position: -3842px 0px;
 }
 
 .sword-mighty {
