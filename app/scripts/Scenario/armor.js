@@ -33,7 +33,7 @@ angular.module("EliteBattleArena.Scenario")
     // armor
     "shoddyArmor": {
         name: "Shoddy Armor",
-        cost:200,
+        cost:300,
         location:"body",
         canBuy:true,
         appearance:'armor-basic',
@@ -42,7 +42,7 @@ angular.module("EliteBattleArena.Scenario")
     },
     "handsomeBreastplate": {
         name: "Handsome Plate",
-        cost:1000,
+        cost:700,
         location:"body",
         canBuy:true,
         appearance:'armor-fancy',
@@ -63,7 +63,7 @@ angular.module("EliteBattleArena.Scenario")
     "roughShield": {
         name: "Rough Shield",
         defense: 4,
-        cost: 300,
+        cost: 200,
         canBuy:true,
         location: "shield",
         description: "Not so rough on the inside.",
@@ -72,7 +72,7 @@ angular.module("EliteBattleArena.Scenario")
     "swarthyBuckler": {
         name: "Swarthy Buckler",
         defense: 9,
-        cost: 1500,
+        cost: 450,
         canBuy:true,
         location: "shield",
         description: "Har har!",

@@ -26,6 +26,16 @@ angular.module("EliteBattleArena.Scenario")
         canBuy:true,
         attack: 6
     },
+    "ghostlyBow": {
+        name: "Ghostly Bow",
+        appearance: "bow-basic",
+        cost: 500,
+        canBuy:false,
+        description:"Oooooo!",
+        location:"weapon",
+        // canBuy:true,
+        attack: 3
+    },
     "trustyCrowbar": {
         name: "Trusty Crowbar",
         appearance: "crowbar-basic",
@@ -34,6 +44,15 @@ angular.module("EliteBattleArena.Scenario")
         description:"Good at persuading people",
         location:"weapon",
         attack: 10
+    },
+    "steelHammer": {
+        name: "Steel Hammer",
+        appearance: "hammer-basic",
+        cost: 650,
+        canBuy:true,
+        description:"A high-quality hammer",
+        location:"weapon",
+        attack: 14
     },
     "swordOfValor": {
         name: "Sword of Valor",

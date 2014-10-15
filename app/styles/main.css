@@ -42,6 +42,21 @@
 .char-bear {
   background-position: 446px 0px;
 }
+.char-swampman {
+  background-position: -65px 0px;
+}
+.char-ghoul {
+  background-position: -259px 0px;
+}
+.char-evilthing {
+  background-position: -515px 0px;
+}
+.char-mummy {
+  background-position: -515px 0px;
+}
+
+
+
 
 .equip {
   width: 64px;
@@ -55,24 +70,7 @@
 
 }
 
-.hammer-basic {
-  background-position: -1280px 0px;
-}
 
-.dagger-basic {
-  background-position: -1024px 0px;
-}
-
-.dagger-fancy {
-  background-position: -128px 0px;
-}
-
-.bow-basic {
-  background-position: -258px 0px;
-}
-.bow-large {
-  background-position: -385px 0px;
-}
 
 
 .equip-armor, .armor-basic {
@@ -116,6 +114,25 @@
 
 .whip-basic {
   background-position: -898px 0px;
+}
+
+.hammer-basic {
+  background-position: -1280px 0px;
+}
+
+.dagger-basic {
+  background-position: -1024px 0px;
+}
+
+.dagger-fancy {
+  background-position: -128px 0px;
+}
+
+.bow-basic {
+  background-position: -258px 0px;
+}
+.bow-large {
+  background-position: -385px 0px;
 }
 
 

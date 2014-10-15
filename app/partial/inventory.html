@@ -1,5 +1,5 @@
 <div class=col-xs-4>
-    <div ng-repeat='item in game.inventory track by $index' ng-if=!item.equipped>
+    <div ng-repeat='item in game.inventory track by $index' ng-if=!item.equipped&&!item.deleted>
         <div item-view item=item></div>
         <p>
             {{item.name}}
@@ -8,4 +8,5 @@
             {{item.description}}
         </p>
         <button class='btn btn-default' ng-click=equip(item)>Equip!</button>
+        <button class='btn btn-default' ng-click=sell(item)>Sell - {{item.cost/2}}c</button>
     </div>

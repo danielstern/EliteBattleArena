@@ -10,4 +10,11 @@ angular.module("EliteBattleArena.App")
         item.equipped = true;
     }
 
+    $scope.sell = function(item) {
+        console.log("Sell", item, $scope.game.party);
+        $scope.game.gold += item.cost / 2;
+        item.deleted = true;
+    }
+
+
 })

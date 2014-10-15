@@ -47,7 +47,7 @@ angular.module("EliteBattleArena.App")
                 console.log("Rolled reward...", treasure);
 
                 if (treasure.reward === "gold") {
-                    var value = Math.floor(Math.random() * lvl * 100);
+                    var value = Math.floor(Math.random() * lvl * 75);
                     treasure = {
                         reward: {
                             value: value,

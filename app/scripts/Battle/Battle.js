@@ -103,7 +103,7 @@ angular.module("EliteBattleArena.Battle")
                         if (action.target.defending) {
                             damage/=2;
                         }
-                        damage -= action.target.getDefense();
+                        damage /= 1 + action.target.getDefense() / 20;
                         if (damage < 0) {
                             damage = 0;
                         }
