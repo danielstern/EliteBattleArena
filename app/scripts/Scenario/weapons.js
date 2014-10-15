@@ -57,7 +57,7 @@ angular.module("EliteBattleArena.Scenario")
     "swordOfValor": {
         name: "Sword of Valor",
         appearance: "sword-mighty",
-        canBuy:true,
+        // canBuy:true,
         cost: 1500,
         description:"Does not make you more valorous",
         location:"weapon",
