@@ -49,7 +49,7 @@ angular.module("Game.EliteBattleArena")
                         console.log("Rn template url", $stateParams, url);
                         return url;
                     },
-                    controller: "BattleController"
+                    controller: "FloorController"
                 }
             }
         })

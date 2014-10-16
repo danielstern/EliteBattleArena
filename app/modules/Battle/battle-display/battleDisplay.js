@@ -7,9 +7,6 @@ angular.module("EliteBattleArena.App")
         },
         templateUrl: "partial/battle-display.html",
         restrict:"AE",
-        controller: function($scope) {
-
-        }
     }
 })
 
