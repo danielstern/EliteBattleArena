@@ -1,4 +1,4 @@
-angular.module("EliteBattleArena.App")
+angular.module("EliteBattleArena.Store")
 
 .controller("StoreController", function($scope) {
     $scope.buy = function(item) {

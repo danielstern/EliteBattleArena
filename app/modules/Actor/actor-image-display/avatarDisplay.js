@@ -1,4 +1,4 @@
-angular.module("EliteBattleArena.App")
+angular.module("EliteBattleArena.Actor")
 .directive("avatarDisplay",function(){
     return {
         scope: {

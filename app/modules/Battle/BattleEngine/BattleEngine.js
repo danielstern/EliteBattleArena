@@ -1,6 +1,6 @@
 angular.module("EliteBattleArena.Battle")
 
-.factory("Battle", function($interval, battleSounds,conditions, characterFilters,$state) {
+.factory("BattleEngine", function($interval, battleSounds,conditions, characterFilters,$state) {
     return function() {
 
         this.actors = [];

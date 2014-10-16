@@ -1,4 +1,4 @@
-angular.module("EliteBattleArena.App")
+angular.module("EliteBattleArena.Battle")
 .directive("battleDisplay",function(){
     return {
         scope: {

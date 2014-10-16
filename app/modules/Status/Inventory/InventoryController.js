@@ -1,4 +1,4 @@
-angular.module("EliteBattleArena.App")
+angular.module("EliteBattleArena.Inventory")
 
 .controller("InventoryController", function($scope) {
     $scope.equip = function(item) {

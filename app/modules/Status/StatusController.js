@@ -1,4 +1,4 @@
-angular.module("EliteBattleArena.App")
+angular.module("EliteBattleArena.Status")
 
 .controller("StatusController", function($state, $scope) {
     $scope.actor = $scope.game.party[0];
