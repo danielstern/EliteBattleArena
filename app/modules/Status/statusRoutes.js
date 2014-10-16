@@ -8,7 +8,7 @@ angular.module("EliteBattleArena.Status")
 	    url: "^/status",
 	    views: {
 	        game: {
-	            templateUrl: "partial/status.html",
+	            templateUrl: "modules/Status/status.html",
 	            controller: "StatusController"
 	        }
 	    }
@@ -19,7 +19,7 @@ angular.module("EliteBattleArena.Status")
 	    url: "/character",
 	    views: {
 	        main: {
-	            templateUrl: "partial/hero-stat-view.html",
+	            templateUrl: "modules/Status/Party/hero-stat-view.html",
 
 	        }
 	    }
@@ -30,7 +30,7 @@ angular.module("EliteBattleArena.Status")
 	    url: "^/store",
 	    views: {
 	        main: {
-	            templateUrl: "partial/store.html",
+	            templateUrl: "modules/Store/store.html",
 	            controller: "StoreController"
 	        }
 	    }
@@ -41,7 +41,7 @@ angular.module("EliteBattleArena.Status")
 	    url: "^/inventory",
 	    views: {
 	        main: {
-	            templateUrl: "partial/inventory.html",
+	            templateUrl: "modules/Inventory/inventory.html",
 	            controller: "InventoryController"
 	        }
 	    }

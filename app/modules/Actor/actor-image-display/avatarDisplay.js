@@ -4,7 +4,7 @@ angular.module("EliteBattleArena.Actor")
         scope: {
             actor:"=",
         },
-        templateUrl: "partial/avatar-display.html",
+        templateUrl: "modules/Actor/actor-image-display.html",
         restrict:"AE",
     }
 })

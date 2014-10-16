@@ -1,7 +1,7 @@
 angular.module("EliteBattleArena.Battle")
 .directive("singleHeroStatus",function(){
     return {
-        templateUrl: "partial/single-hero-status.html",
+        templateUrl: "Battle/battle-hero-display/battle-hero-display.html",
         restrict:"AE",
     }
 })

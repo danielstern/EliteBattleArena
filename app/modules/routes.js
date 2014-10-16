@@ -6,14 +6,14 @@ angular.module("Game.EliteBattleArena")
             name: "main",
             abstract: true,
             url: "/main",
-            templateUrl: 'partial/main.html',
+            templateUrl: 'modules/Splash/main.html',
         })
         .state({
             name: "splash.instructions",
             url: "instructions",
             views: {
                 detail: {
-                    templateUrl: "partial/instructions.html"
+                    templateUrl: "modules/Splash/instructions.html"
                 }
             }
         })
@@ -21,7 +21,7 @@ angular.module("Game.EliteBattleArena")
     $stateProvider.state({
         name: "splash",
         url: "/",
-        templateUrl: "partial/splash.html",
+        templateUrl: "modules/Splash/splash.html",
 
     });
     $urlRouterProvider.when('', '/');

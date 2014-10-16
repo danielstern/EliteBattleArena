@@ -8,7 +8,7 @@ angular.module("EliteBattleArena.Dungeon")
         url: "^/dungeon",
         views: {
             game: {
-                templateUrl: "partial/dungeon.html",
+                templateUrl: "modules/Dungeon/dungeon.html",
                 // controller: "DungeonController"
             }
         }
@@ -19,7 +19,7 @@ angular.module("EliteBattleArena.Dungeon")
         url: "/select",
         views: {
             floor: {
-                templateUrl: "partial/dungeon-select.html",
+                templateUrl: "modules/Dungeon/dungeon-select.html",
                 controller: "DungeonController"
             }
         }
@@ -32,7 +32,7 @@ angular.module("EliteBattleArena.Dungeon")
         views: {
             floor: {
                 templateUrl: function($stateParams) {
-                    var url = "partial/floors/floor-" + $stateParams.floor + ".html";
+                    var url = "modules/Dungeon/Floors/floors/floor-" + $stateParams.floor + ".html";
                     console.log("Rn template url", $stateParams, url);
                     return url;
                 },

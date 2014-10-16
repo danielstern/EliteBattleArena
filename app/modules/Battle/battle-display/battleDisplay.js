@@ -5,7 +5,7 @@ angular.module("EliteBattleArena.Battle")
             battle:"=",
             treasures:"=",
         },
-        templateUrl: "partial/battle-display.html",
+        templateUrl: "modules/Battle/battle-display/battle-display.html",
         restrict:"AE",
     }
 })
