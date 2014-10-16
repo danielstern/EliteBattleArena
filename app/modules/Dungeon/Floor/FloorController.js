@@ -1,4 +1,4 @@
-angular.module("EliteBattleArena.App")
+angular.module("EliteBattleArena.Dungeon")
     .controller("FloorController", function($scope, $stateParams, treasureService, Actor, levelsMap, Battle,enemiesMap,foes) {
         var battle = new Battle();
 

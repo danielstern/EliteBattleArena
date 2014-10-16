@@ -1,4 +1,4 @@
-angular.module("EliteBattleArena.App")
+angular.module("EliteBattleArena.Treasure")
     .service("treasureService", function(armor, weapons) {
         var treasuresMap = {
             1: [{
