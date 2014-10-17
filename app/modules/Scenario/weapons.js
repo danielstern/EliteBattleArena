@@ -93,7 +93,7 @@ angular.module("EliteBattleArena.Scenario")
         appearance: "sword-basic",
         canBuy:true,
         cost: 1200,
-        description:"Does not make you more valorous",
+        description:"As used by Iron Man",
         location:"weapon",
         attack: 18,
       
@@ -115,11 +115,44 @@ angular.module("EliteBattleArena.Scenario")
         appearance: "axe-basic",
         canBuy:true,
         cost: 2000,
-        description:"Does not make you more valorous",
+        description:"They won't know what hit 'em",
         location:"weapon",
         attack: 24,
         bonus:{
             speed:3
+        }
+    },
+    "greatSword": {
+        name: "Great Sword",
+        appearance: "sword-mighty",
+        canBuy:true,
+        cost: 4000,
+        description:"It's a great sword.",
+        location:"weapon",
+        attack: 40,
+    },
+    "mithrilCrowbar": {
+        name: "Mithril Crowbar",
+        appearance: "crowbar-basic",
+        canBuy:true,
+        cost: 4500,
+        description:"It's a great sword.",
+        location:"weapon",
+        attack: 35,
+        bonus: {
+            speed:2
+        }
+    },
+    "elvenBow": {
+        name: "Elven Bow",
+        appearance: "bow-basic",
+        cost: 5500,
+        canBuy:true,
+        description:"A classic bow.",
+        location:"weapon",
+        attack: 30,
+        bonus: {
+            speed:4
         }
     },
 });

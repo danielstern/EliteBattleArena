@@ -9,7 +9,7 @@ angular.module("EliteBattleArena.Scenario")
             reward: "gold",
             probability: 5,
         }, {
-            reward: 'weak-weapons',
+            reward: 'weak-items',
             probability: 1,
         }],
         'medium-enemy': [{
@@ -19,10 +19,10 @@ angular.module("EliteBattleArena.Scenario")
             reward: "gold",
             probability: 10,
         }, {
-            reward: 'weak-weapons',
+            reward: 'weak-items',
             probability: 5,
         },{
-            reward: 'medium-weapons',
+            reward: 'medium-items',
             probability: 5,
         }],
         'strong-enemy': [{
@@ -32,14 +32,35 @@ angular.module("EliteBattleArena.Scenario")
             reward: "gold",
             probability: 15,
         }, {
-            reward: 'medium-weapons',
+            reward: 'medium-items',
             probability: 5,
         },{
-            reward: 'strong-weapons',
+            reward: 'strong-items',
             probability: 2,
         }],
         'elite-enemy': [{
-            reward: 'strong-weapons',
+            reward: 'strong-items',
+            probability: 5,
+        }],
+        'weak-items': [{
+            reward:'weak-weapons',
+            probability: 1,
+        },{
+            reward:'weak-armor',
+            probability: 1,
+        }],
+        'medium-items': [{
+            reward:'medium-weapons',
+            probability: 1,
+        },{
+            reward:'medium-armor',
+            probability: 1,
+        }],
+        'strong-items': [{
+            reward:'strong-weapons',
+            probability: 1,
+        },{
+            reward:'strong-armor',
             probability: 1,
         }],
         'weak-weapons': [{
@@ -127,10 +148,30 @@ angular.module("EliteBattleArena.Scenario")
             probability: 1,
         }],
         'elite-items': [{
+            reward:'elite-armor',
+            probability: 2,
+        },{
+            reward:'elite-weapon',
+            probability: 2,
+        }],
+        'elite-armor':[{
             reward:armor.hatOfTruth,
             probability: 5,
         },{
             reward:armor.gentlemansCoat,
+            probability: 5,
+        },{
+            reward:armor.lidlessEye,
+            probability: 5,
+        }],
+        'elite-weapons':[{
+            reward:weapons.greatSword,
+            probability: 5,
+        },{
+            reward:weapons.mithrilCrowbar,
+            probability: 5,
+        },,{
+            reward:weapons.elvenBow,
             probability: 5,
         }]
     }

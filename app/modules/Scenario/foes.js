@@ -68,6 +68,61 @@ angular.module("EliteBattleArena.Scenario")
             }
         },
         evilThing: {
+            name:"Evil Thing",
+            side: "evil",
+            health: 65,
+            attack: 15,
+            speed: 3,
+            body: 'evilthing',
+            equip: {
+                weapon:weapons.punySpear
+            }
+        },
+        eliteTroll: {
+            name: "Elite Troll",
+            side: "evil",
+            body: "villain",
+            health: 65,
+            speed: 3,
+            attack: 4,
+            equip: {
+                weapon:weapons.trustyCrowbar
+            }
+        },
+        polarBear: {
+            name: "Polar Bear",
+            side: "evil",
+            health: 75,
+            attack: 16,
+            defense:2,
+            speed: 2,
+            body: 'bear'
+        },
+        bogMan: {
+            name:"Bog Man",
+            side: "evil",
+            health: 80,
+            attack: 9,
+            speed: 5,
+            body: 'swampman',
+            equip: {
+                weapon:weapons.steelHammer,
+                armor:armor.shoddyArmor
+            }
+        },
+        frowningGhoul: {
+            name:"Crying Ghoul",
+            side: "evil",
+            health: 90,
+            attack: 24,
+            speed: 5,
+            body: 'ghoul',
+            equip: {
+                weapon:weapons.cheapDagger,
+                armor:armor.shoddyArmor
+            }
+        },
+        monstrousThing: {
             name:"Thing that Should not Be",
             side: "evil",
             health: 200,
@@ -76,6 +131,18 @@ angular.module("EliteBattleArena.Scenario")
             body: 'evilthing',
             equip: {
                 weapon:weapons.punySpear
+            }
+        },
+        lich: {
+            name:"Lich",
+            side: "evil",
+            health: 350,
+            attack: 40,
+            speed: 5,
+            body: 'ghoul',
+            equip: {
+                weapon:weapons.swordOfValor,
+                armor:armor.handsomeBreastplate
             }
         },
     }

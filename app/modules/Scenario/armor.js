@@ -6,7 +6,7 @@ angular.module("EliteBattleArena.Scenario")
         name: "Common Skullcap",
         description: "It's quite common.",
         cost: 400,
-        canBuy:true,
+        canBuy: true,
         location: 'head',
         defense: 2,
         appearance: "helm-fancy"
@@ -15,37 +15,37 @@ angular.module("EliteBattleArena.Scenario")
         name: "Superior Helm",
         description: "Makes you look superior.",
         cost: 1500,
-        canBuy:true,
+        canBuy: true,
         location: 'head',
         defense: 7,
         appearance: "helm-fancy",
         bonus: {
-            speed:1
+            speed: 1
         }
     },
     "centurionHelmet": {
         name: "Centurion's Helm",
         description: "They don't make 'em like this anymore.",
         cost: 3500,
-        canBuy:true,
+        canBuy: true,
         location: 'head',
         defense: 16,
         appearance: "helm-fancy",
         bonus: {
-            speed:2
+            speed: 2
         }
     },
     "hatOfTruth": {
         name: "Hat of Truth",
         description: "Truthfully it doesn't do anything special.",
         cost: 7000,
-        canBuy:true,
+        canBuy: true,
         location: 'head',
         elite: true,
         defense: 30,
         appearance: "helm-fancy",
         bonus: {
-            speed:3
+            speed: 3
         }
     },
 
@@ -54,54 +54,54 @@ angular.module("EliteBattleArena.Scenario")
         description: "A glorious and mighty helm.",
         cost: 2000,
         location: "head",
-        canBuy:true,
+        canBuy: true,
         defense: 10,
         appearance: "helm-basic"
     },
     // armor
     "shoddyArmor": {
         name: "Shoddy Armor",
-        cost:600,
-        location:"body",
-        canBuy:true,
-        appearance:'armor-basic',
-        description:"Shoddy armor indeed.",
+        cost: 600,
+        location: "body",
+        canBuy: true,
+        appearance: 'armor-basic',
+        description: "Shoddy armor indeed.",
         defense: 3
     },
     "chainMail": {
         name: "Chain Mail",
-        cost:1300,
-        location:"body",
-        canBuy:true,
-        appearance:'armor-basic',
-        description:"Try something different for a chain.",
+        cost: 1300,
+        location: "body",
+        canBuy: true,
+        appearance: 'armor-basic',
+        description: "Try something different for a chain.",
         defense: 7
     },
     "handsomeBreastplate": {
         name: "Handsome Plate",
-        cost:2000,
-        location:"body",
-        canBuy:true,
-        appearance:'armor-fancy',
-        description:"It kind of makes you feel ugly by comparison",
+        cost: 2000,
+        location: "body",
+        canBuy: true,
+        appearance: 'armor-fancy',
+        description: "It kind of makes you feel ugly by comparison",
         defense: 12
     },
     "dashingMail": {
         name: "Daring Mail",
-        cost:4000,
-        location:"body",
-        canBuy:true,
-        appearance:'armor-elite',
-        description:"I dare you to buy this armor.",
+        cost: 4000,
+        location: "body",
+        canBuy: true,
+        appearance: 'armor-elite',
+        description: "I dare you to buy this armor.",
         defense: 20
     },
-       "gentlemansCoat": {
+    "gentlemansCoat": {
         name: "Gentleman's Coat",
-        cost:6000,
-        location:"body",
-        canBuy:true,
-        appearance:'armor-elite',
-        description:"Not gentle man's coat.",
+        cost: 6000,
+        location: "body",
+        canBuy: true,
+        appearance: 'armor-elite',
+        description: "Not gentle man's coat.",
         defense: 35
     },
 
@@ -110,19 +110,19 @@ angular.module("EliteBattleArena.Scenario")
         name: "Rough Shield",
         defense: 2,
         cost: 200,
-        canBuy:true,
+        canBuy: true,
         location: "shield",
         description: "Not so rough on the inside.",
-        appearance:"shield-basic"
+        appearance: "shield-basic"
     },
     "swarthyBuckler": {
         name: "Swarthy Buckler",
         defense: 9,
         cost: 2000,
-        canBuy:true,
+        canBuy: true,
         location: "shield",
         description: "Har har!",
-        appearance:"shield-fancy",
+        appearance: "shield-fancy",
         bonus: {
             speed: 1
         }
@@ -131,10 +131,10 @@ angular.module("EliteBattleArena.Scenario")
         name: "Defender",
         defense: 20,
         cost: 5000,
-        canBuy:true,
+        canBuy: true,
         location: "shield",
         description: "Makes you defensive in conversation",
-        appearance:"shield-elite",
+        appearance: "shield-elite",
         bonus: {
             speed: 2
         }
@@ -143,10 +143,10 @@ angular.module("EliteBattleArena.Scenario")
         name: "The Lidless Eye",
         defense: 35,
         cost: 7000,
-        canBuy:true,
+        canBuy: true,
         location: "shield",
         description: "It must get very dry",
-        appearance:"shield-elite",
+        appearance: "shield-elite",
         bonus: {
             speed: 3
         }
