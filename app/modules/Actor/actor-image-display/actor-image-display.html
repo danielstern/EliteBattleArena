@@ -1,0 +1,8 @@
+<div class='char char-{{actor.body}} char-{{actor.appearance}}'>
+    <div ng-if='actor.equip.head' class='equip equip-helmet {{actor.equip.head.appearance}}'>
+    </div>
+    <div ng-if='actor.equip.weapon' class='equip equip-weapon {{actor.animation}} {{actor.equip.weapon.appearance}}'>
+    </div>
+    <div ng-if='actor.equip.body' class='equip equip-armor {{actor.equip.armor.appearance}}'></div>
+    <div ng-if='actor.equip.shield' class='equip equip-shield {{actor.equip.shield.appearance}}'></div>
+</div>

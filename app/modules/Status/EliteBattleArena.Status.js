@@ -1,0 +1,1 @@
+angular.module("EliteBattleArena.Status",['EliteBattleArena.Store','EliteBattleArena.Inventory','ui.router']);

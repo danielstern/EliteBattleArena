@@ -274,15 +274,18 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= config.dist %>/scripts/scripts.js': [
-    //         '<%= config.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
+    uglify: {
+      options:{
+        mangle:false
+      }
+      // dist: {
+      //   files: {
+      //     '<%= config.dist %>/scripts/scripts.js': [
+      //       '<%= config.dist %>/scripts/scripts.js'
+      //     ]
+      //   }
+      // }
+    },
     // concat: {
     //   dist: {}
     // },
@@ -299,7 +302,9 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'images/{,*/}*.webp',
+            'audio/{,*/}*.*',
             '{,*/}*.html',
+            '{,**/}*.html',
             'styles/fonts/{,*/}*.*'
           ]
         }]
