@@ -19,6 +19,7 @@ angular.module("EliteBattleArena.Actor")
             this.speed = options.speed || 2.5;
             this.sp = 0;
             this.equip = options.equip;
+            this.treasureClass = options.treasureClass;
 
             this.equipItem = function(item) {
                 if (this.equip[item.location]) {

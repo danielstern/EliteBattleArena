@@ -1,7 +1,7 @@
 angular.module("EliteBattleArena.Scenario")
 
 
-.service("enemiesMap", function(enemiesGroups, Actor) {
+.service("enemiesMap", function(enemiesGroups, Actor,treasureService) {
     var maps = {
         1: enemiesGroups['weak-enemy'],
         5: enemiesGroups['medium-enemy'],
@@ -63,7 +63,7 @@ angular.module("EliteBattleArena.Scenario")
                 }
             }).group;
             // var map = enemiesGroups['weak-enemy'];
-            var enemy = enemiesGroups[group].reduce(function(a, b) {
+            var enemyProto = enemiesGroups[group].reduce(function(a, b) {
                 if (Math.random() * a.probability > Math.random() * b.probability) {
                     return a;
                 } else {
@@ -71,13 +71,20 @@ angular.module("EliteBattleArena.Scenario")
                 }
             }).enemy;
 
+            var enemy = new Actor(enemyProto);
+
             enemies.push(enemy);
         };
 
-        console.log("Enemeis for level?",maps[1][0]);
-
-        
-
+        enemies.forEach(function(enemy){
+            var itemCount = Math.floor(5 * Math.random() * level) + Math.floor(level / 2);
+            while (itemCount--) {
+                var item = treasureService.getTreasures(enemy.treasureClass, level);
+                if (item && item.name) {
+                    enemy.equipItem(item);
+                }
+            }
+        })
 
         return enemies;
     }
