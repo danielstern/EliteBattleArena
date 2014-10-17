@@ -1,17 +1,17 @@
 angular.module("EliteBattleArena.Scenario")
 
 
-.service("enemiesMap", function(foes, Actor) {
+.service("enemiesMap", function(enemiesGroups, Actor) {
     return {
-        1: [foes.commonTroll],
-        2: [foes.skeleton,foes.skeleton],
-        3: [foes.bear,foes.commonTroll],
-        4: [foes.swampman,foes.skeleton],
-        5: [foes.ghoul,foes.swampman],
-        6: [foes.ghoul,foes.ghoul],
-        7: [foes.skeletalWarrior,foes.skeleton,foes.skeleton],
-        8: [foes.skeletalWarrior,foes.ghoul],
-        9: [foes.evilThing],
+        1: [enemiesGroups['weak-enemy']],
+        2: [enemiesGroups['weak-enemy'],enemiesGroups['weak-enemy']],
+        3: [enemiesGroups['weak-enemy'],enemiesGroups['medium-enemy']],
+        4: [enemiesGroups['medium-enemy'],enemiesGroups['medium-enemy']],
+        5: [enemiesGroups['medium-enemy'],enemiesGroups['medium-enemy'],enemiesGroups['weak-enemy']],
+        6: [enemiesGroups['strong-enemy'],enemiesGroups['medium-enemy']],
+        7: [enemiesGroups['strong-enemy'],enemiesGroups['strong-enemy']],
+        8: [enemiesGroups['strong-enemy'],enemiesGroups['strong-enemy'],enemiesGroups['medium-enemy']],
+        9: [enemiesGroups['elite-enemy']],
 
     }
 })

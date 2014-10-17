@@ -6,7 +6,20 @@ angular.module("EliteBattleArena.Floor")
 
         var level = $stateParams.floor;
 
-        var enemies = enemiesMap[level];
+        var enemiesMap = enemiesMap[level];
+        console.log("enemies map?",enemiesMap,level);
+        var enemies = enemiesMap.map(function(enemyChances){
+            console.log("rolling",enemyChances);
+            return enemyChances.reduce(function(a, b) {
+                if (Math.random() * a.probability > Math.random() * b.probability) {
+                    return a;
+                } else {
+                    return b;
+                }
+            }).enemy;
+
+        });
+        // console.log("Enemies?",enemies);
         var levelMap = levelsMap[level];
 
         battle.on("attack",battleSounds.swing);
@@ -36,7 +49,8 @@ angular.module("EliteBattleArena.Floor")
         }, function(val) {
             if (val === true) {
                 battle.stop();
-                var treasures = treasureService.getTreasures(level);
+                // var treasures = treasureService.getTreasures(level);
+                var treasures = [];
                 $scope.treasures = treasures;
                 treasures.forEach(function(treasure) {
                     if (treasure.gold) {
