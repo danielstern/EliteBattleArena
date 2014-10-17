@@ -3,6 +3,8 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         var game = new Game();
         $rootScope.game = game;
 
+        var TEST_MODE = true;
+
         var hero = new Actor({
             name: "Friendus Fortunato",
             side: "good",
@@ -11,9 +13,12 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             defense: 2
         });
 
-        game.inventory.push(armor.revitalizingPlate);
-        game.inventory.push(weapons.bloodDagger);
-        game.maxDungeonLevel = 10;
+        if (TEST_MODE) {
+            game.inventory.push(armor.revitalizingPlate);
+            game.inventory.push(weapons.levantineSword);
+            game.maxDungeonLevel = 10;
+        }
+
         game.party.push(hero);
         game.totalDungeonLevels = Object.keys(enemiesMap).length;
 
