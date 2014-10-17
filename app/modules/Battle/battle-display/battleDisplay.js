@@ -5,6 +5,9 @@ angular.module("EliteBattleArena.Battle")
             battle:"=",
             treasures:"=",
         },
+        link:function(){
+        	console.log("battle display");
+        },
         templateUrl: "modules/Battle/battle-display/battle-display.html",
         restrict:"AE",
     }

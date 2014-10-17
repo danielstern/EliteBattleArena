@@ -1,1 +1,1 @@
-angular.module("EliteBattleArena.Dungeon",['EliteBattleArena.Floor']);
+angular.module("EliteBattleArena.Dungeon",['EliteBattleArena.Floor','ui.router']);

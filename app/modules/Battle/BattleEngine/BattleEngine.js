@@ -99,7 +99,7 @@ angular.module("EliteBattleArena.Battle")
 
                     if (action.action === 'attack') {
                         action.actor.defending = false;
-                        battleSounds.punch.play();
+                        // battleSounds.punch.play();
                         var damage = action.actor.getAttack();
                         if (action.target.defending) {
                             damage/=2;

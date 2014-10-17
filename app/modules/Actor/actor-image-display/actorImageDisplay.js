@@ -1,10 +1,10 @@
 angular.module("EliteBattleArena.Actor")
-.directive("avatarDisplay",function(){
+.directive("actorImageDisplay",function(){
     return {
         scope: {
             actor:"=",
         },
-        templateUrl: "modules/Actor/actor-image-display.html",
+        templateUrl: "modules/Actor/actor-image-display/actor-image-display.html",
         restrict:"AE",
     }
 })
