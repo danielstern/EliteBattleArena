@@ -1,7 +1,7 @@
 angular.module("EliteBattleArena.Scenario")
 
 
-.service("enemiesMap", function(enemiesGroups, Actor,treasureService) {
+.service("enemiesMap", function(enemiesGroups, Actor,treasureService,foes) {
     var maps = {
         1: enemiesGroups['weak-enemy'],
         5: enemiesGroups['medium-enemy'],
@@ -37,7 +37,13 @@ angular.module("EliteBattleArena.Scenario")
         }).count;
         // });
 
+        console.log("getting level for",level);
+
         var enemies = [];
+
+        if (level==9) {
+            return [foes.insidiousBeing]
+        }
 
     
         var probabilities = [
@@ -77,7 +83,7 @@ angular.module("EliteBattleArena.Scenario")
         };
 
         enemies.forEach(function(enemy){
-            var itemCount = Math.floor(5 * Math.random() * level) + Math.floor(level / 2);
+            var itemCount = Math.floor(2 * Math.random() * level) + Math.floor(level / 2);
             while (itemCount--) {
                 var item = treasureService.getTreasures(enemy.treasureClass, level);
                 if (item && item.name) {

@@ -115,10 +115,6 @@ angular.module("EliteBattleArena.Scenario")
             treasureClass:"strong-enemy",
             speed: 5,
             body: 'swampman',
-            equip: {
-                weapon:weapons.steelHammer,
-                armor:armor.shoddyArmor
-            }
         },
         frowningGhoul: {
             name:"Crying Ghoul",
@@ -128,10 +124,6 @@ angular.module("EliteBattleArena.Scenario")
             attack: 24,
             speed: 5,
             body: 'ghoul',
-            equip: {
-                weapon:weapons.cheapDagger,
-                armor:armor.shoddyArmor
-            }
         },
         monstrousThing: {
             name:"Thing that Should not Be",
@@ -141,18 +133,24 @@ angular.module("EliteBattleArena.Scenario")
             attack: 15,
             speed: 6,
             body: 'evilthing',
-            equip: {
-                weapon:weapons.punySpear
-            }
         },
         lich: {
             name:"Lich",
+            side: "evil",
+            health: 150,
+            attack: 18,
+            speed: 5,
+            treasureClass:"elite-enemy",
+            body: 'ghoul',
+        },
+        insidiousBeing: {
+            name:"Insidious Being",
             side: "evil",
             health: 300,
             attack: 22,
             speed: 5,
             treasureClass:"elite-enemy",
-            body: 'ghoul',
+            body: 'boss',
             equip: {
                 weapon:weapons.swordOfValor,
                 armor:armor.chainMail
