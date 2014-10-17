@@ -5,7 +5,7 @@ angular.module("EliteBattleArena.Scenario")
     "commonSkullCap": {
         name: "Common Skullcap",
         description: "It's quite common.",
-        cost: 100,
+        cost: 400,
         canBuy:true,
         location: 'head',
         defense: 2,
@@ -14,35 +14,72 @@ angular.module("EliteBattleArena.Scenario")
     "superiorHelm": {
         name: "Superior Helm",
         description: "Makes you look superior.",
-        cost: 400,
+        cost: 1500,
         canBuy:true,
         location: 'head',
         defense: 7,
-        appearance: "helm-fancy"
+        appearance: "helm-fancy",
+        bonus: {
+            speed:1
+        }
+    },
+    "centurionHelmet": {
+        name: "Centurion's Helm",
+        description: "They don't make 'em like this anymore.",
+        cost: 3500,
+        canBuy:true,
+        location: 'head',
+        defense: 16,
+        appearance: "helm-fancy",
+        bonus: {
+            speed:2
+        }
+    },
+    "hatOfTruth": {
+        name: "Hat of Truth",
+        description: "Truthfully it doesn't do anything special.",
+        cost: 7000,
+        canBuy:true,
+        location: 'head',
+        elite: true,
+        defense: 30,
+        appearance: "helm-fancy",
+        bonus: {
+            speed:3
+        }
     },
 
     "helmetOfStrength": {
         name: "Hat of Strength",
-        description: "A glorious and mighty helm",
+        description: "A glorious and mighty helm.",
         cost: 2000,
         location: "head",
-        // canBuy:true,
+        canBuy:true,
         defense: 10,
         appearance: "helm-basic"
     },
     // armor
     "shoddyArmor": {
         name: "Shoddy Armor",
-        cost:300,
+        cost:600,
         location:"body",
         canBuy:true,
         appearance:'armor-basic',
-        description:"Shoddy armor indeed",
-        defense: 5
+        description:"Shoddy armor indeed.",
+        defense: 3
+    },
+    "chainMail": {
+        name: "Chain Mail",
+        cost:1300,
+        location:"body",
+        canBuy:true,
+        appearance:'armor-basic',
+        description:"Try something different for a chain.",
+        defense: 7
     },
     "handsomeBreastplate": {
         name: "Handsome Plate",
-        cost:700,
+        cost:2000,
         location:"body",
         canBuy:true,
         appearance:'armor-fancy',
@@ -51,18 +88,27 @@ angular.module("EliteBattleArena.Scenario")
     },
     "dashingMail": {
         name: "Daring Mail",
-        cost:5000,
+        cost:4000,
         location:"body",
-        // canBuy:true,
+        canBuy:true,
         appearance:'armor-elite',
-        description:"It kind of makes you feel ugly by comparison",
-        defense: 12
+        description:"I dare you to buy this armor.",
+        defense: 20
+    },
+       "gentlemansCoat": {
+        name: "Gentleman's Coat",
+        cost:6000,
+        location:"body",
+        canBuy:true,
+        appearance:'armor-elite',
+        description:"Not gentle man's coat.",
+        defense: 35
     },
 
     // shields
     "roughShield": {
         name: "Rough Shield",
-        defense: 4,
+        defense: 2,
         cost: 200,
         canBuy:true,
         location: "shield",
@@ -72,19 +118,37 @@ angular.module("EliteBattleArena.Scenario")
     "swarthyBuckler": {
         name: "Swarthy Buckler",
         defense: 9,
-        cost: 450,
+        cost: 2000,
         canBuy:true,
         location: "shield",
         description: "Har har!",
-        appearance:"shield-fancy"
+        appearance:"shield-fancy",
+        bonus: {
+            speed: 1
+        }
     },
     "defender": {
         name: "Defender",
-        defense: 18,
+        defense: 20,
         cost: 5000,
-        // canBuy:true,
+        canBuy:true,
         location: "shield",
         description: "Makes you defensive in conversation",
-        appearance:"shield-elite"
+        appearance:"shield-elite",
+        bonus: {
+            speed: 2
+        }
+    },
+    "lidlessEye": {
+        name: "The Lidless Eye",
+        defense: 35,
+        cost: 7000,
+        canBuy:true,
+        location: "shield",
+        description: "It must get very dry",
+        appearance:"shield-elite",
+        bonus: {
+            speed: 3
+        }
     }
 })

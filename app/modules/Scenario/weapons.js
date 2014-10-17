@@ -49,14 +49,35 @@ angular.module("EliteBattleArena.Scenario")
         // canBuy:true,
         attack: 3
     },
+    "beechwoodBow": {
+        name: "Beechwood Bow",
+        appearance: "bow-basic",
+        cost: 600,
+        canBuy:true,
+        description:"Oooooo!",
+        location:"weapon",
+        attack: 12,
+        bonus: {
+            speed:2
+        }
+    },
     "trustyCrowbar": {
         name: "Trusty Crowbar",
         appearance: "crowbar-basic",
-        cost: 400,
+        cost: 550,
         canBuy:true,
         description:"Good at persuading people",
         location:"weapon",
         attack: 10
+    },
+    "rustedHammer": {
+        name: "Rusted Hammer",
+        appearance: "hammer-basic",
+        cost: 250,
+        canBuy:true,
+        description:"I doubt it could hammer much of anything.",
+        location:"weapon",
+        attack: 6
     },
     "steelHammer": {
         name: "Steel Hammer",
@@ -67,13 +88,38 @@ angular.module("EliteBattleArena.Scenario")
         location:"weapon",
         attack: 14
     },
+    "ironSword": {
+        name: "Iron Sword",
+        appearance: "sword-basic",
+        canBuy:true,
+        cost: 1200,
+        description:"Does not make you more valorous",
+        location:"weapon",
+        attack: 18,
+      
+    },
     "swordOfValor": {
         name: "Sword of Valor",
         appearance: "sword-mighty",
-        // canBuy:true,
+        canBuy:true,
         cost: 1500,
         description:"Does not make you more valorous",
         location:"weapon",
-        attack: 17
-    }
+        attack: 22,
+        bonus:{
+            speed:2
+        }
+    },
+    "swiftAxe": {
+        name: "Swift Axe",
+        appearance: "axe-basic",
+        canBuy:true,
+        cost: 2000,
+        description:"Does not make you more valorous",
+        location:"weapon",
+        attack: 24,
+        bonus:{
+            speed:3
+        }
+    },
 });
