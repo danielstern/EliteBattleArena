@@ -1,15 +1,16 @@
-
-<div class=col-xs-4>
-    <div ng-repeat='item in game.store.armor track by $index' ng-if=!item.bought>
-        <div store-item-display item=item buy=buy>
-        	Store Item Display
+<div class=store-display>
+    <div class=col-xs-4>
+        <div ng-repeat='item in game.store.armor track by $index' ng-if=!item.bought>
+            <div store-item-display item=item buy=buy>
+                Store Item Display
+            </div>
         </div>
     </div>
-</div>
-<div class=col-xs-4>
-    <div ng-repeat='item in game.store.weapons track by $index' ng-if=!item.bought>
-        <div store-item-display item=item buy=buy>
-        	Store Item Display
+    <div class=col-xs-4>
+        <div ng-repeat='item in game.store.weapons track by $index' ng-if=!item.bought>
+            <div store-item-display item=item buy=buy>
+                Store Item Display
+            </div>
         </div>
     </div>
 </div>
