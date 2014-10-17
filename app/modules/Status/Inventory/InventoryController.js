@@ -3,11 +3,7 @@ angular.module("EliteBattleArena.Inventory")
 .controller("InventoryController", function($scope) {
     $scope.equip = function(item) {
         console.log("Equip!", item, $scope.game.party);
-        if ($scope.game.party[0].equip[item.location]) {
-          $scope.game.party[0].equip[item.location].equipped = false;
-        }
-        $scope.game.party[0].equip[item.location] = item;
-        item.equipped = true;
+        $scope.game.party[0].equipItem(item);
     }
 
     $scope.sell = function(item) {

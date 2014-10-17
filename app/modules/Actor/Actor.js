@@ -20,6 +20,14 @@ angular.module("EliteBattleArena.Actor")
         this.sp = 0;
         this.equip = options.equip;
 
+        this.equipItem = function(item) {
+            if (this.equip[item.location]) {
+              this.equip[item.location].equipped = false;
+            }
+            this.equip[item.location] = item;
+            item.equipped = true;
+        }
+
         this.getAttack = function() {
             var attack = 0;
             attack+= this.attack;
