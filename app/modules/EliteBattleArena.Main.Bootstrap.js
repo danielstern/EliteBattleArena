@@ -1,4 +1,4 @@
-angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Scenario', 'ui.router','ngAudio'])
+angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Scenario','EliteBattleArena.Sounds', 'ui.router','ngAudio'])
     .run(function($rootScope, Game, Actor, armor, weapons,enemiesMap) {
         var game = new Game();
         $rootScope.game = game;
@@ -36,4 +36,16 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
 
         game.gold = 100;
 
+    })
+    .directive("button",function(interfaceSounds){
+        return {
+            restrict:"E",
+            link:function(scope,element){
+                console.log("I'm a sound playing button");
+                element.click(function(){
+                    console.log("clickedm e");
+                    interfaceSounds.click();
+                })
+            }
+        }
     })

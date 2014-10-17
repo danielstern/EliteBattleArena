@@ -9,7 +9,9 @@ angular.module("EliteBattleArena.Floor")
         var enemies = enemiesMap[level];
         var levelMap = levelsMap[level];
 
-        battle.on("attack",battleSounds.attack);
+        battle.on("attack",battleSounds.swing);
+        battle.on("block",battleSounds.block);
+        battle.on("hit",battleSounds.hit);
 
         enemies.forEach(function(enemy) {
             battle.actors.push(new Actor(enemy));

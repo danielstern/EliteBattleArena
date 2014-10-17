@@ -118,6 +118,10 @@ angular.module("EliteBattleArena.Battle")
                         var damage = action.actor.getAttack();
                         if (action.target.defending) {
                             damage/=2;
+                            battle.broadcast("hit");
+                        } else {
+                            battle.broadcast("hit");
+                            battle.broadcast("block");
                         }
                         damage /= 1 + action.target.getDefense() / 20;
                         if (damage < 0) {
