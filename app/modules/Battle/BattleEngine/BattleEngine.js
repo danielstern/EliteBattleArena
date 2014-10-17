@@ -1,11 +1,27 @@
 angular.module("EliteBattleArena.Battle")
 
-.factory("BattleEngine", function($interval, battleSounds,conditions, characterFilters,$state) {
+.factory("BattleEngine", function($interval, conditions, characterFilters,$state) {
     return function() {
 
         this.actors = [];
         this.currentTurn = 0;
         this.narrative = [];
+
+        var listeners = [];
+        this.on = function(event,listener) {
+            listeners.push({
+                trigger:event,
+                func:listener
+            })
+        };
+
+        this.broadcast = function(event) {
+            listeners.forEach(function(listener){
+                if (listener.trigger === event) {
+                    listener.func(battle);
+                }
+            })
+        }
 
         var battle = this;
 
@@ -99,10 +115,13 @@ angular.module("EliteBattleArena.Battle")
 
                     if (action.action === 'attack') {
                         action.actor.defending = false;
-                        // battleSounds.punch.play();
                         var damage = action.actor.getAttack();
                         if (action.target.defending) {
                             damage/=2;
+                            battle.broadcast("hit");
+                        } else {
+                            battle.broadcast("hit");
+                            battle.broadcast("block");
                         }
                         damage /= 1 + action.target.getDefense() / 20;
                         if (damage < 0) {
@@ -112,6 +131,8 @@ angular.module("EliteBattleArena.Battle")
                         narrative.push(action.actor.name + " attacked " + action.target.name + " for " + action.actor.attack + " damage.");
                         action.actor.animation = "attacking";
                         actor.sp = 0;
+
+                        battle.broadcast("attack");
                     }
 
                     if (action.action === 'nothing' || undefined) {

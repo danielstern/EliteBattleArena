@@ -1,4 +1,4 @@
-angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Scenario', 'ui.router','ngAudio'])
+angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Scenario','EliteBattleArena.Sounds', 'ui.router','ngAudio'])
     .run(function($rootScope, Game, Actor, armor, weapons,enemiesMap) {
         var game = new Game();
         $rootScope.game = game;
@@ -37,7 +37,13 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         game.gold = 100;
 
     })
-.service("battleSounds",function(ngAudio){
-    this.punch = ngAudio.load('audio/Swing Fist 2.wav');
-})
-
+    .directive("button",function(interfaceSounds){
+        return {
+            restrict:"E",
+            link:function(scope,element){
+                element.click(function(){
+                    interfaceSounds.click();
+                })
+            }
+        }
+    })

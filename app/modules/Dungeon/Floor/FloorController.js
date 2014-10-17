@@ -1,5 +1,5 @@
 angular.module("EliteBattleArena.Floor")
-    .controller("FloorController", function($scope, $stateParams, treasureService, Actor, levelsMap, BattleEngine,enemiesMap,foes) {
+    .controller("FloorController", function($scope, $stateParams, musicSounds, battleSounds, treasureService, Actor, levelsMap, BattleEngine,enemiesMap,foes) {
         var battle = new BattleEngine();
 
         $scope.battle = battle;
@@ -9,6 +9,10 @@ angular.module("EliteBattleArena.Floor")
         var enemies = enemiesMap[level];
         var levelMap = levelsMap[level];
 
+        battle.on("attack",battleSounds.swing);
+        battle.on("block",battleSounds.block);
+        battle.on("hit",battleSounds.hit);
+
         enemies.forEach(function(enemy) {
             battle.actors.push(new Actor(enemy));
         })
@@ -17,12 +21,14 @@ angular.module("EliteBattleArena.Floor")
             battle.actors.push(hero);
             hero.heals = 1;
             hero.selectedAction = undefined;
+            hero.animation = "nothing";
         })
 
         $scope.startBattle = function() {
             $scope.isFighting = true;
             $scope.fightStarted = true;
             $scope.battle.start();
+            musicSounds.battle();
         }
 
         $scope.$watch(function() {
@@ -36,17 +42,16 @@ angular.module("EliteBattleArena.Floor")
                     if (treasure.gold) {
                         $scope.game.gold += treasure.value;
                     } else {
-                        console.log("Pushing to inventory...",treasure);
                         $scope.game.inventory.push(treasure);
                     }
                 });
                 $scope.isFighting = false;
 
-                console.log("Setting max dungeon level...",level,$scope.game.maxDungeonLevel);
                 if (level+1 > $scope.game.maxDungeonLevel) {
                     $scope.game.maxDungeonLevel = +level + 1;
                 }
                 $scope.isVictory = true;
+                musicSounds.victory();
             } else if (val === false) {
                 battle.stop();
                 $scope.game.gold /= 2;

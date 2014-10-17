@@ -5,5 +5,9 @@ angular.module("EliteBattleArena.Game")
         this.inventory = [];
         this.currentDungeonLevel = 1;
         this.maxDungeonLevel = 1;
+
+        // settings
+        this.musicVolume = 0.3;
+        this.soundVolume = 0.3;
     }
 })
