@@ -1,8 +1,12 @@
 angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Scenario','EliteBattleArena.Sounds', 'ui.router','ngAudio'])
     .run(function($rootScope, Game, Actor, armor, weapons,enemiesMap) {
-        var game = new Game();
+        var game = localStorage['game'] || new Game();
         $rootScope.game = game;
 
+
+        $rootScope.$watch(game,function(){
+            localStorage['game'] = game;
+        },true);
         var TEST_MODE = true;
 
         var hero = new Actor({
