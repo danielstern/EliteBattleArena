@@ -1,1 +1,1 @@
-angular.module("EliteBattleArena.Status",['EliteBattleArena.Store','EliteBattleArena.Inventory','ui.router']);
+angular.module("EliteBattleArena.Status",['EliteBattleArena.Store','EliteBattleArena.Inventory','EliteBattleArena.Sounds','ui.router']);
