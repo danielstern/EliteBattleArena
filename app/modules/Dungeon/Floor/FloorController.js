@@ -1,5 +1,5 @@
 angular.module("EliteBattleArena.Floor")
-    .controller("FloorController", function($scope, $stateParams, treasureService, Actor, levelsMap, BattleEngine,enemiesMap,foes) {
+    .controller("FloorController", function($scope, $stateParams, battleSounds, treasureService, Actor, levelsMap, BattleEngine,enemiesMap,foes) {
         var battle = new BattleEngine();
 
         $scope.battle = battle;
@@ -8,6 +8,8 @@ angular.module("EliteBattleArena.Floor")
 
         var enemies = enemiesMap[level];
         var levelMap = levelsMap[level];
+
+        battle.on("attack",battleSounds.attack);
 
         enemies.forEach(function(enemy) {
             battle.actors.push(new Actor(enemy));

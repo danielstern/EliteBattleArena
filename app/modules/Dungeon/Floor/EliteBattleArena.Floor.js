@@ -1,1 +1,1 @@
-angular.module("EliteBattleArena.Floor",['EliteBattleArena.Battle']);
+angular.module("EliteBattleArena.Floor",['EliteBattleArena.Battle','EliteBattleArena.Sounds']);

@@ -37,7 +37,3 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         game.gold = 100;
 
     })
-.service("battleSounds",function(ngAudio){
-    this.punch = ngAudio.load('audio/Swing Fist 2.wav');
-})
-
