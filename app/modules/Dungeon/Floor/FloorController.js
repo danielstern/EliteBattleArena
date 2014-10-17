@@ -21,6 +21,7 @@ angular.module("EliteBattleArena.Floor")
             battle.actors.push(hero);
             hero.heals = 1;
             hero.selectedAction = undefined;
+            hero.animation = "nothing";
         })
 
         $scope.startBattle = function() {
