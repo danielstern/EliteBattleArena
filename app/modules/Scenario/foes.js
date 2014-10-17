@@ -19,7 +19,7 @@ angular.module("EliteBattleArena.Scenario")
             side: "evil",
             health: 15,
             attack: 6,
-            speed: 4,
+            speed: 6,
             body: 'skeleton',
             treasureClass:"weak-enemy",
             equip: {
@@ -32,7 +32,7 @@ angular.module("EliteBattleArena.Scenario")
             health: 45,
             attack: 12,
             treasureClass:"weak-enemy",
-            speed: 1,
+            speed: 3,
             body: 'bear'
         },
         swampman: {
@@ -41,7 +41,7 @@ angular.module("EliteBattleArena.Scenario")
             health: 50,
             treasureClass:"weak-enemy",
             attack: 9,
-            speed: 3,
+            speed: 5,
             body: 'swampman',
             equip: {
                 weapon:weapons.cheapDagger,
@@ -66,7 +66,7 @@ angular.module("EliteBattleArena.Scenario")
             health: 55,
             attack: 9,
             treasureClass:"weak-enemy",
-            speed: 5,
+            speed: 6,
             body: 'skeleton',
             equip: {
                 weapon:weapons.trustyCrowbar,
@@ -79,7 +79,7 @@ angular.module("EliteBattleArena.Scenario")
             health: 65,
             attack: 15,
             treasureClass:"medium-enemy",
-            speed: 3,
+            speed: 7,
             body: 'evilthing',
             equip: {
                 weapon:weapons.punySpear
@@ -104,7 +104,7 @@ angular.module("EliteBattleArena.Scenario")
             attack: 16,
             defense:2,
             treasureClass:"medium-enemy",
-            speed: 2,
+            speed: 3,
             body: 'bear'
         },
         bogMan: {
@@ -148,14 +148,14 @@ angular.module("EliteBattleArena.Scenario")
         lich: {
             name:"Lich",
             side: "evil",
-            health: 350,
-            attack: 40,
+            health: 250,
+            attack: 20,
             speed: 5,
             treasureClass:"elite-enemy",
             body: 'ghoul',
             equip: {
                 weapon:weapons.swordOfValor,
-                armor:armor.handsomeBreastplate
+                armor:armor.chainMail
             }
         },
     }

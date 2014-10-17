@@ -1,6 +1,13 @@
 <div class=container>
-<h1>The Sword of Volkenrath</h1>
-<button ui-sref=main.dungeon.floor({floor:1}) class='btn btn-primary'>Start Game!</button>
-<button ui-sref-active=hidden ui-sref=splash.instructions class='btn btn-default'>Instructions</button>
+<h1>The Treasure of Elfmire</h1>
+<h2>Welcome to the Arena, Friend Warrior!</h2>
+<p>
+  It is 10,000 years from now. Civilization lies ruined, ravished by a zombie apocalypse of man's own creation.</p>
+<p>
+  The only thing that can save mankind from its folly now lies deep in the fiendish house of traps known as the Cave of Terrors...
+</p>
 <div ui-view=detail>
 </div>
+
+<button ui-sref=main.dungeon.floor({floor:1}) class='btn btn-primary'>Start Game!</button>
+<button ui-sref-active=hidden ui-sref=splash.instructions class='btn btn-default'>Instructions</button>

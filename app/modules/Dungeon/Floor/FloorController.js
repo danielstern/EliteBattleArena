@@ -2,9 +2,12 @@ angular.module("EliteBattleArena.Floor")
     .controller("FloorController", function($scope, $stateParams, musicSounds, battleSounds, treasureService, Actor, levelsMap, BattleEngine,enemiesMap,foes) {
         var battle = new BattleEngine();
 
+
         $scope.battle = battle;
 
         var level = $stateParams.floor;
+        
+        $scope.game.currentDungeonLevel = level;
 
         var enemiesMap = enemiesMap[level];
         console.log("enemies map?",enemiesMap,level);

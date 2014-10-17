@@ -4,9 +4,12 @@
     </h2>
     <div>
         <p>
-            "If thou wishest to know the secret of the treasure of Elfmire, then enter through this mysterious gate, heh heh ha ha..." a cajoling voice whispers through the darkness.
+           You hear forbidding voices echoing from within a pitch black stairwell.
         </p>
-        <button class='btn-danger btn' ng-click='startBattle()'>Couldn't Hurt</button>
+        <p>
+            "Dare I venture deeper into this house of terrors?"
+        </p>
+        <button class='btn-danger btn' ng-click='startBattle()'>Venture On</button>
         <button class='btn-warning btn' ui-sref=main.status>Retreat</button>
     </div>
 
@@ -14,10 +17,7 @@
 <div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
 <div ng-if=isVictory>
     <p>
-        "Hahaha..." Laughs the voice.
-    </p>
-    <p>
-        "But wait!" You say. "What of the truth?"
+       It just goes on and on deeper...
     </p>
     <div treasures-display treasures=treasures></div>
 

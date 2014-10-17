@@ -4,20 +4,23 @@
     </h2>
     <div>
         <p>
-            "If thou wishest to know the secret of the treasure of Elfmire, then enter through this mysterious gate, heh heh ha ha..." a cajoling voice whispers through the darkness.
+          You enter a stony and frozen crypt.
         </p>
-        <button class='btn-danger btn' ng-click='startBattle()'>Couldn't Hurt</button>
-        <button class='btn-warning btn' ui-sref=main.status>Retreat</button>
+        <p>
+            "What manner of foul wizardry is this?"
+        </p>
+        <p>
+            "You fool!" shouts the malificent lich king. "Now cower silently and be destroyed!"
+        </p>
+        <button class='btn-danger btn' ng-click='startBattle()'>Never!!!</button>
+
     </div>
 
 </div>
 <div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
 <div ng-if=isVictory>
     <p>
-        "Hahaha..." Laughs the voice.
-    </p>
-    <p>
-        "But wait!" You say. "What of the truth?"
+       It just goes on and on deeper...
     </p>
     <div treasures-display treasures=treasures></div>
 
