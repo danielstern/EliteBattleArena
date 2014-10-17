@@ -16,22 +16,27 @@ angular.module('EliteBattleArena.Sounds')
     	block2:ngAudio.load('audio/Block 2.wav'),
     };
 
+    
+    $rootScope.$watch('game.soundVolume',function(vol){
+        for (key in sounds) {
+            // consle.log("setting volume");
+            sounds[key].volume = vol;
+        }
+    })
+
     this.hit = function(options) {
     	var sound = _.sample([sounds.punch1,sounds.punch2,sounds.punch3,sounds.punch4,sounds.punch5,sounds.punch6])
-    	sound.volume = 0.3;
     	sound.play();
     }
 
     this.swing = function(options) {
     	var sound = _.sample([sounds.swing1,sounds.swing2])
-    	sound.volume = 0.3;
     	sound.unbind();
     	sound.play();
     }
 
     this.block = function(options) {
     	var sound = _.sample([sounds.block1,sounds.block2]);
-    	sound.volume = 0.3;
     	sound.play();
     }
 })

@@ -1,5 +1,5 @@
 angular.module('EliteBattleArena.Sounds')
-.service("musicSounds",function(ngAudio){
+.service("musicSounds",function(ngAudio,$rootScope){
 
      var sounds = {
     	menu:ngAudio.load('audio/2-05 Mellow Darkness.mp3'),
@@ -11,14 +11,12 @@ angular.module('EliteBattleArena.Sounds')
     	for (key in sounds) {
     		sounds[key].muting = true;
     	}
-    	
     }
 
     this.menu= function(options) {
     	muteAllSounds();
     	var sound = sounds.menu;
     	sound.muting = false;
-    	sound.volume = 0.3;
     	sound.loop = true;
     	sound.play();
     }
@@ -28,7 +26,6 @@ angular.module('EliteBattleArena.Sounds')
     	var sound = sounds.battle;
     	sound.muting = false;
     	sound.currentTime = 0;
-    	sound.volume = 0.3;
     	sound.loop = true;
     	sound.play();
     }
@@ -38,10 +35,16 @@ angular.module('EliteBattleArena.Sounds')
     	var sound = sounds.victory;
     	sound.muting = false;
     	sound.currentTime = 0;
-    	sound.volume = 0.3;
     	sound.loop = true;
     	sound.play();
 
     }
+
+    $rootScope.$watch('game.musicVolume',function(vol){
+        for (key in sounds) {
+            // consle.log("setting volume");
+            sounds[key].volume = vol;
+        }
+    })
 })
 

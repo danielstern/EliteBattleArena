@@ -47,4 +47,15 @@ angular.module("EliteBattleArena.Status")
 	    }
 	})
 
+	.state({
+	    name: "main.status.settings",
+	    url: "^/settings",
+	    views: {
+	        main: {
+	            templateUrl: "modules/Status/Settings/settings.html",
+	            controller: "SettingsController"
+	        }
+	    }
+	})
+
 })
