@@ -20,7 +20,8 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         }
 
         game.party.push(hero);
-        game.totalDungeonLevels = Object.keys(enemiesMap).length;
+        // game.totalDungeonLevels = Object.keys(enemiesMap).length;
+        game.totalDungeonLevels = 9;
 
         game.store = {
             weapons:{

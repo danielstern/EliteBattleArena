@@ -3,21 +3,16 @@ angular.module("EliteBattleArena.Scenario")
 
 .service("enemiesMap", function(enemiesGroups, Actor) {
     var maps = {
-        1: [enemiesGroups['weak-enemy']],
-        // 2: [enemiesGroups['weak-enemy'],enemiesGroups['weak-enemy']],
-        // 3: [enemiesGroups['weak-enemy'],enemiesGroups['medium-enemy']],
-        // 4: [enemiesGroups['medium-enemy'],enemiesGroups['medium-enemy']],
-        // 5: [enemiesGroups['medium-enemy'],enemiesGroups['medium-enemy'],enemiesGroups['weak-enemy']],
-        // 6: [enemiesGroups['strong-enemy'],enemiesGroups['medium-enemy']],
-        // 7: [enemiesGroups['strong-enemy'],enemiesGroups['strong-enemy']],
-        // 8: [enemiesGroups['strong-enemy'],enemiesGroups['strong-enemy'],enemiesGroups['medium-enemy']],
-        // 9: [enemiesGroups['elite-enemy']],
+        1: enemiesGroups['weak-enemy'],
+        5: enemiesGroups['medium-enemy'],
+        8: enemiesGroups['strong-enemy'],
+        9: enemiesGroups['elite-enemy'],
     };
 
     var enemyMap = {
         "enemy-counts": [{
             count: 1,
-            probability: 4
+            probability: 2
         }, {
             count: 2,
             probability: 2
@@ -25,9 +20,9 @@ angular.module("EliteBattleArena.Scenario")
             count: 1,
             probability: 1
         }],
-        "weak-enemy": {
-            minimumLevel: 1,
-        }
+        // "weak-enemy": {
+        //     minimumLevel: 1,
+        // }
     };
 
 
@@ -42,21 +37,48 @@ angular.module("EliteBattleArena.Scenario")
         }).count;
         // });
 
-        while (count--) {
+        var enemies = [];
 
-        }
+    
+        var probabilities = [
+            {
+                group:'weak-enemy',
+                probability: (level < 3) ? 3 - level : 0,
+            },{
+                group:'medium-enemy',
+                probability: (level < 7) ? level - 5 : 0,
+            },
+            {
+                group:'strong-enemy',
+                probability: level - 7,
+            },
+        ];
+
+        while (count--) {
+            var group = probabilities.reduce(function(a, b) {
+                if (Math.random() * a.probability > Math.random() * b.probability) {
+                    return a;
+                } else {
+                    return b;
+                }
+            }).group;
+            // var map = enemiesGroups['weak-enemy'];
+            var enemy = enemiesGroups[group].reduce(function(a, b) {
+                if (Math.random() * a.probability > Math.random() * b.probability) {
+                    return a;
+                } else {
+                    return b;
+                }
+            }).enemy;
+
+            enemies.push(enemy);
+        };
+
         console.log("Enemeis for level?",maps[1][0]);
 
-        var map = enemiesGroups['weak-enemy'];
-        var enemy = map.reduce(function(a, b) {
-            if (Math.random() * a.probability > Math.random() * b.probability) {
-                return a;
-            } else {
-                return b;
-            }
-        }).enemy;
-
         
-        return [enemy];
+
+
+        return enemies;
     }
 })
