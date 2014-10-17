@@ -41,7 +41,7 @@ angular.module("EliteBattleArena.Status")
 	    url: "^/inventory",
 	    views: {
 	        main: {
-	            templateUrl: "modules/Inventory/inventory.html",
+	            templateUrl: "modules/Status/Inventory/inventory.html",
 	            controller: "InventoryController"
 	        }
 	    }

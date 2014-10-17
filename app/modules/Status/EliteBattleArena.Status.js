@@ -1,1 +1,1 @@
-angular.module("EliteBattleArena.Status",[]);
+angular.module("EliteBattleArena.Status",['EliteBattleArena.Store','EliteBattleArena.Inventory','ui.router']);

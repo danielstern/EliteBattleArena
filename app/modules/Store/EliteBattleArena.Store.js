@@ -1,1 +1,1 @@
-angular.module("EliteBattleArena.Store",[]);
+angular.module("EliteBattleArena.Store",['EliteBattleArena.Item']);;

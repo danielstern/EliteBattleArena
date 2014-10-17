@@ -1,7 +1,7 @@
 angular.module("EliteBattleArena.Item")
 .directive("itemView",function(){
     return {
-        templateUrl: "partial/itemView.html",
+        templateUrl: "modules/Item/item-view/item-view.html",
         scope: {
         	item: "="
         },
