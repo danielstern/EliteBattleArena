@@ -63,7 +63,7 @@ angular.module("EliteBattleArena.Battle")
                         actor.dead = true;
                         return;
                     }
-                    actor.sp += actor.speed;
+                    actor.sp += actor.getSpeed() / 4;
                     if (actor.sp > 99) {
                         actor.sp = 100;
                         actor.canAct = true;

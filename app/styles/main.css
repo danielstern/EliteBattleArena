@@ -164,34 +164,6 @@
   background: #101211;
   background-repeat: no-repeat; }
 
-::-webkit-scrollbar-button:horizontal:decrement {
-  background-image: url(scrollbar/horizontal-decrement-arrow.png);
-  background-position: 4px 3px; }
-
-::-webkit-scrollbar-button:horizontal:increment {
-  background-image: url(scrollbar/horizontal-increment-arrow.png);
-  background-position: 3px 3px; }
-
-::-webkit-scrollbar-button:vertical:decrement {
-  background-image: url(scrollbar/vertical-decrement-arrow.png);
-  background-position: 3px 4px; }
-
-::-webkit-scrollbar-button:vertical:increment {
-  background-image: url(scrollbar/vertical-increment-arrow.png);
-  background-position: 3px 4px; }
-
-::-webkit-scrollbar-button:horizontal:decrement:active {
-  background-image: url(scrollbar/horizontal-decrement-arrow-active.png); }
-
-::-webkit-scrollbar-button:horizontal:increment:active {
-  background-image: url(scrollbar/horizontal-increment-arrow-active.png); }
-
-::-webkit-scrollbar-button:vertical:decrement:active {
-  background-image: url(scrollbar/vertical-decrement-arrow-active.png); }
-
-::-webkit-scrollbar-button:vertical:increment:active {
-  background-image: url(scrollbar/vertical-increment-arrow-active.png); }
-
 ::-webkit-scrollbar-track-piece {
   background-color: #151716; }
 

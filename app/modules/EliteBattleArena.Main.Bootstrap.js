@@ -7,6 +7,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             name: "Friendus Fortunato",
             side: "good",
             body: "hero",
+            speed: 6
         });
         game.party.push(hero);
         game.totalDungeonLevels = Object.keys(enemiesMap).length;

@@ -26,6 +26,19 @@ angular.module("EliteBattleArena.Scenario")
         canBuy:true,
         attack: 6
     },
+    "scowlingKnife": {
+        name: "Scowling Knife",
+        appearance: "dagger-fancy",
+        cost: 1000,
+        canBuy:true,
+        description:"This is a mean knife.",
+        location:"weapon",
+        canBuy:true,
+        attack: 6,
+        bonus: {
+            speed: 1
+        }
+    },
     "ghostlyBow": {
         name: "Ghostly Bow",
         appearance: "bow-basic",
