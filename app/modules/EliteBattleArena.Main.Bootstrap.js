@@ -41,9 +41,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         return {
             restrict:"E",
             link:function(scope,element){
-                console.log("I'm a sound playing button");
                 element.click(function(){
-                    console.log("clickedm e");
                     interfaceSounds.click();
                 })
             }
