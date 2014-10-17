@@ -136,7 +136,7 @@ angular.module("EliteBattleArena.Scenario")
         monstrousThing: {
             name:"Thing that Should not Be",
             side: "evil",
-            health: 200,
+            health: 120,
             treasureClass:"strong-enemy",
             attack: 15,
             speed: 6,
@@ -148,8 +148,8 @@ angular.module("EliteBattleArena.Scenario")
         lich: {
             name:"Lich",
             side: "evil",
-            health: 250,
-            attack: 20,
+            health: 300,
+            attack: 22,
             speed: 5,
             treasureClass:"elite-enemy",
             body: 'ghoul',

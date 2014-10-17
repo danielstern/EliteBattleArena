@@ -4,7 +4,7 @@ angular.module("EliteBattleArena.Scenario")
     return {
         'weak-enemy': [{
             reward: "nothing",
-            probability: 10,
+            probability: 4,
         }, {
             reward: "gold",
             probability: 5,
@@ -14,7 +14,7 @@ angular.module("EliteBattleArena.Scenario")
         }],
         'medium-enemy': [{
             reward: "nothing",
-            probability: 10,
+            probability: 4,
         }, {
             reward: "gold",
             probability: 10,
@@ -27,7 +27,7 @@ angular.module("EliteBattleArena.Scenario")
         }],
         'strong-enemy': [{
             reward: "nothing",
-            probability: 10,
+            probability: 4,
         }, {
             reward: "gold",
             probability: 15,
@@ -41,6 +41,9 @@ angular.module("EliteBattleArena.Scenario")
         'elite-enemy': [{
             reward: 'strong-items',
             probability: 5,
+        },{
+            reward: 'elite-items',
+            probability: 1,
         }],
         
         'weak-items': [{
@@ -152,7 +155,7 @@ angular.module("EliteBattleArena.Scenario")
             reward:'elite-armor',
             probability: 2,
         },{
-            reward:'elite-weapon',
+            reward:'elite-weapons',
             probability: 2,
         }],
         'elite-armor':[{
