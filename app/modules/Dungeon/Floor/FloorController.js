@@ -50,15 +50,15 @@ angular.module("EliteBattleArena.Floor")
             if (val === true) {
                 battle.stop();
                 // var treasures = treasureService.getTreasures(level);
-                var treasures = [];
                 $scope.treasures = enemies.map(function(enemy){
-                    return treasureService.getEnemyTreasure(enemy.treasureClass,lvl);
+                    return treasureService.getTreasures(enemy.treasureClass,level);
                 })
-                treasures.forEach(function(treasure) {
+                $scope.treasures.forEach(function(treasure) {
+                    if (!treasure) return;
                     if (treasure.gold) {
                         $scope.game.gold += treasure.value;
                     } else {
-                        $scope.game.inventory.push(treasure);
+                        $scope.game.inventory.push(angular.copy(treasure));
                     }
                 });
                 $scope.isFighting = false;

@@ -1,14 +1,17 @@
 angular.module("EliteBattleArena.Treasure")
-    .service("treasureService", function(armor, weapons,treasuresMap) {
+    .service("treasureService", function(armor, weapons,treasuresGroups) {
 
         function rollForTreasure(group,lvl) {
-            var treasure = treasuresMap[group].reduce(function(a, b) {
+            console.log("Getting treasures",group);
+            var treasure = treasuresGroups[group].reduce(function(a, b) {
                 if (Math.random() * a.probability > Math.random() * b.probability) {
                     return a;
                 } else {
                     return b;
                 }
             });
+
+            console.log("Got treasure...",treasure);
 
             if (treasure.reward === "gold") {
                 var value = Math.floor(Math.random() * lvl * 75);
@@ -21,26 +24,32 @@ angular.module("EliteBattleArena.Treasure")
                 };
             }
 
+            if (treasure.reward == 'nothing') {
+                return undefined;
+            };
+
             if (typeof treasure.reward == 'string') {
                 return rollForTreasure(treasure.reward,lvl);
-            }
+            };
+
+
+            return treasure.reward;
             
         }
        
         this.getTreasures = function(group,lvl) {
-            var group = 'weak';
             var treasure = rollForTreasure(group,lvl)
-            var rewards = [];
-            var max = 5;
-            while (lvl&&max) {
+            // var rewards = [];
+            // var max = 2;
+            // while (lvl&&max) {
 
-                if (treasure.reward !== "nothing") rewards.push(treasure.reward);
+            //     if (treasure.reward !== "nothing") rewards.push(treasure.reward);
 
-                lvl--;
-                max--;    
+            //     lvl--;
+            //     max--;    
                 
-            };
+            // };
 
-            return rewards;
+            return treasure;
         }
     })

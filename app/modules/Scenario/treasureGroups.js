@@ -42,6 +42,7 @@ angular.module("EliteBattleArena.Scenario")
             reward: 'strong-items',
             probability: 5,
         }],
+        
         'weak-items': [{
             reward:'weak-weapons',
             probability: 1,

@@ -125,7 +125,7 @@ angular.module("EliteBattleArena.Scenario")
     "greatSword": {
         name: "Great Sword",
         appearance: "sword-mighty",
-        canBuy:true,
+        // canBuy:true,
         cost: 4000,
         description:"It's a great sword.",
         location:"weapon",
@@ -134,7 +134,7 @@ angular.module("EliteBattleArena.Scenario")
     "mithrilCrowbar": {
         name: "Mithril Crowbar",
         appearance: "crowbar-basic",
-        canBuy:true,
+        // canBuy:true,
         cost: 4500,
         description:"It's a great sword.",
         location:"weapon",
@@ -147,7 +147,7 @@ angular.module("EliteBattleArena.Scenario")
         name: "Elven Bow",
         appearance: "bow-basic",
         cost: 5500,
-        canBuy:true,
+        // canBuy:true,
         description:"A classic bow.",
         location:"weapon",
         attack: 30,

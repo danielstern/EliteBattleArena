@@ -3,6 +3,7 @@ angular.module("EliteBattleArena.Store")
     return {
         scope: {
             item:"=",
+            game:"=",
             buy:"="
         },
         templateUrl: "modules/Store/store-item-display/store-item-display.html",
