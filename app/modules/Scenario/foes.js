@@ -9,6 +9,7 @@ angular.module("EliteBattleArena.Scenario")
             health: 25,
             speed: 3,
             attack: 4,
+            treasureClass:"weak-enemy",
             equip: {
                 weapon:weapons.cheapDagger
             }
@@ -20,6 +21,7 @@ angular.module("EliteBattleArena.Scenario")
             attack: 6,
             speed: 4,
             body: 'skeleton',
+            treasureClass:"weak-enemy",
             equip: {
                 weapon:weapons.ghostlyBow
             }
@@ -29,6 +31,7 @@ angular.module("EliteBattleArena.Scenario")
             side: "evil",
             health: 45,
             attack: 12,
+            treasureClass:"weak-enemy",
             speed: 1,
             body: 'bear'
         },
@@ -36,6 +39,7 @@ angular.module("EliteBattleArena.Scenario")
             name:"Swamp Man",
             side: "evil",
             health: 50,
+            treasureClass:"weak-enemy",
             attack: 9,
             speed: 3,
             body: 'swampman',
@@ -50,6 +54,7 @@ angular.module("EliteBattleArena.Scenario")
             health: 35,
             attack: 12,
             speed: 5,
+            treasureClass:"weak-enemy",
             body: 'ghoul',
             equip: {
                 weapon:weapons.cheapDagger
@@ -60,6 +65,7 @@ angular.module("EliteBattleArena.Scenario")
             side: "evil",
             health: 55,
             attack: 9,
+            treasureClass:"weak-enemy",
             speed: 5,
             body: 'skeleton',
             equip: {
@@ -72,6 +78,7 @@ angular.module("EliteBattleArena.Scenario")
             side: "evil",
             health: 65,
             attack: 15,
+            treasureClass:"medium-enemy",
             speed: 3,
             body: 'evilthing',
             equip: {
@@ -84,6 +91,7 @@ angular.module("EliteBattleArena.Scenario")
             body: "villain",
             health: 65,
             speed: 3,
+            treasureClass:"medium-enemy",
             attack: 4,
             equip: {
                 weapon:weapons.trustyCrowbar
@@ -95,6 +103,7 @@ angular.module("EliteBattleArena.Scenario")
             health: 75,
             attack: 16,
             defense:2,
+            treasureClass:"medium-enemy",
             speed: 2,
             body: 'bear'
         },
@@ -103,6 +112,7 @@ angular.module("EliteBattleArena.Scenario")
             side: "evil",
             health: 80,
             attack: 9,
+            treasureClass:"strong-enemy",
             speed: 5,
             body: 'swampman',
             equip: {
@@ -114,6 +124,7 @@ angular.module("EliteBattleArena.Scenario")
             name:"Crying Ghoul",
             side: "evil",
             health: 90,
+            treasureClass:"strong-enemy",
             attack: 24,
             speed: 5,
             body: 'ghoul',
@@ -126,6 +137,7 @@ angular.module("EliteBattleArena.Scenario")
             name:"Thing that Should not Be",
             side: "evil",
             health: 200,
+            treasureClass:"strong-enemy",
             attack: 15,
             speed: 6,
             body: 'evilthing',
@@ -139,6 +151,7 @@ angular.module("EliteBattleArena.Scenario")
             health: 350,
             attack: 40,
             speed: 5,
+            treasureClass:"elite-enemy",
             body: 'ghoul',
             equip: {
                 weapon:weapons.swordOfValor,

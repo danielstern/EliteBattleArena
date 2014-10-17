@@ -27,7 +27,7 @@ angular.module("EliteBattleArena.Treasure")
             
         }
        
-        this.getTreasures = function(lvl) {
+        this.getTreasures = function(group,lvl) {
             var group = 'weak';
             var treasure = rollForTreasure(group,lvl)
             var rewards = [];
