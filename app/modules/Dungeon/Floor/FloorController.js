@@ -9,25 +9,15 @@ angular.module("EliteBattleArena.Floor")
         
         $scope.game.currentDungeonLevel = level;
 
-        var enemiesMap = enemiesMap[level];
-        console.log("enemies map?",enemiesMap,level);
-        var enemies = enemiesMap.map(function(enemyChances){
-            console.log("rolling",enemyChances);
-            return enemyChances.reduce(function(a, b) {
-                if (Math.random() * a.probability > Math.random() * b.probability) {
-                    return a;
-                } else {
-                    return b;
-                }
-            }).enemy;
+        var enemies = enemiesMap.getEnemiesForLevel(level);
 
-        });
-        // console.log("Enemies?",enemies);
         var levelMap = levelsMap[level];
 
         battle.on("attack",battleSounds.swing);
         battle.on("block",battleSounds.block);
         battle.on("hit",battleSounds.hit);
+
+        console.log("Enemies?",enemies);
 
         enemies.forEach(function(enemy) {
             battle.actors.push(new Actor(enemy));
@@ -56,7 +46,7 @@ angular.module("EliteBattleArena.Floor")
                 $scope.treasures = enemies.map(function(enemy){
                     return treasureService.getTreasures(enemy.treasureClass,level);
                 })
-                console.log("Scope treasures?",$scope.treasures)
+                // console.log("Scope treasures?",$scope.treasures)
                 $scope.treasures.forEach(function(treasure) {
                     if (!treasure) return;
                     if (treasure.gold) {
