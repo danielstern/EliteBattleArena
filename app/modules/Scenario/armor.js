@@ -48,14 +48,28 @@ angular.module("EliteBattleArena.Scenario")
             speed: 3
         }
     },
+    "bloodredBonnet": {
+        name: "Blood Red Bonnet",
+        cost: 4000,
+        location: "body",
+        // canBuy: true,
+        appearance: 'helm-fancy',
+        rarity:'rare',
+        description: "This time it's the wolf who'll get eaten.",
+        defense: 13,
+        bonus:{
+            heal:0.03,
+        }
+    },
 
     "helmetOfStrength": {
         name: "Hat of Strength",
         description: "A glorious and mighty helm.",
         cost: 2000,
         location: "head",
-        canBuy: true,
+        // canBuy: true,
         defense: 10,
+        attack:2,
         appearance: "helm-basic"
     },
     // armor
@@ -67,6 +81,18 @@ angular.module("EliteBattleArena.Scenario")
         appearance: 'armor-basic',
         description: "Shoddy armor indeed.",
         defense: 3
+    },
+    "revitalizingPlate": {
+        name: "Revitalizing Plate",
+        cost: 2000,
+        location: "body",
+        // canBuy: true,
+        appearance: 'armor-basic',
+        description: "Embellished with the leaves of enchanted holly trees",
+        defense: 9,
+        bonus:{
+            heal:0.03,
+        }
     },
     "chainMail": {
         name: "Chain Mail",
@@ -81,7 +107,7 @@ angular.module("EliteBattleArena.Scenario")
         name: "Handsome Plate",
         cost: 2000,
         location: "body",
-        canBuy: true,
+        // canBuy: true,
         appearance: 'armor-fancy',
         description: "It kind of makes you feel ugly by comparison",
         defense: 12
@@ -133,10 +159,12 @@ angular.module("EliteBattleArena.Scenario")
         cost: 5000,
         // canBuy: true,
         location: "shield",
+        rarity:"elite",
         description: "Makes you defensive in conversation",
         appearance: "shield-elite",
         bonus: {
-            speed: 2
+            speed: 2,
+            heal: 0.01
         }
     },
     "lidlessEye": {
@@ -148,7 +176,8 @@ angular.module("EliteBattleArena.Scenario")
         description: "It must get very dry",
         appearance: "shield-elite",
         bonus: {
-            speed: 3
+            speed: 3,
+            heal: 0.01
         }
     }
 })

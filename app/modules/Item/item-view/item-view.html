@@ -1,4 +1,30 @@
-<div class='char char-hero item-view'>
-    <div class='equip equip-{{item.location}} {{item.appearance}}'>
+<div>
+    <div ng-if=!compact title="{{item.description}}" class='char char-hero item-view'>
+        <div class='equip equip-{{item.location}} {{item.appearance}}'>
+        </div>
     </div>
+    <p class=strong>
+        {{item.name}}
+    </p>
+    <!-- <p>
+        {{item.description}}
+    </p> -->
+    </p>
+    <p ng-if=item.attack>
+        Attack - {{item.attack}}
+    </p>
+    <p ng-if=item.defense>
+        Defense - {{item.defense}}
+    </p>
+    <p ng-if=item.bonus.speed>
+        + {{item.bonus.speed}} speed
+    </p>
+    <p ng-if=item.bonus.heal>
+        Recovery
+    </p>
+    <p ng-if=item.bonus.onDealDamage>
+        {{item.bonus.specialDescription}}
+        <!-- Special Effect on Attack -->
+        <!-- {{}} -->
+    </p>
 </div>

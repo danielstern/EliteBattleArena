@@ -3,7 +3,8 @@ angular.module("EliteBattleArena.Item")
     return {
         templateUrl: "modules/Item/item-view/item-view.html",
         scope: {
-        	item: "="
+        	item: "=",
+        	compact:"="
         },
         restrict:"AE",
     }

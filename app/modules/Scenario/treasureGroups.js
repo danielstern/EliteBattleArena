@@ -45,7 +45,6 @@ angular.module("EliteBattleArena.Scenario")
             reward: 'elite-items',
             probability: 1,
         }],
-        
         'weak-items': [{
             reward:'weak-weapons',
             probability: 1,
@@ -67,6 +66,13 @@ angular.module("EliteBattleArena.Scenario")
             reward:'strong-armor',
             probability: 1,
         }],
+        'elite-items': [{
+            reward:'elite-armor',
+            probability: 2,
+        },{
+            reward:'elite-weapons',
+            probability: 2,
+        }],
         'weak-weapons': [{
             reward:weapons.cheapDagger,
             probability: 5,
@@ -74,7 +80,7 @@ angular.module("EliteBattleArena.Scenario")
             reward:weapons.punySpear,
             probability: 4,
         },{
-            reward:weapons.punySpear,
+            reward:weapons.rustedHammer,
             probability: 4,
         },{
             reward:weapons.scowlingKnife,
@@ -82,6 +88,9 @@ angular.module("EliteBattleArena.Scenario")
         },{
             reward:weapons.trustyCrowbar,
             probability: 2,
+        },{
+            reward:weapons.bloodDagger,
+            probability: 1,
         }],
         'medium-weapons': [{
             reward:weapons.trustyCrowbar,
@@ -98,6 +107,9 @@ angular.module("EliteBattleArena.Scenario")
         },{
             reward:weapons.ironSword,
             probability: 1,
+        },{
+            reward:weapons.crimsonHammer,
+            probability: 1,
         }],
         'strong-weapons': [{
             reward:weapons.ironSword,
@@ -110,6 +122,9 @@ angular.module("EliteBattleArena.Scenario")
             probability: 2,
         },{
             reward:weapons.swiftAxe,
+            probability: 3,
+        },{
+            reward:weapons.greaterSwordOfValor,
             probability: 1,
         }],
         'weak-armor': [{
@@ -124,9 +139,15 @@ angular.module("EliteBattleArena.Scenario")
         },{
             reward:armor.chainMail,
             probability: 2,
+        },{
+            reward:armor.superiorHelm,
+            probability: 1,
+        },{
+            reward:armor.revitalizingPlate,
+            probability: 1,
         }],
         'medium-armor': [{
-            reward:armor.handsomeBreastplate,
+            reward:armor.chainMail,
             probability: 5,
         },{
             reward:armor.helmetOfStrength,
@@ -135,8 +156,14 @@ angular.module("EliteBattleArena.Scenario")
             reward:armor.swarthyBuckler,
             probability: 2,
         },{
+            reward:armor.handsomeBreastplate,
+            probability: 2,
+        },{
             reward:'weak-armor',
             probability: 2,
+        },{
+            reward:armor.bloodredBonnet,
+            probability: 1,
         }],
         'strong-armor': [{
             reward:armor.defender,
@@ -150,13 +177,6 @@ angular.module("EliteBattleArena.Scenario")
         },{
             reward:armor.centurionHelmet,
             probability: 1,
-        }],
-        'elite-items': [{
-            reward:'elite-armor',
-            probability: 2,
-        },{
-            reward:'elite-weapons',
-            probability: 2,
         }],
         'elite-armor':[{
             reward:armor.hatOfTruth,
@@ -174,9 +194,12 @@ angular.module("EliteBattleArena.Scenario")
         },{
             reward:weapons.mithrilCrowbar,
             probability: 5,
-        },,{
+        },{
             reward:weapons.elvenBow,
             probability: 5,
+        },{
+            reward:weapons.levantineSword,
+            probability: 1,
         }]
     }
 })

@@ -1,17 +1,3 @@
-<div title="{{item.description}}" item-view item=item></div>
-<p>
-    {{item.name}}
-</p>
-<p>
-   
-</p>
-<p ng-if=item.attack>
-    Attack - {{item.attack}}
-</p>
-<p ng-if=item.defense>
-    Defense - {{item.defense}}
-</p>
-<p ng-if=item.bonus.speed>
-    + {{item.bonus.speed}} speed
-</p>
-<button class='btn btn-default btn-block' ng-disabled="item.cost>game.gold" ng-click=buy(item)>Buy - {{item.cost}}c</button>
+<div item-view item=item></div>
+<button class='btn btn-default btn-block'  ng-click=buy(item)>Buy - {{item.cost}}c</button>
+<!-- <button class='btn btn-default btn-block' ng-disabled="item.cost>game.gold" ng-click=buy(item)>Buy - {{item.cost}}c</button> -->

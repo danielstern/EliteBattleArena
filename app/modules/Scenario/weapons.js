@@ -4,6 +4,7 @@ angular.module("EliteBattleArena.Scenario")
         name: "Cheap Dagger",
         appearance: "dagger-basic",
         location:"weapon",
+        description: "Not an especially nice dagger",
         canBuy:true,
         cost: 50,
         attack: 2
@@ -13,6 +14,7 @@ angular.module("EliteBattleArena.Scenario")
         location:"weapon",
         canBuy:true,
         appearance: "spear-basic",
+        description: "Makes one rethink the expression, 'it's better than nothing.'",
         attack: 4,
         cost: 150
     },
@@ -25,6 +27,23 @@ angular.module("EliteBattleArena.Scenario")
         location:"weapon",
         canBuy:true,
         attack: 6
+    },
+    "bloodDagger": {
+        name: "Blood Dagger",
+        appearance: "dagger-fancy",
+        cost: 2000,
+        // canBuy:true,
+        description:"Glows an eerie red color.",
+        location:"weapon",
+        canBuy:true,
+        attack: 9,
+        bonus: {
+            onDealDamage:function(target,actor,damage) {
+                console.log("Restoring health")
+                actor.health += damage / 10;
+            },
+            specialDescription: "10% of damage dealt to enemies is added to your health"
+        }
     },
     "scowlingKnife": {
         name: "Scowling Knife",
@@ -47,14 +66,17 @@ angular.module("EliteBattleArena.Scenario")
         description:"Oooooo!",
         location:"weapon",
         // canBuy:true,
-        attack: 3
+        attack: 5,
+        bonus: {
+            speed:1
+        }
     },
     "beechwoodBow": {
         name: "Beechwood Bow",
         appearance: "bow-basic",
         cost: 600,
         canBuy:true,
-        description:"Oooooo!",
+        description:"Made of high-quality wood",
         location:"weapon",
         attack: 12,
         bonus: {
@@ -78,6 +100,22 @@ angular.module("EliteBattleArena.Scenario")
         description:"I doubt it could hammer much of anything.",
         location:"weapon",
         attack: 6
+    },
+    "crimsonHammer": {
+        name: "Crimson Hammer",
+        appearance: "hammer-basic",
+        cost: 250,
+        canBuy:true,
+        description:"Is that rust or...",
+        location:"weapon",
+        attack: 16,
+        bonus: {
+            onDealDamage:function(target,actor,damage) {
+                console.log("Restoring health")
+                actor.health += damage / 10;
+            },
+            specialDescription: "10% of damage dealt to enemies is added to your health"
+        }
     },
     "steelHammer": {
         name: "Steel Hammer",
@@ -110,11 +148,43 @@ angular.module("EliteBattleArena.Scenario")
             speed:2
         }
     },
+    "greaterSwordOfValor": {
+        name: "Sword of Valor",
+        appearance: "sword-mighty",
+        canBuy:true,
+        cost: 3000,
+        description:"Does not make you more valorous",
+        location:"weapon",
+        attack: 27,
+        bonus:{
+            speed:2,
+            heal:0.05
+        }
+    },
     "swiftAxe": {
         name: "Swift Axe",
         appearance: "axe-basic",
         canBuy:true,
         cost: 2000,
+        description:"They won't know what hit 'em",
+        location:"weapon",
+        attack: 24,
+        bonus:{
+            speed:3,
+            bonus: {
+                onDealDamage:function(target,actor,damage) {
+                    console.log("Restoring health")
+                    actor.health += damage / 10;
+                },
+                specialDescription: "10% of damage dealt to enemies is added to your health"
+            }
+        }
+    },
+    "terrifyingCleaver": {
+        name: "Terrifying Cleaver",
+        appearance: "axe-basic",
+        canBuy:true,
+        cost: 4000,
         description:"They won't know what hit 'em",
         location:"weapon",
         attack: 24,
@@ -147,12 +217,30 @@ angular.module("EliteBattleArena.Scenario")
         name: "Elven Bow",
         appearance: "bow-basic",
         cost: 5500,
-        // canBuy:true,
+        canBuy:true,
         description:"A classic bow.",
         location:"weapon",
         attack: 30,
         bonus: {
-            speed:4
+            speed:4,
+            onDealDamage:function(target,actor,damage) {
+                console.log("Restoring health")
+                actor.health += damage / 12;
+            },
+            specialDescription: "12% of damage dealt to enemies is added to your health"
+        }
+    },
+    "levantineSword": {
+        name: "Levantine Sword",
+        appearance: "sword-mighty",
+        cost: 7000,
+        canBuy:true,
+        description:"A classic bow.",
+        location:"weapon",
+        attack: 40,
+        bonus: {
+            speed:3,
+            heal:0.05,
         }
     },
 });

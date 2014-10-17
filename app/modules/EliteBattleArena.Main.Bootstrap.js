@@ -7,8 +7,13 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             name: "Friendus Fortunato",
             side: "good",
             body: "hero",
-            speed: 6
+            speed: 6,
+            defense: 2
         });
+
+        game.inventory.push(armor.revitalizingPlate);
+        game.inventory.push(weapons.bloodDagger);
+        game.maxDungeonLevel = 10;
         game.party.push(hero);
         game.totalDungeonLevels = Object.keys(enemiesMap).length;
 
@@ -32,8 +37,6 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
                 game.store.armor[key] = armor[key];
             }
         }
-        // game.store.armor = armor;
-
 
         game.gold = 100;
 

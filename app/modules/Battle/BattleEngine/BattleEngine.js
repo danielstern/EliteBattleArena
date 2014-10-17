@@ -58,12 +58,19 @@ angular.module("EliteBattleArena.Battle")
                 battle.currentTurn++;
                 var narrative = battle.narrative;
                 battle.actors.forEach(function(actor) {
-                    if (actor.health <= 0) {
+                    if (actor.health <= 0.5) {
+                        actor.health = 0;
                         actor.animation = "dead";
                         actor.dead = true;
                         return;
+                    };
+
+                    if (actor.health > actor.maxHealth) {
+                        actor.health = actor.maxHealth;
                     }
                     actor.sp += actor.getSpeed() / 4;
+                    actor.health += actor.getHealPerCycle();
+
                     if (actor.sp > 99) {
                         actor.sp = 100;
                         actor.canAct = true;
@@ -128,6 +135,7 @@ angular.module("EliteBattleArena.Battle")
                             damage = 0;
                         }
                         action.target.health -= damage;
+                        action.actor.onDealDamage(action.target,action.actor,damage);
                         narrative.push(action.actor.name + " attacked " + action.target.name + " for " + action.actor.attack + " damage.");
                         action.actor.animation = "attacking";
                         actor.sp = 0;
