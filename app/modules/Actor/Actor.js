@@ -14,25 +14,25 @@ angular.module("EliteBattleArena.Actor")
             this.maxHealth = options.health || 100;
             this.attack = options.attack || 10;
             this.defending = false;
-            this.exp = 0;
+            this.exp = options.exp || 0;
             this.body = options.body || "hero";
             this.speed = options.speed || 2.5;
             this.sp = 0;
-            this.equip = {};
+            this.equip = options.equip || {};
             this.treasureClass = options.treasureClass;
 
             this.equipItem = function(item) {
                 var oldItem;
                 if (!item.location) {
-                    console.log("cant equip this");
+                    // console.log("cant equip this");
                     return;
                 }
                 if (this.equip[item.location]) {
                     oldItem = this.equip[item.location];
                 }
-                console.log("Equip item",item);
+                // console.log("Equip item",item);
                 this.equip[item.location] = item;
-                console.log("my equip?",this.equip);
+                // console.log("my equip?",this.equip);
 
                 return oldItem;
             }

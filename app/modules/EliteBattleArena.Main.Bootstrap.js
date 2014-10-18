@@ -7,6 +7,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             }
             reviveGame(game);
             $rootScope.game = game;
+            $state.go('main.status.inventory');
         } else {
             game = new Game();
             // console.log("Initing game");
