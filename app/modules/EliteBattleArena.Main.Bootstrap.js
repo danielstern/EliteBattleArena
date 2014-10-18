@@ -30,7 +30,13 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         var TEST_MODE = true;
 
         function reviveGame() {
-            console.log("reviving game,,,");
+            console.log("reviving game");
+            game.party.forEach(function(hero){
+                var protoHero = new Actor();
+                // console.log("Proto?",protoHero.prototype,Actor.prototype);
+                hero.equipItem = protoHero.equipItem.bind(hero);
+                hero.unequipItem = protoHero.unequipItem.bind(hero);
+            })
         }
 
         function initGame(game) {

@@ -6,7 +6,7 @@ angular.module("EliteBattleArena.Status")
     musicSounds.menu();
 
     $scope.unequip = function(item) {
-        $scope.game.party[0].unequip(item);
+        $scope.game.party[0].unequipItem(item);
         $scope.game.inventory.push(item);
     }
 
