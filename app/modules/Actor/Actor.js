@@ -18,22 +18,26 @@ angular.module("EliteBattleArena.Actor")
             this.body = options.body || "hero";
             this.speed = options.speed || 2.5;
             this.sp = 0;
-            this.equip = options.equip || {};
+            // this.equip = options.equip || {};
             this.treasureClass = options.treasureClass;
+
+            this.equip = {
+                armor:options.armor,
+                weapon:options.weapon,
+                helmet:options.helmet,
+                shield:options.shield,
+            }
 
             this.equipItem = function(item) {
                 var oldItem;
                 if (!item.location) {
-                    // console.log("cant equip this");
                     return;
                 }
                 if (this.equip[item.location]) {
                     oldItem = this.equip[item.location];
                 }
-                // console.log("Equip item",item);
-                this.equip[item.location] = item;
-                // console.log("my equip?",this.equip);
 
+                this.equip[item.location] = item;
                 return oldItem;
             }
 
@@ -44,15 +48,12 @@ angular.module("EliteBattleArena.Actor")
             }
 
             this.getAttack = function() {
-                // console.log("getting attack...",this.attack + 1);
                 var attack = 0;
                 attack += +this.attack;
                 if (this.equip.weapon) {
                     console.log("Weapon?",this.equip.weapon)
                     attack += +this.equip.weapon.attack;
                 };
-
-                // console.log("returning attack...",attack)
 
                 return attack;
             };
@@ -61,7 +62,7 @@ angular.module("EliteBattleArena.Actor")
                 console.log("On deal damage", arguments);
                 for (key in this.equip) {
                     var equip = this.equip[key];
-                    if (equip.bonus && equip.bonus.onDealDamage) {
+                    if (equip && equip.bonus && equip.bonus.onDealDamage) {
                         equip.bonus.onDealDamage(target, actor, damage);
                     }
                 }
@@ -98,7 +99,6 @@ angular.module("EliteBattleArena.Actor")
 
             this.getDefense = function() {
                 var defense = 0;
-                // console.log("Get defense...",this);
                 if (this.equip.head) {
                     defense += this.equip.head.defense;
                 }

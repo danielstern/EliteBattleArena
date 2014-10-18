@@ -19,7 +19,7 @@ angular.module("EliteBattleArena.Status")
 	    url: "/character",
 	    views: {
 	        main: {
-	            templateUrl: "modules/Status/Party/hero-stat-view.html",
+	            templateUrl: "modules/Status/Party/party.html",
 
 	        }
 	    }

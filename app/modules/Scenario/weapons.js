@@ -1,5 +1,6 @@
 angular.module("EliteBattleArena.Scenario")
-.value("weapons", {
+.service("weapons", function(){
+ return {
     "cheapDagger": {
         name: "Cheap Dagger",
         appearance: "dagger-basic",
@@ -38,11 +39,7 @@ angular.module("EliteBattleArena.Scenario")
         canBuy:true,
         attack: 9,
         bonus: {
-            onDealDamage:function(target,actor,damage) {
-                console.log("Restoring health")
-                actor.health += damage / 10;
-            },
-            specialDescription: "10% of damage dealt to enemies is added to your health"
+           drain: 0.1
         }
     },
     "scowlingKnife": {
@@ -109,11 +106,7 @@ angular.module("EliteBattleArena.Scenario")
         location:"weapon",
         attack: 16,
         bonus: {
-            onDealDamage:function(target,actor,damage) {
-                console.log("Restoring health")
-                actor.health += damage / 10;
-            },
-            specialDescription: "10% of damage dealt to enemies is added to your health"
+            drain: 0.1
         }
     },
     "steelHammer": {
@@ -171,11 +164,7 @@ angular.module("EliteBattleArena.Scenario")
         bonus:{
             speed:3,
             bonus: {
-                onDealDamage:function(target,actor,damage) {
-                    console.log("Restoring health")
-                    actor.health += damage / 10;
-                },
-                specialDescription: "10% of damage dealt to enemies is added to your health"
+                drain: 0.1
             }
         }
     },
@@ -222,11 +211,7 @@ angular.module("EliteBattleArena.Scenario")
         attack: 30,
         bonus: {
             speed:4,
-            onDealDamage:function(target,actor,damage) {
-                console.log("Restoring health")
-                actor.health += damage / 12;
-            },
-            specialDescription: "12% of damage dealt to enemies is added to your health"
+            drain: 0.1
         }
     },
     "levantineSword": {
@@ -242,4 +227,5 @@ angular.module("EliteBattleArena.Scenario")
             heal:0.05,
         }
     },
+}   
 });

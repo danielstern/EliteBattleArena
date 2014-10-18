@@ -1,7 +1,7 @@
 angular.module("EliteBattleArena.Scenario")
 
 
-.service("enemiesMap", function(enemiesGroups, Actor,Item,treasureService,foes) {
+.service("enemiesMap", function(enemiesGroups, gamble, Actor,Item,treasureService,foes) {
     var maps = {
         1: enemiesGroups['weak-enemy'],
         5: enemiesGroups['medium-enemy'],
@@ -59,21 +59,9 @@ angular.module("EliteBattleArena.Scenario")
         ];
 
         while (count--) {
-            var group = probabilities.reduce(function(a, b) {
-                if (Math.random() * a.probability > Math.random() * b.probability) {
-                    return a;
-                } else {
-                    return b;
-                }
-            }).group;
+            var group = probabilities.reduce(gamble).group;
             // var map = enemiesGroups['weak-enemy'];
-            var enemyProto = enemiesGroups[group].reduce(function(a, b) {
-                if (Math.random() * a.probability > Math.random() * b.probability) {
-                    return a;
-                } else {
-                    return b;
-                }
-            }).enemy;
+            var enemyProto = enemiesGroups[group].reduce(gamble).enemy;
 
             var enemy = new Actor(enemyProto);
 

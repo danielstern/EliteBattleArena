@@ -88,9 +88,6 @@ angular.module("EliteBattleArena.Battle")
                             action = actor.act(battle, actor);
 
                         } else {
-
-
-
                             if (actor.selectedAction) {
                                 var selection = actor.selectedAction;
                                 if (selection == 'heal' || selection === "defend") {
@@ -135,7 +132,6 @@ angular.module("EliteBattleArena.Battle")
                             damage = 0;
                         }
                         action.target.health -= damage;
-                        action.actor.onDealDamage(action.target,action.actor,damage);
                         narrative.push(action.actor.name + " attacked " + action.target.name + " for " + action.actor.attack + " damage.");
                         action.actor.animation = "attacking";
                         actor.sp = 0;

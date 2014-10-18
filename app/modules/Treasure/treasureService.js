@@ -1,15 +1,9 @@
 angular.module("EliteBattleArena.Treasure")
-    .service("treasureService", function(armor, weapons,treasuresGroups) {
+    .service("treasureService", function(armor, gamble, weapons,treasuresGroups) {
 
         function rollForTreasure(group,lvl) {
             // console.log("Getting treasures",group);
-            var treasure = treasuresGroups[group].reduce(function(a, b) {
-                if (Math.random() * a.probability > Math.random() * b.probability) {
-                    return a;
-                } else {
-                    return b;
-                }
-            });
+            var treasure = treasuresGroups[group].reduce(gamble);
 
             // console.log("Got treasure...",treasure);
 
