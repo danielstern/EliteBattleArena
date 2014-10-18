@@ -1,4 +1,4 @@
-angular.module("EliteBattleArena.Game")
+angular.module("EliteBattleArena.Scenario")
     .factory("Game", function(Actor, party, weapons, armor, Item) {
         return function() {
             var game = this;
