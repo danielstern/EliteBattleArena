@@ -1,5 +1,5 @@
 angular.module("EliteBattleArena.Floor")
-    .controller("FloorController", function($scope, $stateParams, musicSounds, battleSounds, treasureService, Actor, levelsMap, BattleEngine,enemiesMap,foes) {
+    .controller("FloorController", function($scope, $stateParams, Item, musicSounds, battleSounds, treasureService, Actor, levelsMap, BattleEngine,enemiesMap,foes) {
         var battle = new BattleEngine();
 
 
@@ -52,7 +52,7 @@ angular.module("EliteBattleArena.Floor")
                     if (treasure.gold) {
                         $scope.game.gold += treasure.value;
                     } else {
-                        $scope.game.inventory.push(angular.copy(treasure));
+                        $scope.game.inventory.push(new Item(treasure));
                     }
                 });
                 $scope.isFighting = false;

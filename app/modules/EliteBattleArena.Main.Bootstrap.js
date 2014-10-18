@@ -3,7 +3,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         var game = new Game();
         $rootScope.game = game;
 
-        var TEST_MODE = false;
+        var TEST_MODE = true;
 
         var hero = new Actor({
             name: "Friendus Fortunato",
@@ -17,6 +17,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             game.inventory.push(armor.revitalizingPlate);
             game.inventory.push(weapons.levantineSword);
             game.maxDungeonLevel = 10;
+            game.gold = 10000;
         }
 
         game.party.push(hero);
@@ -44,7 +45,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             }
         }
 
-        game.gold = 100;
+        game.gold += 100;
 
     })
     .directive("button",function(interfaceSounds){
