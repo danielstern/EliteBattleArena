@@ -21,7 +21,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena', 'EliteBattleArena.S
             localStorage['game'] = JSON.stringify(game);
             // console.log("Game json?")
         }, true);
-        var TEST_MODE = true;
+        var TEST_MODE = false;
 
         function initGame(game) {
 
@@ -29,6 +29,11 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena', 'EliteBattleArena.S
                     var hero = game.party[0];
 
                     var newActor = new Actor();
+                    for (key in newActor) {
+                        if (_.isFunction(newActor[key])) {
+                           hero[key] = newActor[key].bind(hero);
+                        }
+                    }
                     hero.equipItem = newActor.equipItem.bind(hero);
 
                 } else {
@@ -74,7 +79,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena', 'EliteBattleArena.S
                     }
                 }
 
-                game.gold = 100;
+                game.gold = game.gold || 100;
                 console.log("initinggame;")
             }
             // initGame(game);
