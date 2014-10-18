@@ -44,5 +44,5 @@
 <div ng-repeat="(name,item) in actor.equip" ng-if=item.equipped>
     <h3 ng-if=$first>Equipped:</h3>
     <div item-view compact=true item=item></div>
-    <button class='btn btn-default' ng-click=actor.unequipItem(item)>Unequip</button>
+    <button class='btn btn-default' ng-click=unequip(item)>Unequip</button>
 </div>

@@ -32,6 +32,7 @@ angular.module("EliteBattleArena.Actor")
             this.unequipItem = function(item) {
                 item.equipped = false;
                 this.equip[item.location] = undefined;
+                return item;
             }
 
             this.getAttack = function() {

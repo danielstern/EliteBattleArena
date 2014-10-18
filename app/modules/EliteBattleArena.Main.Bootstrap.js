@@ -1,5 +1,5 @@
 angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Scenario','EliteBattleArena.Sounds', 'ui.router','ngAudio'])
-    .run(function($rootScope, Game, Actor, armor, weapons,enemiesMap) {
+    .run(function($rootScope, Game, Actor, Item, armor, weapons,enemiesMap) {
         if (localStorage['game']) {
             game = angular.fromJson(localStorage['game']);
             if (!game.party[0]) {
@@ -62,17 +62,17 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             //     }
             // };
 
-            // for (var key in weapons) {
-            //     if (weapons[key].canBuy) {
-            //         game.store.weapons[key] = weapons[key];
-            //     }
-            // }
+            for (var key in weapons) {
+                if (weapons[key].canBuy) {
+                    game.store.push(new Item(weapons[key]));
+                }
+            }
 
-            // for (var key in armor) {
-            //     if (armor[key].canBuy) {
-            //         game.store.armor[key] = armor[key];
-            //     }
-            // }
+            for (var key in armor) {
+                if (armor[key].canBuy) {
+                    game.store.push(new Item(armor[key]));
+                }
+            }
 
             game.gold += 100;
 
