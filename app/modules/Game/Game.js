@@ -10,5 +10,7 @@ angular.module("EliteBattleArena.Game")
         // settings
         this.musicVolume = 0.3;
         this.soundVolume = 0.3;
+
+        this.store = []
     }
 })
