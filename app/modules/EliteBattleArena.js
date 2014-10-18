@@ -5,6 +5,7 @@ angular.module("EliteBattleArena", [
     'EliteBattleArena.Status',
     'EliteBattleArena.Scenario',
     'EliteBattleArena.Sounds',
+    'EliteBattleArena.Helpers',
     'EliteBattleArena.Dungeon',
     'EliteBattleArena.Helpers'])
 

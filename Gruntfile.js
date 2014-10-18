@@ -155,6 +155,8 @@ module.exports = function (grunt) {
       all: {
         options: {
           run: true,
+          log: true,
+          logErrors: true,
           urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
         }
       }

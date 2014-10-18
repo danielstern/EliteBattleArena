@@ -1,1 +1,1 @@
-angular.module("EliteBattleArena.Scenario", []);
+angular.module("EliteBattleArena.Scenario", ['EliteBattleArena.Actor','EliteBattleArena.Item']);

@@ -1,1 +1,1 @@
-angular.module("EliteBattleArena.Treasure",[]);
+angular.module("EliteBattleArena.Treasure",["EliteBattleArena.Scenario","EliteBattleArena.Helpers"]);

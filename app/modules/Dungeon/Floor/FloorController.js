@@ -1,5 +1,5 @@
 angular.module("EliteBattleArena.Floor")
-    .controller("FloorController", function($scope, $stateParams, Item, musicSounds, battleSounds, treasureService, Actor, levelsMap, BattleEngine,enemiesMap,foes) {
+    .controller("FloorController", function($scope, $state, $stateParams, Item, musicSounds, battleSounds, treasureService, Actor, levelsMap, BattleEngine,enemiesMap,foes) {
         var battle = new BattleEngine();
 
 
@@ -17,7 +17,10 @@ angular.module("EliteBattleArena.Floor")
         battle.on("block",battleSounds.block);
         battle.on("hit",battleSounds.hit);
 
-        console.log("Enemies?",enemies);
+        battle.on("escape",function(){
+            battle.stop();
+            $state.go("main.status");
+        })
 
         enemies.forEach(function(enemy) {
             battle.actors.push(enemy);
