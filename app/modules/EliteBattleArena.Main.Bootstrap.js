@@ -1,5 +1,5 @@
 angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Scenario','EliteBattleArena.Sounds', 'ui.router','ngAudio'])
-    .run(function($rootScope, Game, Actor, Item, armor, weapons,enemiesMap) {
+    .run(function($rootScope, Game, Actor, Item, armor, weapons,enemiesMap, $state) {
         if (localStorage['game']) {
             game = angular.fromJson(localStorage['game']);
             if (!game.party[0]) {
@@ -21,6 +21,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             if (game.deleted) {
                 game = new Game();
                 initGame(game);
+                $state.go('splash');
             }
             localStorage['game'] = JSON.stringify(game);
             // console.log("Game json?")

@@ -1,0 +1,595 @@
+diff --git a/app/heregies.zip b/app/heregies.zip
+deleted file mode 100644
+index 8000e24..0000000
+Binary files a/app/heregies.zip and /dev/null differ
+diff --git a/app/modules/Actor/Actor.js b/app/modules/Actor/Actor.js
+index 516bd55..3b806bf 100644
+--- a/app/modules/Actor/Actor.js
++++ b/app/modules/Actor/Actor.js
+@@ -18,7 +18,7 @@ angular.module("EliteBattleArena.Actor")
+             this.body = options.body || "hero";
+             this.speed = options.speed || 2.5;
+             this.sp = 0;
+-            this.equip = angular.copy(options.equip);
++            this.equip = {};
+             this.treasureClass = options.treasureClass;
+ 
+             this.equipItem = function(item) {
+diff --git a/app/modules/Dungeon/Floor/FloorController.js b/app/modules/Dungeon/Floor/FloorController.js
+index 2a2ac8d..54f3425 100644
+--- a/app/modules/Dungeon/Floor/FloorController.js
++++ b/app/modules/Dungeon/Floor/FloorController.js
+@@ -1,5 +1,5 @@
+ angular.module("EliteBattleArena.Floor")
+-    .controller("FloorController", function($scope, $stateParams, Item, musicSounds, battleSounds, treasureService, Actor, levelsMap, BattleEngine,enemiesMap,foes) {
++    .controller("FloorController", function($scope, $stateParams, musicSounds, battleSounds, treasureService, Actor, levelsMap, BattleEngine,enemiesMap,foes) {
+         var battle = new BattleEngine();
+ 
+ 
+@@ -52,7 +52,7 @@ angular.module("EliteBattleArena.Floor")
+                     if (treasure.gold) {
+                         $scope.game.gold += treasure.value;
+                     } else {
+-                        $scope.game.inventory.push(new Item(treasure));
++                        $scope.game.inventory.push(angular.copy(treasure));
+                     }
+                 });
+                 $scope.isFighting = false;
+diff --git a/app/modules/Dungeon/Floor/floors/floor-1.html b/app/modules/Dungeon/Floor/floors/floor-1.html
+index 8c514e0..fee2b39 100644
+--- a/app/modules/Dungeon/Floor/floors/floor-1.html
++++ b/app/modules/Dungeon/Floor/floors/floor-1.html
+@@ -4,9 +4,9 @@
+     </h2>
+     <div>
+         <p>
+-            You arrive in a long-abandoned plaza. You see a dark figure in the distance.
++            "If thou wishest to know the secret of the treasure of Elfmire, then enter through this mysterious gate, heh heh ha ha..." a cajoling voice whispers through the darkness.
+         </p>
+-        <button class='btn-danger btn' ng-click='startBattle()'>Follow him</button>
++        <button class='btn-danger btn' ng-click='startBattle()'>Couldn't Hurt</button>
+         <button class='btn-warning btn' ui-sref=main.status>Retreat</button>
+     </div>
+ 
+@@ -14,7 +14,11 @@
+ <div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
+ <div ng-if=isVictory>
+     <p>
+-       "This is going to be dangerous."
++        "Hahaha..." Laughs the voice.
++    </p>
++    <p>
++        "But wait!" You say. "What of the truth?"
++    </p>
+     <div treasures-display treasures=treasures></div>
+ 
+     <button class='btn btn-success' ui-sref='main.status'>Victory!</button>
+diff --git a/app/modules/Dungeon/Floor/floors/floor-2.html b/app/modules/Dungeon/Floor/floors/floor-2.html
+index aba07c5..c3195d8 100644
+--- a/app/modules/Dungeon/Floor/floors/floor-2.html
++++ b/app/modules/Dungeon/Floor/floors/floor-2.html
+@@ -4,12 +4,12 @@
+     </h2>
+     <div>
+         <p>
+-            You follow the figure into an underground reservoir.
++            You are in a dark and cavernous pit.
+         </p>
+         <p>
+-            "Dwarves again, no doubt..."
++            "The work of dwarves, no doubt..."
+         </p>
+-        <button class='btn-danger btn' ng-click='startBattle()'>Explore the reservoir</button>
++        <button class='btn-danger btn' ng-click='startBattle()'>Explore the pit</button>
+         <button class='btn-warning btn' ui-sref=main.status>Retreat</button>
+     </div>
+ 
+@@ -17,7 +17,7 @@
+ <div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
+ <div ng-if=isVictory>
+     <p>
+-       You hear the voice of the wizard laughing faintly in the distance.
++       It just goes on and on deeper...
+     </p>
+     <div treasures-display treasures=treasures></div>
+ 
+diff --git a/app/modules/Dungeon/Floor/floors/floor-3.html b/app/modules/Dungeon/Floor/floors/floor-3.html
+index 6a5eff3..83ab906 100644
+--- a/app/modules/Dungeon/Floor/floors/floor-3.html
++++ b/app/modules/Dungeon/Floor/floors/floor-3.html
+@@ -4,12 +4,12 @@
+     </h2>
+     <div>
+         <p>
+-           "Stop right there!" you shout at the man. He pauses for a moment. You see he is a cloaked figure, aged but strong.
++           Mysterious glyphs cover the walls of this long-forgotten catacomb.
+         </p>
+         <p>
+-            "You do not understand the forces with which you meddle, boy!"
++            You can make out but little of their meanings. Something about sode.
+         </p>
+-        <button class='btn-danger btn' ng-click='startBattle()'>I'll show you!</button>
++        <button class='btn-danger btn' ng-click='startBattle()'>Touch the Runes</button>
+         <button class='btn-warning btn' ui-sref=main.status>Retreat</button>
+     </div>
+ 
+@@ -17,7 +17,7 @@
+ <div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
+ <div ng-if=isVictory>
+     <p>
+-       He escaped!
++       It just goes on and on deeper...
+     </p>
+     <div treasures-display treasures=treasures></div>
+ 
+diff --git a/app/modules/Dungeon/Floor/floors/floor-4.html b/app/modules/Dungeon/Floor/floors/floor-4.html
+index f1e8ceb..5551b9c 100644
+--- a/app/modules/Dungeon/Floor/floors/floor-4.html
++++ b/app/modules/Dungeon/Floor/floors/floor-4.html
+@@ -4,9 +4,12 @@
+     </h2>
+     <div>
+         <p>
+-           Deeper you descend into the bellows. You pass great furnaces that spew black smoke.
++           "I'm starting to feel a little dizzy," you say aloud to none in particular.
+         </p>
+-        <button class='btn-danger btn' ng-click='startBattle()'>Onward</button>
++        <p>
++            "Lay awhile and rest, weary traveller," says a sweet voice.
++        </p>
++        <button class='btn-danger btn' ng-click='startBattle()'>Lay Down</button>
+         <button class='btn-warning btn' ui-sref=main.status>Retreat</button>
+     </div>
+ 
+@@ -14,7 +17,7 @@
+ <div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
+ <div ng-if=isVictory>
+     <p>
+-       "Must find that man..."
++       It just goes on and on deeper...
+     </p>
+     <div treasures-display treasures=treasures></div>
+ 
+diff --git a/app/modules/Dungeon/Floor/floors/floor-5.html b/app/modules/Dungeon/Floor/floors/floor-5.html
+index cec7771..a7b43da 100644
+--- a/app/modules/Dungeon/Floor/floors/floor-5.html
++++ b/app/modules/Dungeon/Floor/floors/floor-5.html
+@@ -4,12 +4,9 @@
+     </h2>
+     <div>
+         <p>
+-           You are now in some ancient ruins. No doubt many thousands of years old.
++           There lays in the center of the room an altar surrounded by stone birds.
+         </p>
+-        <p>
+-            You see a mural depicting 9 cloaked figures, each with a magnificent treasure. Suddenly, monsters attack.
+-        </p>
+-        <button class='btn-danger btn' ng-click='startBattle()'>Fight!</button>
++        <button class='btn-danger btn' ng-click='startBattle()'>Put a Bird on It</button>
+         <button class='btn-warning btn' ui-sref=main.status>Retreat</button>
+     </div>
+ 
+@@ -17,7 +14,7 @@
+ <div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
+ <div ng-if=isVictory>
+     <p>
+-       "Must keep moving!"
++       It just goes on and on deeper...
+     </p>
+     <div treasures-display treasures=treasures></div>
+ 
+diff --git a/app/modules/Dungeon/Floor/floors/floor-6.html b/app/modules/Dungeon/Floor/floors/floor-6.html
+index c5e23f1..fc8e75c 100644
+--- a/app/modules/Dungeon/Floor/floors/floor-6.html
++++ b/app/modules/Dungeon/Floor/floors/floor-6.html
+@@ -4,10 +4,10 @@
+     </h2>
+     <div>
+         <p>
+-           You enter a vast underground cavern with lakes and trees.
++           You hear forbidding voices echoing from within a pitch black stairwell.
+         </p>
+         <p>
+-            "What dark magic is at work here?"
++            "Dare I venture deeper into this house of terrors?"
+         </p>
+         <button class='btn-danger btn' ng-click='startBattle()'>Venture On</button>
+         <button class='btn-warning btn' ui-sref=main.status>Retreat</button>
+@@ -17,7 +17,7 @@
+ <div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
+ <div ng-if=isVictory>
+     <p>
+-       "I don't like the looks of this..."
++       It just goes on and on deeper...
+     </p>
+     <div treasures-display treasures=treasures></div>
+ 
+diff --git a/app/modules/Dungeon/Floor/floors/floor-7.html b/app/modules/Dungeon/Floor/floors/floor-7.html
+index c95f108..dfcae59 100644
+--- a/app/modules/Dungeon/Floor/floors/floor-7.html
++++ b/app/modules/Dungeon/Floor/floors/floor-7.html
+@@ -4,19 +4,19 @@
+     </h2>
+     <div>
+         <p>
+-           You trip over some roots and almost die.
++           You narrowly avoid falling into a trip of deadly spikes.
+         </p>
+         <p>
+-            "Hmm, I'll be lucky if that'sthe worst that happens to me."
++            Suddenly monsters surround you on every side.
+         </p>
+-        <button class='btn-danger btn' ng-click='startBattle()'>Enter the cathedral</button>
++        <button class='btn-danger btn' ng-click='startBattle()'>Fight it Out!</button>
+     </div>
+ 
+ </div>
+ <div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
+ <div ng-if=isVictory>
+     <p>
+-       "What have I gotten myself into now?"
++       It just goes on and on deeper...
+     </p>
+     <div treasures-display treasures=treasures></div>
+ 
+diff --git a/app/modules/Dungeon/Floor/floors/floor-8.html b/app/modules/Dungeon/Floor/floors/floor-8.html
+index da8574c..65585e0 100644
+--- a/app/modules/Dungeon/Floor/floors/floor-8.html
++++ b/app/modules/Dungeon/Floor/floors/floor-8.html
+@@ -4,12 +4,15 @@
+     </h2>
+     <div>
+         <p>
+-           "Get back here!" you shout. The man seems tired and weary.
++           "You are almost near the end of your journey, adventurer," says a cool voice. You feel it is very close.
+         </p>
+         <p>
+-            "You will not stop me from collecting the shards, you fool!" and with that he assails you with a powerful enchantment.
++            "Curse you! Nothing has been explained."
+         </p>
+-        <button class='btn-danger btn' ng-click='startBattle()'>Where did he go?</button>
++        <p>
++            "Fear not," says the voice with an evil laugh. "All will be explained."
++        </p>
++        <button class='btn-danger btn' ng-click='startBattle()'>Explore The Deep Reaches</button>
+         
+     </div>
+ 
+@@ -17,7 +20,7 @@
+ <div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
+ <div ng-if=isVictory>
+     <p>
+-       This is it
++       It just goes on and on deeper...
+     </p>
+     <div treasures-display treasures=treasures></div>
+ 
+diff --git a/app/modules/Dungeon/Floor/floors/floor-9.html b/app/modules/Dungeon/Floor/floors/floor-9.html
+index 3b348ac..76f9ed7 100644
+--- a/app/modules/Dungeon/Floor/floors/floor-9.html
++++ b/app/modules/Dungeon/Floor/floors/floor-9.html
+@@ -4,18 +4,15 @@
+     </h2>
+     <div>
+         <p>
+-          You corner the cloaked man in a dark catacomb.
++          You enter a stony and frozen crypt.
+         </p>
+         <p>
+-            "Who are you?" you demand.
++            "What manner of foul wizardry is this?"
+         </p>
+         <p>
+-            "I am known as Ailwar. You are meddling in affairs you know nothing about."
++            "You fool!" shouts the malificent lich king. "Now cower silently and be destroyed!"
+         </p>
+-        <p>
+-            "I'll show you who knows something!"
+-        </p>
+-        <button class='btn-danger btn' ng-click='startBattle()'>Battle!</button>
++        <button class='btn-danger btn' ng-click='startBattle()'>Never!!!</button>
+ 
+     </div>
+ 
+diff --git a/app/modules/EliteBattleArena.Main.Bootstrap.js b/app/modules/EliteBattleArena.Main.Bootstrap.js
+index 4d292bb..93de9db 100644
+--- a/app/modules/EliteBattleArena.Main.Bootstrap.js
++++ b/app/modules/EliteBattleArena.Main.Bootstrap.js
+@@ -1,60 +1,97 @@
+-angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Scenario','EliteBattleArena.Sounds', 'ui.router','ngAudio'])
+-    .run(function($rootScope, Game, Actor, armor, weapons,enemiesMap) {
+-        var game = new Game();
++angular.module("Game.EliteBattleArena", ['EliteBattleArena', 'EliteBattleArena.Scenario', 'EliteBattleArena.Sounds', 'ui.router', 'ngAudio'])
++    .run(function($rootScope, Game, Actor, armor, weapons, enemiesMap) {
++        var game;
++        if (localStorage['game']) {
++            game = angular.fromJson(localStorage['game']);
++            initGame(game);
++        } else {
++            game = new Game();
++            initGame(game);
++        }
++        console.log("game?", game);
+         $rootScope.game = game;
+ 
+-        var TEST_MODE = true;
+-
+-        var hero = new Actor({
+-            name: "Friendus Fortunato",
+-            side: "good",
+-            body: "hero",
+-            speed: 6,
+-            defense: 2
+-        });
+-
+-        if (TEST_MODE) {
+-            game.inventory.push(armor.revitalizingPlate);
+-            game.inventory.push(weapons.levantineSword);
+-            game.maxDungeonLevel = 10;
+-            game.gold = 10000;
+-        }
+ 
+-        game.party.push(hero);
+-        // game.totalDungeonLevels = Object.keys(enemiesMap).length;
+-        game.totalDungeonLevels = 9;
++        $rootScope.$watch("game", function() {
++            console.log("updating game");
++            if (game.deleted) {
++                game = new Game();
++                initGame(game);
++            }
++            localStorage['game'] = JSON.stringify(game);
++            // console.log("Game json?")
++        }, true);
++        var TEST_MODE = false;
+ 
+-        game.store = {
+-            weapons:{
++        function initGame(game) {
+ 
+-            },
+-            armor:{
++                if (game.party[0]) {
++                    var hero = game.party[0];
+ 
+-            }
+-        };
++                    var newActor = new Actor();
++                    for (key in newActor) {
++                        if (_.isFunction(newActor[key])) {
++                           hero[key] = newActor[key].bind(hero);
++                        }
++                    }
++                    hero.equipItem = newActor.equipItem.bind(hero);
+ 
+-        for (var key in weapons) {
+-            if (weapons[key].canBuy) {
+-                game.store.weapons[key] = weapons[key];
+-            }
+-        }
++                } else {
+ 
+-        for (var key in armor) {
+-            if (armor[key].canBuy) {
+-                game.store.armor[key] = armor[key];
+-            }
+-        }
+ 
+-        game.gold += 100;
++                    var hero = new Actor({
++                        name: "Friendus Fortunato",
++                        side: "good",
++                        body: "hero",
++                        speed: 6,
++                        defense: 2
++                    });
++                    game.party.push(hero);
++
++                }
++                if (TEST_MODE) {
++                    game.inventory.push(armor.revitalizingPlate);
++                    game.inventory.push(weapons.levantineSword);
++                    game.maxDungeonLevel = 10;
++                }
++
++                // game.totalDungeonLevels = Object.keys(enemiesMap).length;
++                game.totalDungeonLevels = 9;
++
++                game.store = {
++                    weapons: {
++
++                    },
++                    armor: {
++
++                    }
++                };
++
++                for (var key in weapons) {
++                    if (weapons[key].canBuy) {
++                        game.store.weapons[key] = weapons[key];
++                    }
++                }
++
++                for (var key in armor) {
++                    if (armor[key].canBuy) {
++                        game.store.armor[key] = armor[key];
++                    }
++                }
++
++                game.gold = game.gold || 100;
++                console.log("initinggame;")
++            }
++            // initGame(game);
+ 
+     })
+-    .directive("button",function(interfaceSounds){
++    .directive("button", function(interfaceSounds) {
+         return {
+-            restrict:"E",
+-            link:function(scope,element){
+-                element.click(function(){
++            restrict: "E",
++            link: function(scope, element) {
++                element.click(function() {
+                     interfaceSounds.click();
+                 })
+             }
+         }
+-    })
+\ No newline at end of file
++    })
+diff --git a/app/modules/Game/Game.js b/app/modules/Game/Game.js
+index 0876b59..2f6edb8 100644
+--- a/app/modules/Game/Game.js
++++ b/app/modules/Game/Game.js
+@@ -5,7 +5,6 @@ angular.module("EliteBattleArena.Game")
+         this.inventory = [];
+         this.currentDungeonLevel = 1;
+         this.maxDungeonLevel = 1;
+-        this.gold = 0;
+ 
+         // settings
+         this.musicVolume = 0.3;
+diff --git a/app/modules/Item/item-view/itemView.js b/app/modules/Item/item-view/itemView.js
+index 63b4b85..a41bb26 100644
+--- a/app/modules/Item/item-view/itemView.js
++++ b/app/modules/Item/item-view/itemView.js
+@@ -8,24 +8,4 @@ angular.module("EliteBattleArena.Item")
+         },
+         restrict:"AE",
+     }
+-})
+-.factory("Item",function(){
+-    return function(options){
+-    	options = options || {};
+-    	options.bonus = options.bonus || {};
+-
+-    	this.id = Math.ceil(Math.random() * 100000);
+-    	this.name = options.name;
+-    	this.description = options.description;
+-    	this.cost = options.cost;
+-    	this.canBuy = options.canBuy;
+-    	this.location = options.location;
+-    	this.defense = options.defense;
+-    	this.appearance = options.appearance;
+-    	this.bonus = {
+-    	    heal:options.bonus.heal,
+-    	    speed:options.bonus.speed,
+-    	}
+-        
+-    }
+ })
+\ No newline at end of file
+diff --git a/app/modules/Splash/splash.html b/app/modules/Splash/splash.html
+index d9aa559..1b382b7 100644
+--- a/app/modules/Splash/splash.html
++++ b/app/modules/Splash/splash.html
+@@ -1,7 +1,6 @@
+ <div class=container>
+-<h1>Adventure Quest III</h1>
+-<h2>Goldhelm's Secret</h2>
+-<h3>Welcome to the Arena, Friend Warrior!</h3>
++<h1>The Treasure of Elfmire</h1>
++<h2>Welcome to the Arena, Friend Warrior!</h2>
+ <p>
+   It is 10,000 years from now. Civilization lies ruined, ravished by a zombie apocalypse of man's own creation.</p>
+ <p>
+diff --git a/app/modules/Status/Inventory/InventoryController.js b/app/modules/Status/Inventory/InventoryController.js
+index 2170750..e600754 100644
+--- a/app/modules/Status/Inventory/InventoryController.js
++++ b/app/modules/Status/Inventory/InventoryController.js
+@@ -2,6 +2,7 @@ angular.module("EliteBattleArena.Inventory")
+ 
+ .controller("InventoryController", function($scope) {
+     $scope.equip = function(item) {
++    	console.log("Hero?",$scope.game.party[0])
+         $scope.game.party[0].equipItem(item);
+     }
+ 
+diff --git a/app/modules/Status/Inventory/inventory.html b/app/modules/Status/Inventory/inventory.html
+index 926ab84..3422399 100644
+--- a/app/modules/Status/Inventory/inventory.html
++++ b/app/modules/Status/Inventory/inventory.html
+@@ -1,4 +1,5 @@
+ <div class=col-xs-4>
++	{{game.inventory}}
+     <div ng-repeat='item in game.inventory track by $index' ng-if=!item.equipped&&!item.deleted>
+         <div item-view item=item></div>
+         <button class='btn btn-default' ng-click=equip(item)>Equip!</button>
+diff --git a/app/modules/Status/Settings/SettingsController.js b/app/modules/Status/Settings/SettingsController.js
+index a6fda94..da5b214 100644
+--- a/app/modules/Status/Settings/SettingsController.js
++++ b/app/modules/Status/Settings/SettingsController.js
+@@ -1,5 +1,11 @@
+ angular.module("EliteBattleArena.Status")
+ 
+ .controller("SettingsController", function($scope) {
++	$scope.restartGame = function(){
++		var restart = window.confirm("Reset all progress?");
++		if (restart) {
++			$scope.game.deleted = true;
++		}
++	}
+     
+ })
+diff --git a/app/modules/Status/Settings/settings.html b/app/modules/Status/Settings/settings.html
+index 3f02ba9..c8d75c3 100644
+--- a/app/modules/Status/Settings/settings.html
++++ b/app/modules/Status/Settings/settings.html
+@@ -2,4 +2,7 @@
+ <input type=range min=0.01 max=1 step=0.01 ng-model=game.soundVolume></input>
+ 
+ <h3>Music Volume</h3>
+-<input type=range min=0.01 max=1 step=0.01 ng-model=game.musicVolume></input>
+\ No newline at end of file
++<input type=range min=0.01 max=1 step=0.01 ng-model=game.musicVolume></input>
++
++<h3>Restart Game</h3>
++<button class='btn btn-danger' ng-click=restartGame()>Restart Your Game?</button>
+\ No newline at end of file
+diff --git a/app/modules/Store/StoreController.js b/app/modules/Store/StoreController.js
+index db5fcfa..e5f7abf 100644
+--- a/app/modules/Store/StoreController.js
++++ b/app/modules/Store/StoreController.js
+@@ -1,9 +1,9 @@
+ angular.module("EliteBattleArena.Store")
+ 
+-.controller("StoreController", function($scope, Item) {
++.controller("StoreController", function($scope) {
+     $scope.buy = function(item) {
+         $scope.game.gold -= item.cost;
+-        $scope.game.inventory.push(new Item(item));
+-        item.alreadySold = true;
++        $scope.game.inventory.push(angular.copy(item));
++        item.bought = true;
+     }
+ })
+diff --git a/app/modules/Store/store-item-display/store-item-display.html b/app/modules/Store/store-item-display/store-item-display.html
+index b531698..2e2fc3b 100644
+--- a/app/modules/Store/store-item-display/store-item-display.html
++++ b/app/modules/Store/store-item-display/store-item-display.html
+@@ -1,3 +1,3 @@
+ <div item-view item=item></div>
+ <!-- <button class='btn btn-default btn-block'  ng-click=buy(item)>Buy - {{item.cost}}c</button> -->
+-<button class='btn btn-default btn-block'  ng-disabled="item.cost>game.gold" ng-click=buy(item)>Buy - {{item.cost}}c</button>
++<button class='btn btn-default btn-block' ng-disabled="item.cost>game.gold" ng-click=buy(item)>Buy - {{item.cost}}c</button>
+diff --git a/app/modules/Store/store.html b/app/modules/Store/store.html
+index 2ab52d9..c2835d9 100644
+--- a/app/modules/Store/store.html
++++ b/app/modules/Store/store.html
+@@ -1,13 +1,13 @@
+ <div class=store-display>
+     <div class=col-xs-4>
+-        <div ng-repeat='item in game.store.armor track by $index' ng-if=!item.alreadySold>
++        <div ng-repeat='item in game.store.armor track by $index' ng-if=!item.bought>
+             <div store-item-display item=item buy=buy game=game>
+                 Store Item Display
+             </div>
+         </div>
+     </div>
+     <div class=col-xs-4>
+-        <div ng-repeat='item in game.store.weapons track by $index' ng-if=!item.alreadySold>
++        <div ng-repeat='item in game.store.weapons track by $index' ng-if=!item.bought>
+             <div store-item-display item=item buy=buy game=game>
+                 Store Item Display
+             </div>
