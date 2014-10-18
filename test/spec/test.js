@@ -3,10 +3,15 @@
 (function () {
     'use strict';
 
-    describe('Give it some context', function () {
-        describe('maybe a bit more context here', function () {
-            it('should run here few assertions', function () {
+    console.log("Testing");
 
+    // angular.module('EliteBattleArena.Test',['EliteBattleArena']);
+
+    describe('the enemy map', function () {
+        describe('how the enemy map works', function () {
+            it('should return only weak enemies in level 1', function () {
+            	// throw new Error();
+            	return true;
             });
         });
     });

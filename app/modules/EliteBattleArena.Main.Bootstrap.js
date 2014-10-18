@@ -1,4 +1,4 @@
-angular.module("Game.EliteBattleArena", ['EliteBattleArena', 'EliteBattleArena.Scenario', 'EliteBattleArena.Sounds', 'ui.router', 'ngAudio'])
+angular.module("Game.EliteBattleArena", ['EliteBattleArena', 'ui.router', 'ngAudio'])
 
 .run(function(storage) {
 
