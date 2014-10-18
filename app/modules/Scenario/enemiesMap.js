@@ -2,17 +2,9 @@ angular.module("EliteBattleArena.Scenario")
 
 
 .service("enemiesMap", function(enemiesGroups, gamble, Actor,Item,treasureService,foes) {
-    var maps = {
-        1: enemiesGroups['weak-enemy'],
-        5: enemiesGroups['medium-enemy'],
-        8: enemiesGroups['strong-enemy'],
-        9: enemiesGroups['elite-enemy'],
-    };
-
-
-
 
     this.getEnemiesForLevel = function(level) {
+
         var enemyCounts = [{
                 count: 1,
                 probability: (level < 4) ? 2 : 0
@@ -24,18 +16,7 @@ angular.module("EliteBattleArena.Scenario")
                 probability: 1
             }];
 
-        var count = enemyCounts.reduce(function(a, b) {
-            if (Math.random() * a.probability > Math.random() * b.probability) {
-                return a;
-            } else {
-                return b;
-            }
-        }).count;
-
-
-        // });
-
-        console.log("getting level for",level,count);
+        var count = enemyCounts.reduce(gamble).count;
 
         var enemies = [];
 
@@ -60,11 +41,8 @@ angular.module("EliteBattleArena.Scenario")
 
         while (count--) {
             var group = probabilities.reduce(gamble).group;
-            // var map = enemiesGroups['weak-enemy'];
             var enemyProto = enemiesGroups[group].reduce(gamble).enemy;
-
             var enemy = new Actor(enemyProto);
-
             enemies.push(enemy);
         };
 

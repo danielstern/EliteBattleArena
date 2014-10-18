@@ -32,7 +32,7 @@ angular.module("EliteBattleArena.Dungeon")
         views: {
             floor: {
                 templateUrl: function($stateParams) {
-                    var url = "modules/Dungeon/Floor/floors/floor-" + $stateParams.floor + ".html";
+                    var url = "modules/Scenario/floors/floor-" + $stateParams.floor + ".html";
                     // var url = "modules/Dungeon/Floor/floors/floor-1.html";
                     console.log("Rn template url", $stateParams, url);
                     return url;
