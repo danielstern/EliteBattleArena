@@ -18,7 +18,7 @@ angular.module("EliteBattleArena.Actor")
             this.body = options.body || "hero";
             this.speed = options.speed || 2.5;
             this.sp = 0;
-            this.equip = angular.copy(options.equip);
+            this.equip = {};
             this.treasureClass = options.treasureClass;
 
             this.equipItem = function(item) {
