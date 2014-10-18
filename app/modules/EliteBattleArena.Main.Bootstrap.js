@@ -20,6 +20,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             console.log("updating game");
             if (game.deleted) {
                 game = new Game();
+                $rootScope.game = game;
                 initGame(game);
                 $state.go('splash');
             }
@@ -28,7 +29,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         }, true);
 
 
-        var TEST_MODE = true;
+        var TEST_MODE = false;
 
         function reviveGame() {
             console.log("reviving game");
