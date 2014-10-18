@@ -1,7 +1,7 @@
 angular.module("EliteBattleArena.Scenario")
 
 
-.service("enemiesMap", function(enemiesGroups, Actor,treasureService,foes) {
+.service("enemiesMap", function(enemiesGroups, Actor,Item,treasureService,foes) {
     var maps = {
         1: enemiesGroups['weak-enemy'],
         5: enemiesGroups['medium-enemy'],
@@ -9,25 +9,23 @@ angular.module("EliteBattleArena.Scenario")
         9: enemiesGroups['elite-enemy'],
     };
 
-    var enemyMap = {
-        "enemy-counts": [{
-            count: 1,
-            probability: 2
-        }, {
-            count: 2,
-            probability: 2
-        }, {
-            count: 1,
-            probability: 1
-        }],
-        // "weak-enemy": {
-        //     minimumLevel: 1,
-        // }
-    };
 
 
 
     this.getEnemiesForLevel = function(level) {
+        var enemyMap = {
+            "enemy-counts": [{
+                count: 1,
+                probability: (level < 4) ? 2 : 0
+            }, {
+                count: 2,
+                probability: 2
+            }, {
+                count: 1,
+                probability: 1
+            }],
+        };
+
         var count = enemyMap['enemy-counts'].reduce(function(a, b) {
             if (Math.random() * a.probability > Math.random() * b.probability) {
                 return a;
@@ -35,9 +33,11 @@ angular.module("EliteBattleArena.Scenario")
                 return b;
             }
         }).count;
+
+
         // });
 
-        console.log("getting level for",level);
+        console.log("getting level for",level,count);
 
         var enemies = [];
 
@@ -86,8 +86,9 @@ angular.module("EliteBattleArena.Scenario")
             var itemCount = Math.floor(2 * Math.random() * level) + Math.floor(level / 2);
             while (itemCount--) {
                 var item = treasureService.getTreasures(enemy.treasureClass, level);
-                if (item && item.name) {
-                    enemy.equipItem(item);
+                if (item && item.name && !item.gold) {
+                    var completeItem = new Item(item);
+                    enemy.equipItem(completeItem);
                 }
             }
         })

@@ -41,7 +41,8 @@
         </td>
     </tr>
 </table>
-<div ng-repeat="(name,item) in actor.equip" ng-if=item.equipped>
+<!-- {{actor}} -->
+<div ng-repeat="(name,item) in actor.equip" ng-if=item>
     <h3 ng-if=$first>Equipped:</h3>
     <div item-view compact=true item=item></div>
     <button class='btn btn-default' ng-click=unequip(item)>Unequip</button>

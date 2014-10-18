@@ -18,15 +18,23 @@ angular.module("EliteBattleArena.Actor")
             this.body = options.body || "hero";
             this.speed = options.speed || 2.5;
             this.sp = 0;
-            this.equip = angular.copy(options.equip);
+            this.equip = {};
             this.treasureClass = options.treasureClass;
 
             this.equipItem = function(item) {
-                if (this.equip[item.location]) {
-                    this.equip[item.location].equipped = false;
+                var oldItem;
+                if (!item.location) {
+                    console.log("cant equip this");
+                    return;
                 }
+                if (this.equip[item.location]) {
+                    oldItem = this.equip[item.location];
+                }
+                console.log("Equip item",item);
                 this.equip[item.location] = item;
-                item.equipped = true;
+                console.log("my equip?",this.equip);
+
+                return oldItem;
             }
 
             this.unequipItem = function(item) {
@@ -36,11 +44,15 @@ angular.module("EliteBattleArena.Actor")
             }
 
             this.getAttack = function() {
+                // console.log("getting attack...",this.attack + 1);
                 var attack = 0;
-                attack += this.attack;
+                attack += +this.attack;
                 if (this.equip.weapon) {
-                    attack += this.equip.weapon.attack;
+                    console.log("Weapon?",this.equip.weapon)
+                    attack += +this.equip.weapon.attack;
                 };
+
+                // console.log("returning attack...",attack)
 
                 return attack;
             };
@@ -86,6 +98,7 @@ angular.module("EliteBattleArena.Actor")
 
             this.getDefense = function() {
                 var defense = 0;
+                // console.log("Get defense...",this);
                 if (this.equip.head) {
                     defense += this.equip.head.defense;
                 }

@@ -2,7 +2,10 @@ angular.module("EliteBattleArena.Inventory")
 
 .controller("InventoryController", function($scope) {
     $scope.equip = function(item) {
-        $scope.game.party[0].equipItem(item);
+        var oldItem = $scope.game.party[0].equipItem(item);
+        if (oldItem) {
+        	$scope.game.inventory.push(oldItem);
+        }
         $scope.game.inventory.splice($scope.game.inventory.indexOf(item), 1);
     }
 

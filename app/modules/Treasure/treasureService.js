@@ -2,7 +2,7 @@ angular.module("EliteBattleArena.Treasure")
     .service("treasureService", function(armor, weapons,treasuresGroups) {
 
         function rollForTreasure(group,lvl) {
-            console.log("Getting treasures",group);
+            // console.log("Getting treasures",group);
             var treasure = treasuresGroups[group].reduce(function(a, b) {
                 if (Math.random() * a.probability > Math.random() * b.probability) {
                     return a;
@@ -11,7 +11,7 @@ angular.module("EliteBattleArena.Treasure")
                 }
             });
 
-            console.log("Got treasure...",treasure);
+            // console.log("Got treasure...",treasure);
 
             if (treasure.reward === "gold") {
                 var value = Math.floor(Math.random() * lvl * 75);

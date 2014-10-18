@@ -17,19 +17,24 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
 
 
         $rootScope.$watch("game", function() {
-            console.log("updating game");
+            // console.log("updating game");
             if (game.deleted) {
                 game = new Game();
                 $rootScope.game = game;
                 initGame(game);
                 $state.go('splash');
             }
-            localStorage['game'] = JSON.stringify(game);
+            // localStorage['game'] = JSON.stringify(game);
             // console.log("Game json?")
         }, true);
 
+        setInterval(function(){
+            localStorage['game'] = JSON.stringify(game);
+        },1000);
 
-        var TEST_MODE = false;
+
+        var TEST_MODE = true;
+        // var TEST_MODE = true;
 
         function reviveGame() {
             console.log("reviving game");

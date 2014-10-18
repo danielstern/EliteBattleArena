@@ -20,7 +20,7 @@ angular.module("EliteBattleArena.Floor")
         console.log("Enemies?",enemies);
 
         enemies.forEach(function(enemy) {
-            battle.actors.push(new Actor(enemy));
+            battle.actors.push(enemy);
         })
 
         $scope.game.party.forEach(function(hero) {

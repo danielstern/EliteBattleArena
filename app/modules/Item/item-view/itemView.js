@@ -19,7 +19,8 @@ angular.module("EliteBattleArena.Item")
     	this.description = options.description;
     	this.cost = options.cost;
     	this.canBuy = options.canBuy;
-    	this.location = options.location;
+        this.location = options.location;
+    	this.attack = options.attack;
     	this.defense = options.defense;
     	this.appearance = options.appearance;
     	this.bonus = {
