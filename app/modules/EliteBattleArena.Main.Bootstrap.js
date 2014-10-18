@@ -9,7 +9,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             $rootScope.game = game;
         } else {
             game = new Game();
-            console.log("Initing game");
+            // console.log("Initing game");
             initGame(game);
             $rootScope.game = game;
         }
@@ -33,8 +33,8 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         },1000);
 
 
-        var TEST_MODE = true;
         // var TEST_MODE = true;
+        var TEST_MODE = false;
 
         function reviveGame() {
             console.log("reviving game");

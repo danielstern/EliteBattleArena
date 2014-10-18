@@ -9,14 +9,11 @@ angular.module("EliteBattleArena.Scenario")
         9: enemiesGroups['elite-enemy'],
     };
 
-
-
-
     this.getEnemiesForLevel = function(level) {
         var enemyMap = {
             "enemy-counts": [{
                 count: 1,
-                probability: (level < 4) ? 2 : 0
+                probability: level < 4 ? 2 : 0
             }, {
                 count: 2,
                 probability: 2
@@ -25,8 +22,10 @@ angular.module("EliteBattleArena.Scenario")
                 probability: 1
             }],
         };
+        console.log("map?",enemyMap);
 
         var count = enemyMap['enemy-counts'].reduce(function(a, b) {
+            console.log("rolling",a,b);
             if (Math.random() * a.probability > Math.random() * b.probability) {
                 return a;
             } else {
@@ -35,9 +34,6 @@ angular.module("EliteBattleArena.Scenario")
         }).count;
 
 
-        // });
-
-        console.log("getting level for",level,count);
 
         var enemies = [];
 
