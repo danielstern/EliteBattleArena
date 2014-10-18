@@ -9,6 +9,4 @@ angular.module("EliteBattleArena.Status")
         $scope.game.party[0].unequipItem(item);
         $scope.game.inventory.push(item);
     }
-
-    // $state.go('main.status.character');
 });

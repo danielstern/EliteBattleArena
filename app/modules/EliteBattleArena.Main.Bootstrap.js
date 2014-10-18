@@ -33,9 +33,13 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
             console.log("reviving game");
             game.party.forEach(function(hero){
                 var protoHero = new Actor();
-                // console.log("Proto?",protoHero.prototype,Actor.prototype);
                 hero.equipItem = protoHero.equipItem.bind(hero);
                 hero.unequipItem = protoHero.unequipItem.bind(hero);
+                hero.onDealDamage = protoHero.onDealDamage.bind(hero);
+                hero.getAttack = protoHero.getAttack.bind(hero);
+                hero.getHealPerCycle = protoHero.getHealPerCycle.bind(hero);
+                hero.getSpeed = protoHero.getSpeed.bind(hero);
+                hero.getDefense = protoHero.getDefense.bind(hero);
             })
         }
 
