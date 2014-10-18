@@ -4,9 +4,12 @@
     </h2>
     <div>
         <p>
-           There lays in the center of the room an altar surrounded by stone birds.
+           You are now in some ancient ruins. No doubt many thousands of years old.
         </p>
-        <button class='btn-danger btn' ng-click='startBattle()'>Put a Bird on It</button>
+        <p>
+            You see a mural depicting 9 cloaked figures, each with a magnificent treasure. Suddenly, monsters attack.
+        </p>
+        <button class='btn-danger btn' ng-click='startBattle()'>Fight!</button>
         <button class='btn-warning btn' ui-sref=main.status>Retreat</button>
     </div>
 
@@ -14,7 +17,7 @@
 <div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
 <div ng-if=isVictory>
     <p>
-       It just goes on and on deeper...
+       "Must keep moving!"
     </p>
     <div treasures-display treasures=treasures></div>
 

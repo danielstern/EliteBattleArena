@@ -4,12 +4,12 @@
     </h2>
     <div>
         <p>
-           Mysterious glyphs cover the walls of this long-forgotten catacomb.
+           "Stop right there!" you shout at the man. He pauses for a moment. You see he is a cloaked figure, aged but strong.
         </p>
         <p>
-            You can make out but little of their meanings. Something about sode.
+            "You do not understand the forces with which you meddle, boy!"
         </p>
-        <button class='btn-danger btn' ng-click='startBattle()'>Touch the Runes</button>
+        <button class='btn-danger btn' ng-click='startBattle()'>I'll show you!</button>
         <button class='btn-warning btn' ui-sref=main.status>Retreat</button>
     </div>
 
@@ -17,7 +17,7 @@
 <div ng-if=fightStarted battle-display battle=battle treasures=treasures></div>
 <div ng-if=isVictory>
     <p>
-       It just goes on and on deeper...
+       He escaped!
     </p>
     <div treasures-display treasures=treasures></div>
 

@@ -3,7 +3,7 @@ angular.module("Game.EliteBattleArena", ['EliteBattleArena','EliteBattleArena.Sc
         var game = new Game();
         $rootScope.game = game;
 
-        var TEST_MODE = true;
+        var TEST_MODE = false;
 
         var hero = new Actor({
             name: "Friendus Fortunato",
