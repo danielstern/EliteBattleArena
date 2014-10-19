@@ -131,8 +131,8 @@ angular.module("EliteBattleArena.Scenario")
     "swordOfValor": {
         name: "Sword of Valor",
         appearance: "sword-mighty",
-        // canBuy:true,
-        cost: 1500,
+        canBuy:true,
+        cost: 5000,
         description:"Does not make you more valorous",
         location:"weapon",
         attack: 22,
@@ -171,11 +171,11 @@ angular.module("EliteBattleArena.Scenario")
     "terrifyingCleaver": {
         name: "Terrifying Cleaver",
         appearance: "axe-basic",
-        // canBuy:true,
-        cost: 4000,
+        canBuy:true,
+        cost: 6000,
         description:"They won't know what hit 'em",
         location:"weapon",
-        attack: 24,
+        attack: 26,
         bonus:{
             speed:3
         }

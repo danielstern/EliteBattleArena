@@ -1,5 +1,5 @@
 angular.module("EliteBattleArena.Floor")
-    .controller("FloorController", function($scope, $state, $stateParams, Item, musicSounds, $interval, battleSounds, battleTurn, treasureService, Actor, levelsMap, Battle, BattleEngine,enemiesMap,foes) {
+    .controller("FloorController", function($scope, $state, $stateParams, Item, musicSounds, $interval, battleSounds, battleTurn, treasureService,  levelsMap, Battle, BattleEngine,enemiesMap,foes) {
         
 
         // var battle = new BattleEngine();
@@ -43,6 +43,12 @@ angular.module("EliteBattleArena.Floor")
             $state.go("main.status");
         })
 
+        battle.on("stop",function(){
+            // $state.go("main.status");
+            $interval.cancel(gameClock);
+        })
+
+
         enemies.forEach(function(enemy) {
             battle.actors.push(enemy);
         })
@@ -50,6 +56,7 @@ angular.module("EliteBattleArena.Floor")
         $scope.game.party.forEach(function(hero) {
             battle.actors.push(hero);
             hero.heals = 1;
+            hero.health = hero.maxHealth;
             hero.selectedAction = undefined;
             hero.animation = "nothing";
         })

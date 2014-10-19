@@ -9,20 +9,20 @@ angular.module("EliteBattleArena.Battle")
             
 
 
-            var gameClock;
-            this.start = function() {
-                characterFilters.isGood(battle.actors)[0].controlled = true;
+            // var gameClock;
+            // this.start = function() {
+            //     characterFilters.isGood(battle.actors)[0].controlled = true;
 
-                battle.on(stop,function() {
-                    $interval.cancel(gameClock);
-                });
+            //     battle.on(stop,function() {
+            //         $interval.cancel(gameClock);
+            //     });
 
 
 
-                gameClock = $interval(function(){
-                    battleTurn(battle);
-                },20);
-            };
+            //     gameClock = $interval(function(){
+            //         battleTurn(battle);
+            //     },20);
+            // };
 
         }
     })
