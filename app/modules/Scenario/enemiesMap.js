@@ -21,7 +21,7 @@ angular.module("EliteBattleArena.Scenario")
         var enemies = [];
 
         if (level==9) {
-            return [foes.insidiousBeing]
+            return [new Actor(foes.insidiousBeing)]
         }
 
     

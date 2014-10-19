@@ -1,54 +1,21 @@
 angular.module("EliteBattleArena.Battle")
 
-.factory("BattleEngine", function($interval, conditions, characterFilters,battleTurn, $state) {
+.factory("BattleEngine", function($interval, conditions, characterFilters,battleTurn, Battle,$state) {
         return function() {
 
-            this.actors = [];
-            this.currentTurn = 0;
-            this.narrative = [];
 
-            var listeners = [];
-            this.on = function(event, listener) {
-                listeners.push({
-                    trigger: event,
-                    func: listener
-                })
-            };
 
-            this.broadcast = function(event) {
-                listeners.forEach(function(listener) {
-                    if (listener.trigger === event) {
-                        listener.func(battle);
-                    }
-                })
-            }
+            // var battle = new Battle();
+            
 
-            var battle = this;
 
-            this.winConditions = [conditions.allVillainsDead];
-            this.loseConditions = [conditions.allHeroesDead];
-
-            battle.targetNextValidUnit = function() {
-
-                var enemies = characterFilters.isEvil(battle.actors);
-                enemies = characterFilters.isAlive(enemies);
-
-                var targetIndex = enemies.indexOf(battle.target);
-                console.log("target index?", targetIndex, targetIndex.length);
-                if (targetIndex === enemies.length - 1) {
-                    battle.target = enemies[0];
-                } else {
-                    battle.target = enemies[targetIndex + 1];
-                }
-
-            }
-
-            battle.stop = function() {
-                $interval.cancel(gameClock);
-            }
             var gameClock;
             this.start = function() {
                 characterFilters.isGood(battle.actors)[0].controlled = true;
+
+                battle.on(stop,function() {
+                    $interval.cancel(gameClock);
+                });
 
 
 
@@ -59,11 +26,69 @@ angular.module("EliteBattleArena.Battle")
 
         }
     })
-    .service("battleTurn", function(conditions, characterFilters) {
+    .factory("Battle",function(characterFilters,conditions){
+        return function(){
+            var battle = this;
+
+            this.actors = [];
+            this.currentTurn = 0;
+            this.narrative = [];
+
+            var listeners = [];
+            
+
+
+            this.on = function(event, listener) {
+                listeners.push({
+                    trigger: event,
+                    func: listener
+                })
+            };
+
+
+            this.broadcast = function(event) {
+                listeners.forEach(function(listener) {
+                    if (listener.trigger === event) {
+                        listener.func(battle);
+                    }
+                })
+            }
+
+            
+
+            this.winConditions = [conditions.allVillainsDead];
+            this.loseConditions = [conditions.allHeroesDead];
+
+            battle.stop = function() {
+                battle.broadcast("stop");
+            }
+
+            this.targetNextValidUnit = function() {
+
+                var enemies = characterFilters.isEvil(battle.actors);
+                enemies = characterFilters.isAlive(enemies);
+
+                var targetIndex = enemies.indexOf(battle.target);
+                if (targetIndex === enemies.length - 1) {
+                    battle.target = enemies[0];
+                } else {
+                    battle.target = enemies[targetIndex + 1];
+                }
+
+            }
+
+          
+
+
+        }
+    })
+    .service("battleTurn", function(conditions) {
         return function(battle) {
 
-            var enemies = characterFilters.isEvil(battle.actors);
-            enemies = characterFilters.isAlive(enemies);
+            if (!battle.actors) {
+                throw new Error("Unable to have one-sided battle");
+            }
+
             if (!battle.target || battle.target.dead) battle.targetNextValidUnit();
             battle.currentTurn++;
             var narrative = battle.narrative;
@@ -94,7 +119,6 @@ angular.module("EliteBattleArena.Battle")
                     var action;
 
                     if (!actor.controlled) {
-
                         action = actor.act(battle, actor);
 
                     } else {
@@ -185,10 +209,12 @@ angular.module("EliteBattleArena.Battle")
 
             if (losing) {
                 battle.victory = false;
+                // battle.stop();
             }
 
             if (winning) {
                 battle.victory = true;
+                // battle.stp[)_]
             }
         }
     })

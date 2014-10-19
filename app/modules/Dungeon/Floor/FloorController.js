@@ -1,7 +1,28 @@
 angular.module("EliteBattleArena.Floor")
-    .controller("FloorController", function($scope, $state, $stateParams, Item, musicSounds, battleSounds, treasureService, Actor, levelsMap, BattleEngine,enemiesMap,foes) {
-        var battle = new BattleEngine();
+    .controller("FloorController", function($scope, $state, $stateParams, Item, musicSounds, $interval, battleSounds, battleTurn, treasureService, Actor, levelsMap, Battle, BattleEngine,enemiesMap,foes) {
+        
 
+        // var battle = new BattleEngine();
+
+
+
+        var battle = new Battle();
+
+        var gameClock;
+
+        $scope.start = function() {
+            $scope.game.party[0].controlled = true;
+
+            battle.on(stop,function() {
+                $interval.cancel(gameClock);
+            });
+
+
+
+            gameClock = $interval(function(){
+                battleTurn(battle);
+            },20);
+        };
 
         $scope.battle = battle;
 
@@ -36,7 +57,7 @@ angular.module("EliteBattleArena.Floor")
         $scope.startBattle = function() {
             $scope.isFighting = true;
             $scope.fightStarted = true;
-            $scope.battle.start();
+            $scope.start();
             musicSounds.battle();
         }
 

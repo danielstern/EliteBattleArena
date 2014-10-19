@@ -4,12 +4,12 @@
     'use strict';
     var testCount = 100;
 
-    angular.module("tests", ['treasureServiceTest','foesTest']);
+    angular.module("tests", ['treasureServiceTest', 'foesTest']);
 
     // angular.module('EliteBattleArena.Test',['EliteBattleArena']);
 
     describe('the treasure service', function() {
-    angular.module("treasureServiceTest", ['EliteBattleArena.Treasure']);
+        angular.module("treasureServiceTest", ['EliteBattleArena.Treasure']);
 
 
         describe('how the treasure service returns items', function() {
@@ -49,7 +49,7 @@
                             }
                         });
 
-                        console.log("Group?",group);
+                        console.log("Group?", group);
                         console.log("Total Armor:" + armorCount);
                         console.log("Total Weapons" + weaponsCount);
                         console.log("Total Gold" + totalGold);
@@ -78,7 +78,7 @@
                         ]
                         .forEach(function(report) {
 
-                        // console.log("Testing enemies for treasure...");
+                            // console.log("Testing enemies for treasure...");
                             if (report.weaponsCount + report.armorCount < testCount / 5) {
                                 console.warn("Not enough treasure!");
                             }
@@ -107,27 +107,27 @@
     describe("how the foes scale", function() {
         console.log("Testing foes");
 
-        angular.module("foesTest", ['EliteBattleArena.Scenario', 'EliteBattleArena.Battle','EliteBattleArena.AI']);
+        angular.module("foesTest", ['EliteBattleArena.Scenario', 'EliteBattleArena.Battle', 'EliteBattleArena.AI']);
 
         angular.module("foesTest")
-            .service("battleSimulator", function(battleTurn,conditions,characterFilters,Battle) {
+            .service("battleSimulator", function(battleTurn, conditions, characterFilters, Battle) {
                 this.simulateBattle = function(party, foes) {
                     // console.log("Simulating battle");
                     this.winConditions = [conditions.allVillainsDead];
                     this.loseConditions = [conditions.allHeroesDead];
                     var battle = new Battle();
                     battle.actors.push(party[0]);
-                    foes.forEach(function(foe){
+                    foes.forEach(function(foe) {
                         battle.actors.push(foe);
                     })
 
-                 
+
                     var count = 1000;
-                    while(battle.victory !== true && battle.victory !== false) {
+                    while (battle.victory !== true && battle.victory !== false) {
                         battleTurn(battle);
                     }
 
-                    console.log("Batle outcome?",battle.victory);
+                    // console.log("Batle outcome?", battle.victory);
 
                     return battle;
                 }
@@ -136,23 +136,41 @@
 
         it("should get a bit tougher each level", function() {
             angular.module("foesTest")
-                .run(function(battleSimulator, enemiesMap,Actor) {
-                    var i = testCount;
-                    var totalResults = [];
-                    console.log("module run... ",i)
+                .run(function(battleSimulator, enemiesMap, Actor) {
+                    var level = 0;
+                    while (level++ < 9) {
 
-                    var dummy = {
-                        name: "Friendus Fortunato",
-                        side: "good",
-                        body: "hero",
-                        speed: 6,
-                        defense: 2
-                    };
+                        var i = testCount;
+                        var totalResults = [];
 
-                    // var party = [];
+                        var hero = {
+                            name: "Friendus Fortunato",
+                            side: "good",
+                            body: "hero",
+                            speed: 6,
+                            defense: 2
+                        };
 
-                    while (i--) {
-                        totalResults.push(battleSimulator.simulateBattle([new Actor(dummy)], enemiesMap.getEnemiesForLevel(4)));
+                        // var party = [];
+
+                        while (i--) {
+                            totalResults.push(battleSimulator.simulateBattle([new Actor(hero)], enemiesMap.getEnemiesForLevel(level)));
+                        }; 
+
+                        var totalVictories = 0;
+                        var totalDefeats = 0;
+
+                        totalResults.forEach(function(result){
+                            if (result.victory) {
+                                totalVictories++;
+                            } else {
+                                totalDefeats++;
+                            }
+                        });
+
+                        console.log("Totals?");
+                        console.log("Victories: ", totalVictories);
+                        console.log("Defeats: ", totalDefeats);
                     }
 
                 })

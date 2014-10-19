@@ -51,7 +51,7 @@ angular.module("EliteBattleArena.Actor")
                 var attack = 0;
                 attack += +this.attack;
                 if (this.equip.weapon) {
-                    console.log("Weapon?",this.equip.weapon)
+                    // console.log("Weapon?",this.equip.weapon)
                     attack += +this.equip.weapon.attack;
                 };
 
