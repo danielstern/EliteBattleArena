@@ -110,25 +110,26 @@
         angular.module("foesTest", ['EliteBattleArena.Scenario', 'EliteBattleArena.Battle','EliteBattleArena.AI']);
 
         angular.module("foesTest")
-            .service("battleSimulator", function(battleTurn,conditions,characterFilters) {
+            .service("battleSimulator", function(battleTurn,conditions,characterFilters,Battle) {
                 this.simulateBattle = function(party, foes) {
-                    console.log("Simulating battle");
+                    // console.log("Simulating battle");
                     this.winConditions = [conditions.allVillainsDead];
                     this.loseConditions = [conditions.allHeroesDead];
-                    var battle = {
-                        currentTurn:0,
-                        actors:party.concat(foes),
-                        loseConditions:[conditions.allHeroesDead],
-                        winConditions:[conditions.allVillainsDead],
-                    }
+                    var battle = new Battle();
+                    battle.actors.push(party[0]);
+                    foes.forEach(function(foe){
+                        battle.actors.push(foe);
+                    })
 
                  
                     var count = 1000;
-                    while(count-- || battle.victory !== true && battle.victory !== false) {
+                    while(battle.victory !== true && battle.victory !== false) {
                         battleTurn(battle);
                     }
 
                     console.log("Batle outcome?",battle.victory);
+
+                    return battle;
                 }
 
             });
@@ -148,10 +149,10 @@
                         defense: 2
                     };
 
-                    var party = [new Actor(dummy)];
+                    // var party = [];
 
                     while (i--) {
-                        totalResults.push(battleSimulator.simulateBattle(party, enemiesMap.getEnemiesForLevel(1)));
+                        totalResults.push(battleSimulator.simulateBattle([new Actor(dummy)], enemiesMap.getEnemiesForLevel(4)));
                     }
 
                 })
