@@ -80,7 +80,7 @@
 
                         // console.log("Testing enemies for treasure...");
                             if (report.weaponsCount + report.armorCount < testCount / 5) {
-                                throw new Error("Not enough treasure!");
+                                console.warn("Not enough treasure!");
                             }
 
                         })
@@ -110,30 +110,32 @@
         angular.module("foesTest", ['EliteBattleArena.Scenario', 'EliteBattleArena.Battle','EliteBattleArena.AI']);
 
         angular.module("foesTest")
-            .service("battleSimulator", function(battleTurn,conditions) {
+            .service("battleSimulator", function(battleTurn,conditions,characterFilters) {
                 this.simulateBattle = function(party, foes) {
                     console.log("Simulating battle");
                     this.winConditions = [conditions.allVillainsDead];
                     this.loseConditions = [conditions.allHeroesDead];
                     var battle = {
                         currentTurn:0,
-                        party:party,
-                        winConditions:conditions.allHeroesDead,
-                        loseConditions:conditions.allVillainsDead,
+                        actors:party.concat(foes),
+                        loseConditions:[conditions.allHeroesDead],
+                        winConditions:[conditions.allVillainsDead],
                     }
 
-                    while(battle.victory !== true && battle.victory !== false) {
+                 
+                    var count = 1000;
+                    while(count-- || battle.victory !== true && battle.victory !== false) {
                         battleTurn(battle);
                     }
 
-                    console.log("Batle outcome?",battle);
+                    console.log("Batle outcome?",battle.victory);
                 }
 
             });
 
         it("should get a bit tougher each level", function() {
             angular.module("foesTest")
-                .run(function(battleSimulator, enemiesMap) {
+                .run(function(battleSimulator, enemiesMap,Actor) {
                     var i = testCount;
                     var totalResults = [];
                     console.log("module run... ",i)
@@ -145,12 +147,11 @@
                         speed: 6,
                         defense: 2
                     };
-                    var party = [dummy];
 
-                    var enemies = enemiesMap.getEnemiesForLevel(1);
+                    var party = [new Actor(dummy)];
 
                     while (i--) {
-                        totalResults.push(battleSimulator.simulateBattle(party, enemies));
+                        totalResults.push(battleSimulator.simulateBattle(party, enemiesMap.getEnemiesForLevel(1)));
                     }
 
                 })
