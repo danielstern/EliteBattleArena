@@ -31,7 +31,7 @@ angular.module("EliteBattleArena.Scenario")
                 probability: (level < 3) ? 3 - level : 0,
             },{
                 group:'medium-enemy',
-                probability: (level < 7) ? level - 5 : 0,
+                probability: (level < 9) ? level - 5 : 0,
             },
             {
                 group:'strong-enemy',

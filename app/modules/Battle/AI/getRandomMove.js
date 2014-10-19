@@ -9,7 +9,7 @@ angular.module("EliteBattleArena.AI")
 
 
             if (!target) {
-                console.error(self.name + " can't get target...", game);
+                // console.error(self.name + " can't get target...", game);
                 return;
             }
 

@@ -74,7 +74,8 @@
 
                         [treasureTester.testTreasureFor('weak-enemy', 1, testCount),
                             treasureTester.testTreasureFor('medium-enemy', 4, testCount),
-                            treasureTester.testTreasureFor('strong-enemy', 7, testCount)
+                            treasureTester.testTreasureFor('strong-enemy', 7, testCount),
+                            treasureTester.testTreasureFor('elite-enemy', 7, testCount)
                         ]
                         .forEach(function(report) {
 
@@ -136,25 +137,41 @@
 
         it("should get a bit tougher each level", function() {
             angular.module("foesTest")
-                .run(function(battleSimulator, enemiesMap, Actor) {
+                .run(function(battleSimulator, enemiesMap, Actor,treasureService, Item) {
                     var level = 0;
                     while (level++ < 9) {
+
 
                         var i = testCount;
                         var totalResults = [];
 
-                        var hero = {
-                            name: "Friendus Fortunato",
-                            side: "good",
-                            body: "hero",
-                            speed: 6,
-                            defense: 2
-                        };
-
+            
                         // var party = [];
 
                         while (i--) {
-                            totalResults.push(battleSimulator.simulateBattle([new Actor(hero)], enemiesMap.getEnemiesForLevel(level)));
+                            var hero = new Actor({
+                                name: "Friendus Fortunato",
+                                side: "good",
+                                body: "hero",
+                                speed: 6,
+                                defense: 2
+                            });
+
+                            var requiredGrinds = 10;
+                            while(requiredGrinds--) {
+                                var enemyLevel = (level < 2) ? 1 : level - 2;
+                                var enemies = enemiesMap.getEnemiesForLevel(enemyLevel);
+                                enemies.forEach(function(enemy){
+                                    var item = treasureService.getTreasures(enemy.treasureClass, level)
+                                    if (item && item.name && !item.gold) {
+                                        var completeItem = new Item(item);
+                                        hero.equipItem(completeItem);
+                                    }
+                                })
+                              
+                            }
+
+                            totalResults.push(battleSimulator.simulateBattle([hero], enemiesMap.getEnemiesForLevel(level)));
                         }; 
 
                         var totalVictories = 0;
@@ -168,7 +185,7 @@
                             }
                         });
 
-                        console.log("Totals?");
+                        console.log("Totals for:", level);
                         console.log("Victories: ", totalVictories);
                         console.log("Defeats: ", totalDefeats);
                     }
