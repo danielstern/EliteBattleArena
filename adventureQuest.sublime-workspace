@@ -1,0 +1,2049 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Battle",
+				"BattleEngine"
+			],
+			[
+				"getE",
+				"getEnemiesForLevel"
+			],
+			[
+				"ene",
+				"enemyLevel"
+			],
+			[
+				"tot",
+				"totalVictories"
+			],
+			[
+				"total",
+				"totalVictories"
+			],
+			[
+				"tota",
+				"totalResults"
+			],
+			[
+				"c",
+				"conditions"
+			],
+			[
+				"battl",
+				"battleTurn"
+			],
+			[
+				"bat",
+				"battleSimulator"
+			],
+			[
+				"to",
+				"totalResults"
+			],
+			[
+				"foes",
+				"foesTest"
+			],
+			[
+				"gold",
+				"goldCount"
+			],
+			[
+				"go",
+				"goldCount"
+			],
+			[
+				"weapon",
+				"weaponsCount"
+			],
+			[
+				"wea",
+				"weaponsCount"
+			],
+			[
+				"trea",
+				"treasureService"
+			],
+			[
+				"pro",
+				"probability"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"revi",
+				"reviveGame"
+			],
+			[
+				"new",
+				"newActor"
+			],
+			[
+				"enemy",
+				"enemyMap"
+			],
+			[
+				"equi",
+				"equipped"
+			],
+			[
+				"pun",
+				"punchSoundSrc"
+			],
+			[
+				"sto",
+				"storeItems"
+			],
+			[
+				"helm",
+				"helmetOfStrength"
+			],
+			[
+				"targ",
+				"targetNextValidUnit"
+			],
+			[
+				"tar",
+				"targetIndex"
+			],
+			[
+				"target",
+				"targetIndex"
+			],
+			[
+				"sel",
+				"selectedAction"
+			],
+			[
+				"badG",
+				"badGuy2"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"game",
+				"gameClock"
+			],
+			[
+				"sim",
+				"simulation"
+			],
+			[
+				"back",
+				"background-position"
+			],
+			[
+				"get",
+				"getRandomMove"
+			],
+			[
+				"act",
+				"actors"
+			],
+			[
+				"ef",
+				"effect"
+			],
+			[
+				"eff",
+				"effects"
+			],
+			[
+				"E",
+				"EliteBattleArena"
+			],
+			[
+				"num",
+				"numTurns"
+			],
+			[
+				"random",
+				"randomTile"
+			],
+			[
+				"rand",
+				"randomTile"
+			],
+			[
+				"board",
+				"boardSize"
+			],
+			[
+				"en",
+				"enemies"
+			],
+			[
+				"gam",
+				"gameData"
+			],
+			[
+				"enem",
+				"enemyTile"
+			],
+			[
+				"st",
+				"stateParams"
+			],
+			[
+				"song",
+				"songRemember"
+			],
+			[
+				"aud",
+				"audioObject"
+			],
+			[
+				"curren",
+				"currentTime"
+			],
+			[
+				"para",
+				"paragraphs"
+			],
+			[
+				"last",
+				"lastLetter"
+			],
+			[
+				"saying",
+				"sayingPairs"
+			],
+			[
+				"sen",
+				"sentence"
+			],
+			[
+				"say",
+				"sayingPairs"
+			],
+			[
+				"parg",
+				"paragraphCount"
+			],
+			[
+				"elvi",
+				"elvishSayingsAndMeanings"
+			],
+			[
+				"cont",
+				"controller"
+			],
+			[
+				"_os",
+				"_oscillator"
+			],
+			[
+				"_osc",
+				"_oscillatorRunning"
+			],
+			[
+				"tones",
+				"tonesIndex"
+			],
+			[
+				"maj",
+				"majorScale"
+			],
+			[
+				"volu",
+				"volume"
+			],
+			[
+				"ng",
+				"ngAudioGlobals"
+			],
+			[
+				"ngAu",
+				"ngAudioGlobals"
+			],
+			[
+				"volume",
+				"volumeWatch"
+			],
+			[
+				"vol",
+				"volumeToSet"
+			],
+			[
+				"prog",
+				"progressWatch"
+			],
+			[
+				"pr",
+				"progress"
+			],
+			[
+				"audio",
+				"audioObject"
+			],
+			[
+				"audi",
+				"audioObject"
+			],
+			[
+				"ngAudio",
+				"ngAudioObject"
+			],
+			[
+				"ngA",
+				"ngAudioObject"
+			],
+			[
+				"cle",
+				"cleverAudioFindingService"
+			],
+			[
+				"remo",
+				"remoteAudioFindingService"
+			],
+			[
+				"getS",
+				"getSoundFromCache"
+			],
+			[
+				"allS",
+				"allSoundsLoaded"
+			],
+			[
+				"Audio",
+				"AudioObject"
+			],
+			[
+				"each",
+				"eachifiedIds"
+			],
+			[
+				"memo",
+				"memorySeed"
+			],
+			[
+				"short",
+				"shortTerm"
+			],
+			[
+				"cycl",
+				"cycleListeners"
+			],
+			[
+				"Lisa",
+				"LisaOutput"
+			],
+			[
+				"activ",
+				"activated"
+			],
+			[
+				"comp",
+				"completedPages"
+			],
+			[
+				"choic",
+				"choices"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"cond",
+				"conditionValid"
+			],
+			[
+				"el",
+				"element"
+			],
+			[
+				"local",
+				"localConditions"
+			],
+			[
+				"con",
+				"condition"
+			],
+			[
+				"stor",
+				"storyEvents"
+			],
+			[
+				"choice",
+				"choicesOnPage"
+			],
+			[
+				"choi",
+				"choiceName"
+			],
+			[
+				"page",
+				"pageName"
+			],
+			[
+				"even",
+				"eventNames"
+			],
+			[
+				"star",
+				"startGame"
+			],
+			[
+				"draw",
+				"drawSplash"
+			],
+			[
+				"magic",
+				"MagicCircle"
+			],
+			[
+				"fixtu",
+				"fixtureDef"
+			],
+			[
+				"cen",
+				"centerY"
+			],
+			[
+				"list",
+				"listener"
+			],
+			[
+				"cir",
+				"circumference"
+			],
+			[
+				"fit",
+				"fitSize"
+			],
+			[
+				"textS",
+				"textSizeB"
+			],
+			[
+				"text",
+				"textSizeB"
+			],
+			[
+				"textSize",
+				"textSizeA"
+			],
+			[
+				"rune",
+				"runeRing"
+			],
+			[
+				"getC",
+				"getComputedTextLength"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"menu",
+				"menuDisplaying"
+			],
+			[
+				"int",
+				"interact"
+			],
+			[
+				"inter",
+				"interactivity"
+			],
+			[
+				"Magic",
+				"MagicCircle"
+			],
+			[
+				"sub",
+				"subcircles"
+			],
+			[
+				"su",
+				"subcircles"
+			],
+			[
+				"stroke",
+				"strokeWidth"
+			],
+			[
+				"strok",
+				"strokeWidth"
+			],
+			[
+				"Mag",
+				"MagicCircle"
+			],
+			[
+				"defe",
+				"deferred"
+			],
+			[
+				"elem",
+				"elementCount"
+			],
+			[
+				"anim",
+				"animationListeners"
+			],
+			[
+				"styl",
+				"styles"
+			],
+			[
+				"ani",
+				"animationSpeed"
+			],
+			[
+				"am",
+				"animationSpeed"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"parall",
+				"parallaxingObject"
+			],
+			[
+				"modal",
+				"modalSelector"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/modules/Battle/battle-display/battle-display.html",
+			"settings":
+			{
+				"buffer_size": 366,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test/spec/test.js",
+			"settings":
+			{
+				"buffer_size": 7260,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/modules/Scenario/enemiesMap.js",
+			"settings":
+			{
+				"buffer_size": 1752,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/modules/Battle/AI/getRandomMove.js",
+			"settings":
+			{
+				"buffer_size": 1725,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/modules/Dungeon/Floor/FloorController.js",
+			"settings":
+			{
+				"buffer_size": 3140,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/modules/Battle/BattleEngine/BattleEngine.js",
+			"settings":
+			{
+				"buffer_size": 7175,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 144 files for \"interv\"\n\nE:\\Projects\\elite battle arena\\app\\modules\\storage.js:\n   36  \n   37  \n   38:         setInterval(function() {\n   39              localStorage['game'] = JSON.stringify(game);\n   40          }, 1000);\n\nE:\\Projects\\elite battle arena\\app\\modules\\Battle\\BattleEngine\\BattleEngine.js:\n    1  angular.module(\"EliteBattleArena.Battle\")\n    2  \n    3: .factory(\"BattleEngine\", function($interval, conditions, characterFilters,battleTurn, Battle,$state) {\n    4          return function() {\n    5  \n    .\n   15  \n   16                  battle.on(stop,function() {\n   17:                     $interval.cancel(gameClock);\n   18                  });\n   19  \n   20  \n   21  \n   22:                 gameClock = $interval(function(){\n   23                      battleTurn(battle);\n   24                  },20);\n\nE:\\Projects\\elite battle arena\\app\\modules\\Dungeon\\Floor\\FloorController.js:\n    1  angular.module(\"EliteBattleArena.Floor\")\n    2:     .controller(\"FloorController\", function($scope, $state, $stateParams, Item, musicSounds, $interval, battleSounds, battleTurn, treasureService, Actor, levelsMap, Battle, BattleEngine,enemiesMap,foes) {\n    3          \n    4  \n    .\n   15  \n   16              battle.on(stop,function() {\n   17:                 $interval.cancel(gameClock);\n   18              });\n   19  \n   20  \n   21  \n   22:             gameClock = $interval(function(){\n   23                  battleTurn(battle);\n   24              },20);\n   ..\n   46          battle.on(\"stop\",function(){\n   47              $state.go(\"main.status\");\n   48:             $interval.clear(gameClock);\n   49          })\n   50  \n\nE:\\Projects\\elite battle arena\\test\\bower_components\\mocha\\mocha.js:\n 1835  var Date = global.Date\n 1836    , setTimeout = global.setTimeout\n 1837:   , setInterval = global.setInterval\n 1838    , clearTimeout = global.clearTimeout\n 1839:   , clearInterval = global.clearInterval;\n 1840  \n 1841  /**\n ....\n 2496  var Date = global.Date\n 2497    , setTimeout = global.setTimeout\n 2498:   , setInterval = global.setInterval\n 2499    , clearTimeout = global.clearTimeout\n 2500:   , clearInterval = global.clearInterval;\n 2501  \n 2502  /**\n ....\n 3939  var Date = global.Date\n 3940    , setTimeout = global.setTimeout\n 3941:   , setInterval = global.setInterval\n 3942    , clearTimeout = global.clearTimeout\n 3943:   , clearInterval = global.clearInterval;\n 3944  \n 3945  /**\n ....\n 4062  var Date = global.Date\n 4063    , setTimeout = global.setTimeout\n 4064:   , setInterval = global.setInterval\n 4065    , clearTimeout = global.clearTimeout\n 4066:   , clearInterval = global.clearInterval;\n 4067  \n 4068  /**\n ....\n 4290    'setTimeout',\n 4291    'clearTimeout',\n 4292:   'setInterval',\n 4293:   'clearInterval',\n 4294    'XMLHttpRequest',\n 4295    'Date'\n ....\n 5316  \n 5317  exports.watch = function(files, fn){\n 5318:   var options = { interval: 100 };\n 5319    files.forEach(function(file){\n 5320      debug('file %s', file);\n ....\n 5477  var Date = global.Date;\n 5478  var setTimeout = global.setTimeout;\n 5479: var setInterval = global.setInterval;\n 5480  var clearTimeout = global.clearTimeout;\n 5481: var clearInterval = global.clearInterval;\n 5482  \n 5483  /**\n\n31 matches across 4 files\n",
+			"settings":
+			{
+				"buffer_size": 3239,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "app/modules/Scenario/armor.js",
+			"settings":
+			{
+				"buffer_size": 4487,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/Projects/reveal.js/index.html",
+			"settings":
+			{
+				"buffer_size": 14119,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/JSLint/JSLint.sublime-build",
+	"command_palette":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pc",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"upda",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/Projects/elite battle arena/app/modules/Scenario/weapons.js",
+		"/E/Projects/elite battle arena/app/modules/Scenario/foes.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/BattleEngine/BattleEngine.js",
+		"/E/Projects/elite battle arena/app/modules/Actor/Actor.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/AI/conditions.js",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/Floor/FloorController.js",
+		"/E/Projects/elite battle arena/test/index.html",
+		"/E/Projects/elite battle arena/app/modules/Battle/AI/getRandomMove.js",
+		"/E/Projects/elite battle arena/app/modules/Scenario/enemiesMap.js",
+		"/E/Projects/elite battle arena/app/modules/Scenario/EliteBattleArena.Scenario.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/AI/characterFilters.js",
+		"/E/Projects/elite battle arena/app/modules/Scenario/treasureGroups.js",
+		"/E/Projects/elite battle arena/app/modules/Scenario/party.js",
+		"/E/Projects/elite battle arena/app/modules/Treasure/treasureService.js",
+		"/E/Projects/elite battle arena/app/modules/EliteBattleArena.js",
+		"/E/Projects/elite battle arena/app/modules/Scenario/Game.js",
+		"/E/Projects/elite battle arena/app/index.html",
+		"/E/Projects/elite battle arena/app/modules/Scenario/treasuresMap.js",
+		"/E/Projects/elite battle arena/app/modules/Treasure/EliteBattleArena.Treasure.js",
+		"/E/Projects/elite battle arena/Gruntfile.js",
+		"/E/Projects/elite battle arena/app/modules/Common/Helpers/slice.js",
+		"/E/Projects/elite battle arena/app/modules/Common/Helpers/EliteBattleArena.Helpers.js",
+		"/E/Projects/elite battle arena/app/modules/EliteBattleArena.Main.Bootstrap.js",
+		"/E/Projects/elite battle arena/test/spec/test.js",
+		"/E/Projects/elite battle arena/test/bower_components/mocha/mocha.js",
+		"/E/Projects/elite battle arena/app/modules/Item/item-view/itemView.js",
+		"/E/Projects/elite battle arena/app/modules/Status/statusRoutes.js",
+		"/E/Projects/elite battle arena/app/modules/Store/store.html",
+		"/E/Projects/elite battle arena/app/modules/Status/StatusController.js",
+		"/E/Projects/elite battle arena/app/modules/Game/Game.js",
+		"/E/Projects/elite battle arena/app/modules/storage.js",
+		"/E/Projects/elite battle arena/app/modules/button.js",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/dungeonRoutes.js",
+		"/E/Projects/elite battle arena/app/modules/Item/item-view/Item.js",
+		"/E/Projects/elite battle arena/app/modules/Status/Settings/SettingsController.js",
+		"/E/Projects/elite battle arena/app/modules/Common/Helpers/gamble.js",
+		"/E/Projects/elite battle arena/app/modules/Splash/splash.html",
+		"/E/Projects/elite battle arena/app/modules/Status/Settings/settings.html",
+		"/E/Projects/elite battle arena/.gitignore",
+		"/E/Projects/elite battle arena/app/modules/Battle/battle-display/battle-hero-list/battle-hero-display/battle-hero-display.html",
+		"/E/Projects/elite battle arena/app/modules/Status/Party/hero-stat-view.html",
+		"/E/Projects/elite battle arena/app/modules/Status/Inventory/InventoryController.js",
+		"/E/Projects/elite battle arena/app/modules/Status/status.html",
+		"/E/Projects/elite battle arena/app/modules/Status/Inventory/inventory.html",
+		"/E/Projects/elite battle arena/diff.huh",
+		"/E/Projects/elite battle arena/app/modules/Store/StoreController.js",
+		"/E/Projects/elite battle arena/app/modules/Item/item-view/item-view.html",
+		"/E/Projects/elite battle arena/app/modules/Store/store-item-display/store-item-display.html",
+		"/E/Projects/elite battle arena/app/modules/Scenario/armor.js",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/Floor/floors/floor-9.html",
+		"/E/Projects/elite battle arena/app/modules/Actor/actorService.js",
+		"/E/Projects/elite battle arena/eba.sublime-project",
+		"/E/Projects/elite battle arena/eba.sublime-workspace",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/Floor/floors/floor-8.html",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/Floor/floors/floor-7.html",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/Floor/floors/floor-6.html",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/Floor/floors/floor-5.html",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/Floor/floors/floor-4.html",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/Floor/floors/floor-3.html",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/Floor/floors/floor-2.html",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/Floor/floors/floor-1.html",
+		"/E/Projects/elite battle arena/app/modules/Store/store-item-display/storeItemDisplay.js",
+		"/E/Projects/elite battle arena/app/styles/main.css",
+		"/E/Projects/elite battle arena/app/modules/Scenario/enemiesGroups.js",
+		"/E/Projects/elite battle arena/app/modules/Sounds/musicSounds.js",
+		"/E/Projects/elite battle arena/app/modules/Sounds/battleSounds.js",
+		"/E/Projects/elite battle arena/app/modules/Sounds/interfaceSounds.js",
+		"/E/Projects/elite battle arena/app/modules/Status/EliteBattleArena.Status.js",
+		"/E/Projects/elite battle arena/app/modules/Status/Settings/settingsController.html",
+		"/E/Projects/elite battle arena/app/dark-bootstrap.css",
+		"/E/Downloads/variables.less",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/Floor/EliteBattleArena.Floor.js",
+		"/E/Projects/elite battle arena/app/modules/Sounds/EliteBattleArena.Sounds.js",
+		"/E/Projects/elite battle arena/app/modules/Store/EliteBattleArena.Store.js",
+		"/E/Projects/elite battle arena/app/modules/Item/itemView.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/treasures-display/treasures-display.html",
+		"/E/Projects/elite battle arena/app/modules/Battle/treasure-display/treasureDisplay.js",
+		"/E/Projects/elite battle arena/app/modules/Treasure/treasure-display/treasureDisplay.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/battle-display/battle-display.html",
+		"/E/Projects/elite battle arena/app/modules/Battle/EliteBattleArena.Battle.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/battle-display/battle-hero-list/battleHeroList.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/battle-display/battle-hero-list/battle-hero-list.html",
+		"/E/Projects/elite battle arena/app/modules/Battle/battle-display/battle-hero-list/battle-hero-display/battleHeroDisplay.js",
+		"/E/Projects/elite battle arena/app/modules/Actor/actor-image-display/actorImageDisplay.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/battle-hero-display/battleHeroDisplay.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/battle-hero-display/battle-hero-display.html",
+		"/E/Projects/elite battle arena/app/modules/Battle/battle-display/battleDisplay.js",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/EliteBattleArena.Dungeon.js",
+		"/E/Projects/elite battle arena/app/modules/Actor/actor-image-display/avatarDisplay.js",
+		"/E/Projects/elite battle arena/app/modules/routes.js",
+		"/E/Projects/elite battle arena/app/modules/Item/EliteBattleArena.Item.js",
+		"/E/Projects/elite battle arena/app/modules/Inventory/InventoryController.js",
+		"/E/Projects/elite battle arena/app/modules/Inventory/EliteBattleArena.Inventory.js",
+		"/E/Projects/elite battle arena/app/modules/Dungeon/DungeonController.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/battleRoutes.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/BattleEngine/Battle.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/Treasure/treasureService.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/Treasure/EliteBattleArena.Treasure.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/heroBattleDisplay.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/battleDisplay.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/Battle.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/BattleController.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/singleHeroStatus.js",
+		"/E/Projects/elite battle arena/app/modules/Battle/itemView.js",
+		"/E/Projects/elite battle arena/app/modules/Actor/actor-image-display/actor-image-display.html",
+		"/E/Projects/elite battle arena/app/modules/Battle/battle-display.html",
+		"/E/Projects/elite battle arena/app/modules/Battle/single-hero-status.html",
+		"/E/Projects/elite battle arena/app/modules/Battle/avatarDisplay.js",
+		"/E/Projects/elite battle arena/app/scripts/App/EliteBattleArena.App.js",
+		"/E/Projects/elite battle arena/app/scripts/Scenario/enemiesMap.js",
+		"/E/Projects/elite battle arena/app/scripts/EliteBattleArena.js",
+		"/E/Projects/elite battle arena/app/partial/itemView.html",
+		"/E/Projects/elite battle arena/app/partial/hero-battle.html",
+		"/E/Projects/elite battle arena/app/partial/hero-stat-view.html",
+		"/E/Projects/elite battle arena/app/modules/Status/singleHeroStatus.js",
+		"/E/Projects/elite battle arena/app/modules/Status/single-hero-status.html",
+		"/E/Projects/elite battle arena/app/scripts/AI/conditions.js",
+		"/E/Projects/elite battle arena/app/scripts/EliteBattleArena.Main.Bootstrap.js",
+		"/E/Projects/elite battle arena/app/scripts/Battle/Battle.js",
+		"/E/Projects/elite battle arena/app/scripts/Scenario/foes.js",
+		"/E/Projects/elite battle arena/bower_components/angular-audio/app/_bower.json",
+		"/E/Projects/elite battle arena/bower_components/angular-audio/app/angular.audio.js",
+		"/E/Projects/elite battle arena/app/partial/instructions.html",
+		"/E/Projects/elite battle arena/app/scripts/Scenario/weapons.js",
+		"/E/Projects/elite battle arena/app/partial/inventory.html",
+		"/E/Projects/elite battle arena/app/scripts/App/InventoryController.js",
+		"/E/Projects/elite battle arena/app/scripts/Scenario/armor.js",
+		"/E/Projects/elite battle arena/app/scripts/App/directives/singleHeroStatus.js"
+	],
+	"find":
+	{
+		"height": 69.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"",
+			"E:\\Projects\\Rectangular\\src\\BallAgent,<open folders>",
+			"E:\\Projects\\Rectangular\\src\\BallAgent",
+			"E:\\Projects\\Rectangular\\src\\js",
+			"<open folders>",
+			"calc"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"actor",
+			"interv",
+			"invteral",
+			"$interva",
+			"sto",
+			"];",
+			"weapon?",
+			"actor is a",
+			"got target",
+			"getRa",
+			"this",
+			"target index",
+			"contro",
+			"    })",
+			"game",
+			"ga,e",
+			"mocha",
+			"tes",
+			"karm",
+			".Game",
+			"reduce",
+			" \n",
+			"angular.copy",
+			"Item",
+			"getAttack",
+			"equipItem",
+			"actor",
+			"folder_i",
+			"folder",
+			"Actor",
+			"speed",
+			".speed",
+			"menu",
+			"audio",
+			"battles",
+			"treasure-dis",
+			"treasure-ds",
+			"alignment",
+			"directive",
+			"stateProvider",
+			"partial/splas",
+			"EliteBattleArena.App",
+			"battlec",
+			"EliteBattleArena.App",
+			"angular.module(\"EliteBattleArena.App\",[]);\nEliteBattleArena.App",
+			"*",
+			"uglif",
+			"injec",
+			"head",
+			"location",
+			"charact",
+			"equip(",
+			"$rootScope.game",
+			"dead",
+			"retreat",
+			"[];\n",
+			"Action?",
+			"target",
+			"common",
+			"getRandomMove",
+			"single",
+			"Simulati",
+			"Simulatoin",
+			"isGood",
+			"acto",
+			"Game",
+			"});",
+			"actors",
+			"muting:",
+			"this.loop",
+			"00",
+			"12",
+			"My t",
+			"My",
+			"my tar",
+			"my target",
+			"distance?",
+			"my t",
+			"damageDone",
+			"findNearestObjectDirectionAndDistance",
+			"<<<",
+			"github",
+			"console",
+			"NgAudioObject",
+			"ngAudioObject",
+			"\"",
+			"PERFORMANCE_MODE",
+			"observeProperties",
+			"noWatch",
+			"stop()",
+			"bower_c",
+			"audio.",
+			"active",
+			"_noWatch",
+			"clearWatch",
+			"setWatc",
+			"setWat",
+			"attr",
+			"saying.english",
+			"val[0]",
+			"/",
+			")",
+			"(",
+			") ",
+			" (",
+			"min.js",
+			"/",
+			"(",
+			")",
+			"   ",
+			"  ",
+			"^\\n",
+			"antolle",
+			"/",
+			"(",
+			")",
+			"(",
+			"(_",
+			"(",
+			"uglify",
+			"min",
+			"scale",
+			"440",
+			"scope",
+			"ngSynthesizer",
+			"proje",
+			"uglify",
+			"copy"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"game",
+			"NgAudioObject",
+			"'",
+			"observeProperties",
+			"$no",
+			"$noWatch",
+			"saying.elvish",
+			"saying.english",
+			" ",
+			"",
+			" ",
+			"",
+			" ",
+			"",
+			"$scope",
+			"ngAudioLoader.",
+			"audioObj",
+			"Output",
+			"output",
+			"input",
+			"Input",
+			"",
+			"$element.attr(\"hidden\");",
+			"storyEvents",
+			"events",
+			"size",
+			"value",
+			"1000",
+			"100",
+			"60",
+			"ID",
+			"/project_images/",
+			"#1a1c4c",
+			"caster",
+			"m",
+			"magicCircle.styles.animation.animationSpeed",
+			"blur",
+			"blurFilter",
+			"shadowFeMerge",
+			"introAnimationTime",
+			"ring",
+			"stock",
+			"BillionaireStocks/StockModals/confirmStockBuyModal",
+			"Billionaire/modules/BillionaireStocks/StockMarket/yourHoldings.html",
+			"finalValue",
+			"compoundFrequency",
+			"monthlyPaymentGuess",
+			"estimateNumber",
+			"record",
+			"duration",
+			"startingValue",
+			"paymentFrequency",
+			"annualInterest",
+			"billionaireDriverService.unpause",
+			"billionaireDriverService.pause",
+			"Loans",
+			"Stocks",
+			"Jobs",
+			"Events",
+			"loanToBeRepayed",
+			"NewGame",
+			"boughtPrice",
+			"stock",
+			"deal",
+			"$scope.session",
+			"Calculon",
+			"refreshStashedValues",
+			"refreshStashedValues\n",
+			"r.value\n",
+			"parameters",
+			"scripts/",
+			"Sara",
+			"Insanity",
+			"enemy",
+			"body",
+			"this.stats",
+			"calvin.stats",
+			"mahakana",
+			"mahakana.stats",
+			"mahakana",
+			"enemy",
+			"Entity",
+			"entity",
+			"enemy",
+			"body",
+			"ngrBody",
+			"",
+			"Right",
+			"currentAttack.animation",
+			"heroPos",
+			"heroBody",
+			"body",
+			"hero.",
+			"js/lib/Rectangular/",
+			"js/lib/Rectangular",
+			"js/lib/",
+			"js/lib",
+			"Finance",
+			"finance",
+			"Finance",
+			"finance",
+			"Finance",
+			"finance",
+			"Finance",
+			"finance",
+			"Finance",
+			"finance",
+			"Finance",
+			"finance",
+			"Finance",
+			"finance",
+			"$scope.params",
+			"params",
+			"paramaters",
+			"48",
+			"50",
+			"2000",
+			", ",
+			"__checkForHasMessaged",
+			"__mac",
+			"__presearch",
+			"body",
+			"body.",
+			"name",
+			",",
+			"",
+			":",
+			"shapemakerDefaults"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 8,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/modules/Battle/battle-display/battle-display.html",
+					"settings":
+					{
+						"buffer_size": 366,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								240,
+								240
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/spec/test.js",
+					"settings":
+					{
+						"buffer_size": 7260,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5244,
+								5244
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2528.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/modules/Scenario/enemiesMap.js",
+					"settings":
+					{
+						"buffer_size": 1752,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								185,
+								185
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/modules/Battle/AI/getRandomMove.js",
+					"settings":
+					{
+						"buffer_size": 1725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								448,
+								448
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/modules/Dungeon/Floor/FloorController.js",
+					"settings":
+					{
+						"buffer_size": 3140,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								595,
+								595
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 342.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/modules/Battle/BattleEngine/BattleEngine.js",
+					"settings":
+					{
+						"buffer_size": 7175,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								650,
+								233
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"settings":
+					{
+						"buffer_size": 3239,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										123,
+										129
+									],
+									[
+										414,
+										420
+									],
+									[
+										618,
+										624
+									],
+									[
+										733,
+										739
+									],
+									[
+										1058,
+										1064
+									],
+									[
+										1278,
+										1284
+									],
+									[
+										1385,
+										1391
+									],
+									[
+										1590,
+										1596
+									],
+									[
+										1799,
+										1805
+									],
+									[
+										1820,
+										1826
+									],
+									[
+										1891,
+										1897
+									],
+									[
+										1914,
+										1920
+									],
+									[
+										2035,
+										2041
+									],
+									[
+										2056,
+										2062
+									],
+									[
+										2127,
+										2133
+									],
+									[
+										2150,
+										2156
+									],
+									[
+										2271,
+										2277
+									],
+									[
+										2292,
+										2298
+									],
+									[
+										2363,
+										2369
+									],
+									[
+										2386,
+										2392
+									],
+									[
+										2507,
+										2513
+									],
+									[
+										2528,
+										2534
+									],
+									[
+										2599,
+										2605
+									],
+									[
+										2622,
+										2628
+									],
+									[
+										2718,
+										2724
+									],
+									[
+										2744,
+										2750
+									],
+									[
+										2881,
+										2887
+									],
+									[
+										3066,
+										3072
+									],
+									[
+										3087,
+										3093
+									],
+									[
+										3160,
+										3166
+									],
+									[
+										3183,
+										3189
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								631,
+								631
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/modules/Scenario/armor.js",
+					"settings":
+					{
+						"buffer_size": 4487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3950,
+								3950
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2565.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/E/Projects/reveal.js/index.html",
+					"settings":
+					{
+						"buffer_size": 14119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"arm",
+				"app/modules/Scenario/armor.js"
+			],
+			[
+				"foes",
+				"app/modules/Scenario/foes.js"
+			],
+			[
+				"weap",
+				"app/modules/Scenario/weapons.js"
+			],
+			[
+				"battlee",
+				"app/modules/Battle/BattleEngine/BattleEngine.js"
+			],
+			[
+				"flo",
+				"app/modules/Dungeon/Floor/FloorController.js"
+			],
+			[
+				"ene",
+				"app/modules/Scenario/enemiesMap.js"
+			],
+			[
+				"enem",
+				"app/modules/Scenario/enemiesMap.js"
+			],
+			[
+				"battle",
+				"app/modules/Battle/BattleEngine/BattleEngine.js"
+			],
+			[
+				"cond",
+				"app/modules/Battle/AI/conditions.js"
+			],
+			[
+				"floorc",
+				"app/modules/Dungeon/Floor/FloorController.js"
+			],
+			[
+				"battleen",
+				"app/modules/Battle/BattleEngine/BattleEngine.js"
+			],
+			[
+				"enemi",
+				"app/modules/Scenario/enemiesMap.js"
+			],
+			[
+				"random",
+				"app/modules/Battle/AI/getRandomMove.js"
+			],
+			[
+				"act",
+				"app/modules/Actor/Actor.js"
+			],
+			[
+				"charac",
+				"app/modules/Battle/AI/characterFilters.js"
+			],
+			[
+				"scena",
+				"app/modules/Scenario/EliteBattleArena.Scenario.js"
+			],
+			[
+				"treas",
+				"app/modules/Scenario/treasureGroups.js"
+			],
+			[
+				"enemiesma",
+				"app/modules/Scenario/enemiesMap.js"
+			],
+			[
+				"par",
+				"app/modules/Scenario/party.js"
+			],
+			[
+				"game",
+				"app/modules/Scenario/Game.js"
+			],
+			[
+				"floo",
+				"app/modules/Dungeon/Floor/FloorController.js"
+			],
+			[
+				"treasureg",
+				"app/modules/Scenario/treasureGroups.js"
+			],
+			[
+				"treasures",
+				"app/modules/Scenario/treasuresMap.js"
+			],
+			[
+				"treasu",
+				"app/modules/Treasure/treasureService.js"
+			],
+			[
+				".treas",
+				"app/modules/Treasure/EliteBattleArena.Treasure.js"
+			],
+			[
+				"slice",
+				"app/modules/Common/Helpers/slice.js"
+			],
+			[
+				"statusc",
+				"modules/Status/StatusController.js"
+			],
+			[
+				"gam",
+				"modules/Game/Game.js"
+			],
+			[
+				"stora",
+				"modules/storage.js"
+			],
+			[
+				"stor",
+				"modules/Store/store.html"
+			],
+			[
+				"bootst",
+				"modules/EliteBattleArena.Main.Bootstrap.js"
+			],
+			[
+				"dungeo",
+				"modules/Dungeon/dungeonRoutes.js"
+			],
+			[
+				"statusr",
+				"modules/Status/statusRoutes.js"
+			],
+			[
+				"item",
+				"modules/Item/item-view/itemView.js"
+			],
+			[
+				"ind",
+				"index.html"
+			],
+			[
+				"spla",
+				"modules/Splash/splash.html"
+			],
+			[
+				"acto",
+				"modules/Actor/Actor.js"
+			],
+			[
+				"bootstra",
+				"modules/EliteBattleArena.Main.Bootstrap.js"
+			],
+			[
+				"boots",
+				"modules/EliteBattleArena.Main.Bootstrap.js"
+			],
+			[
+				"floor",
+				"modules/Dungeon/Floor/FloorController.js"
+			],
+			[
+				"statv",
+				"modules/Status/Party/hero-stat-view.html"
+			],
+			[
+				"boot",
+				"modules/EliteBattleArena.Main.Bootstrap.js"
+			],
+			[
+				"stat",
+				"modules/Status/status.html"
+			],
+			[
+				"hero-ba",
+				"modules/Battle/battle-display/battle-hero-list/battle-hero-display/battle-hero-display.html"
+			],
+			[
+				"ac",
+				"modules/Actor/Actor.js"
+			],
+			[
+				"inven",
+				"modules/Status/Inventory/InventoryController.js"
+			],
+			[
+				"inve",
+				"modules/Status/Inventory/inventory.html"
+			],
+			[
+				"setti",
+				"modules/Status/Settings/settings.html"
+			],
+			[
+				"setting",
+				"modules/Status/Settings/SettingsController.js"
+			],
+			[
+				"hero",
+				"modules/Status/Party/hero-stat-view.html"
+			],
+			[
+				"store",
+				"modules/Store/StoreController.js"
+			],
+			[
+				"store-ite",
+				"modules/Store/store-item-display/store-item-display.html"
+			],
+			[
+				"storei-i",
+				"modules/Store/store-item-display/store-item-display.html"
+			],
+			[
+				"floor-9",
+				"modules/Dungeon/Floor/floors/floor-9.html"
+			],
+			[
+				"floor8",
+				"modules/Dungeon/Floor/floors/floor-8.html"
+			],
+			[
+				"floor-7",
+				"modules/Dungeon/Floor/floors/floor-7.html"
+			],
+			[
+				"floor-6",
+				"modules/Dungeon/Floor/floors/floor-6.html"
+			],
+			[
+				"floor-5",
+				"modules/Dungeon/Floor/floors/floor-5.html"
+			],
+			[
+				"floor-4",
+				"modules/Dungeon/Floor/floors/floor-4.html"
+			],
+			[
+				"floor3",
+				"modules/Dungeon/Floor/floors/floor-3.html"
+			],
+			[
+				"floor-3",
+				"modules/Dungeon/Floor/floors/floor-3.html"
+			],
+			[
+				"floor2",
+				"modules/Dungeon/Floor/floors/floor-2.html"
+			],
+			[
+				"splas",
+				"modules/Splash/splash.html"
+			],
+			[
+				"floor1",
+				"modules/Dungeon/Floor/floors/floor-1.html"
+			],
+			[
+				"hero-b",
+				"modules/Battle/battle-display/battle-hero-list/battle-hero-display/battle-hero-display.html"
+			],
+			[
+				"invent",
+				"modules/Status/Inventory/inventory.html"
+			],
+			[
+				"storei",
+				"modules/Store/store-item-display/store-item-display.html"
+			],
+			[
+				"settin",
+				"modules/Status/Settings/SettingsController.js"
+			],
+			[
+				"sett",
+				"modules/Status/Settings/settings.html"
+			],
+			[
+				".css",
+				"styles/main.css"
+			],
+			[
+				"foe",
+				"modules/Scenario/foes.js"
+			],
+			[
+				"treasrures",
+				"modules/Treasure/treasureService.js"
+			],
+			[
+				"store-",
+				"modules/Store/store-item-display/store-item-display.html"
+			],
+			[
+				"status",
+				"modules/Status/status.html"
+			],
+			[
+				"battle-h",
+				"modules/Battle/battle-display/battle-hero-list/battle-hero-display/battle-hero-display.html"
+			],
+			[
+				"batt",
+				"modules/Battle/BattleEngine/BattleEngine.js"
+			],
+			[
+				"itemv",
+				"modules/Item/item-view/item-view.html"
+			],
+			[
+				"armor",
+				"modules/Scenario/armor.js"
+			],
+			[
+				"heros",
+				"modules/Status/Party/hero-stat-view.html"
+			],
+			[
+				"item-v",
+				"modules/Item/item-view/item-view.html"
+			],
+			[
+				"treasuresm",
+				"modules/Scenario/treasuresMap.js"
+			],
+			[
+				"armo",
+				"modules/Scenario/armor.js"
+			],
+			[
+				"css",
+				"styles/main.css"
+			],
+			[
+				"stire",
+				"modules/Store/store-item-display/store-item-display.html"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"settings",
+				"modules/Status/Settings/SettingsController.js"
+			],
+			[
+				"sound",
+				"modules/Sounds/battleSounds.js"
+			],
+			[
+				"interf",
+				"modules/Sounds/interfaceSounds.js"
+			],
+			[
+				"dungo",
+				"modules/Dungeon/dungeonRoutes.js"
+			],
+			[
+				"battles",
+				"modules/Sounds/battleSounds.js"
+			],
+			[
+				"itemvi",
+				"modules/Item/itemView.js"
+			],
+			[
+				"route",
+				"modules/Dungeon/dungeonRoutes.js"
+			],
+			[
+				"dung",
+				"modules/Dungeon/EliteBattleArena.Dungeon.js"
+			],
+			[
+				"dungon",
+				"modules/Dungeon/dungeonRoutes.js"
+			],
+			[
+				"battl",
+				"scripts/Battle/Battle.js"
+			],
+			[
+				"hero-st",
+				"partial/hero-stat-view.html"
+			],
+			[
+				"rout",
+				"scripts/routes.js"
+			],
+			[
+				"stats",
+				"partial/single-hero-status.html"
+			],
+			[
+				"statu",
+				"partial/status.html"
+			],
+			[
+				"avat",
+				"partial/avatar-display.html"
+			],
+			[
+				"ava",
+				"partial/avatar-display.html"
+			],
+			[
+				"battlec",
+				"scripts/App/BattleController.js"
+			],
+			[
+				"sing",
+				"partial/single-hero-status.html"
+			],
+			[
+				"dun",
+				"partial/dungeon.html"
+			],
+			[
+				"sim",
+				"partial/battle-simulation-display.html"
+			],
+			[
+				"main.j",
+				"scripts/main.js"
+			],
+			[
+				"main",
+				"partial/main.html"
+			],
+			[
+				"elit",
+				"scripts/EliteBattleArena.js"
+			],
+			[
+				"eli",
+				"scripts/EliteBattleArena.js"
+			],
+			[
+				"angular.a",
+				"app/angular.audio.js"
+			],
+			[
+				"angul",
+				"app/angular.audio.js"
+			],
+			[
+				"main.js",
+				"app/scripts/main.js"
+			],
+			[
+				"angular",
+				"app/angular.audio.js"
+			],
+			[
+				"mus",
+				"scripts/music.js"
+			],
+			[
+				"osc",
+				"scripts/oscillator.js"
+			],
+			[
+				"person",
+				"app/typescript/Lisa/Brain/Emotion/Personality.ts"
+			],
+			[
+				"lisa",
+				"app/typescript/Lisa/Lisa.ts"
+			],
+			[
+				"core",
+				"app/typescript/Lisa/Core/Core.ts"
+			],
+			[
+				"brain",
+				"app/typescript/Lisa/Brain/Brain.ts"
+			],
+			[
+				"input",
+				"app/scripts/Lisa/Input/BasicInput.js"
+			],
+			[
+				"outp",
+				"app/typescript/Lisa/Output/Output.ts"
+			],
+			[
+				"listen",
+				"app/typescript/Lisa/Utilities/Listener.ts"
+			],
+			[
+				"lisalo",
+				"app/typescript/Lisa/Brain/Logic/Logic.ts"
+			],
+			[
+				"",
+				"app/typescript/Lisa/Brain/Brain.ts"
+			],
+			[
+				"cor",
+				"app/typescript/Lisa/Core/Core.ts"
+			],
+			[
+				"lisain",
+				"app/typescript/Lisa/Input/BasicInput.ts"
+			],
+			[
+				"brai",
+				"app/typescript/Lisa/Brain/Brain.ts"
+			],
+			[
+				"emo",
+				"app/typescript/Lisa/Emotion/Emotion.ts"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/wamp/www/lisa/lisa-project.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 227.0,
+	"status_bar_visible": false
+}

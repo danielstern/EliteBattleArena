@@ -1,13 +1,8 @@
 angular.module("EliteBattleArena.Floor")
-    .controller("FloorController", function($scope, $state, $stateParams, Item, musicSounds, $interval, battleSounds, battleTurn, treasureService,  levelsMap, Battle, BattleEngine,enemiesMap,foes) {
+    .controller("FloorController", function($scope, $state, $stateParams, Item, musicSounds, $interval, battleSounds, battleTurn, treasureService,  levelsMap, Battle, enemiesMap,foes) {
         
 
-        // var battle = new BattleEngine();
-
-
-
         var battle = new Battle();
-
         var gameClock;
 
         $scope.start = function() {
@@ -18,10 +13,19 @@ angular.module("EliteBattleArena.Floor")
             });
 
 
-
+            var lastTime = new Date().getTime();
+            var fps = 60;
+            var fpsCounter = 0;
             gameClock = $interval(function(){
-                battleTurn(battle);
-            },20);
+                var newTime = new Date().getTime();
+                var diff = newTime-lastTime;
+                fpsCounter+=diff;
+                if (fpsCounter > fps) {
+                    fpsCounter-=fps;
+                    battleTurn(battle);
+                }
+
+            },30);
         };
 
         $scope.battle = battle;

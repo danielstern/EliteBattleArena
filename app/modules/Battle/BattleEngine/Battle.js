@@ -1,31 +1,5 @@
 angular.module("EliteBattleArena.Battle")
 
-.factory("BattleEngine", function($interval, conditions, characterFilters,battleTurn, Battle,$state) {
-        return function() {
-
-
-
-            // var battle = new Battle();
-            
-
-
-            // var gameClock;
-            // this.start = function() {
-            //     characterFilters.isGood(battle.actors)[0].controlled = true;
-
-            //     battle.on(stop,function() {
-            //         $interval.cancel(gameClock);
-            //     });
-
-
-
-            //     gameClock = $interval(function(){
-            //         battleTurn(battle);
-            //     },20);
-            // };
-
-        }
-    })
     .factory("Battle",function(characterFilters,conditions){
         return function(){
             var battle = this;
@@ -168,6 +142,8 @@ angular.module("EliteBattleArena.Battle")
                     action.target.health -= damage;
                     action.actor.animation = "attacking";
                     actor.sp = 0;
+
+                    action.actor.health += damage * actor.getDrain();
 
                     battle.broadcast("attack");
                 }

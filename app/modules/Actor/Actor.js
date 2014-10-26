@@ -96,6 +96,21 @@ angular.module("EliteBattleArena.Actor")
                 return speed;
             }
 
+            this.getDrain = function() {
+                var drain = 0;
+                for (key in this.equip) {
+                    var equip = this.equip[key];
+                    if (equip && equip.bonus) {
+                        if (equip.bonus.drain) {
+                            drain += equip.bonus.drain;
+                        }
+                    }
+                }
+
+                return drain;
+            }
+
+
 
             this.getDefense = function() {
                 var defense = 0;

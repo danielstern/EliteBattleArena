@@ -77,6 +77,9 @@
 
 }
 
+.item-view {
+  text-align: center;
+}
 
 
 
@@ -151,6 +154,10 @@
   background-position: -385px 0px;
 }
 
+.inventory-item {
+  border: 1px solid gray;
+  text-align: center;
+}
 
 
 
@@ -158,10 +165,10 @@
   transform: rotate(30deg);
 }
 
-.item-view {
+/*.item-view {
   border: 1px solid black;
 }
-
+*/
 ::-webkit-scrollbar {
   width: 13px;
   height: 13px; }
